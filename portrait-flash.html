@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <style>
         :root {
             --bg: #0B0A0A;
@@ -170,8 +171,9 @@
         .share-btn.whatsapp:hover{background:#1da851;border-color:#1da851;}
 
         .share-generating{text-align:center;font-size:0.85rem;color:var(--text-dim);padding:12px;display:none;}
+        .share-note{font-size:0.75rem;color:var(--text-dim);margin-top:10px;display:none;}
 
-        /* ── SHARE CARD (off-screen) ── */
+        /* ── SHARE CARD (off-screen, avec QR code) ── */
         #share-card{
             position:fixed;left:-9999px;top:-9999px;
             width:400px;height:400px;
@@ -179,7 +181,7 @@
             font-family:'Cormorant Garamond',Georgia,serif;
         }
         .sc-chroma{height:5px;background:linear-gradient(90deg,#B5312A,#C4581F,#B8930A,#2D7A4F,#1D5F8A,#5C3280,#7A3594);}
-        .sc-body{display:flex;flex-direction:column;align-items:center;justify-content:center;height:calc(100% - 5px);padding:24px 28px;text-align:center;}
+        .sc-body{display:flex;flex-direction:column;align-items:center;justify-content:center;height:calc(100% - 5px);padding:24px 28px;text-align:center;position:relative;}
         .sc-img-wrap{width:100px;height:100px;border-radius:50%;overflow:hidden;position:relative;margin-bottom:16px;flex-shrink:0;}
         .sc-img{width:100%;height:100%;object-fit:cover;}
         .sc-overlay{position:absolute;inset:0;border-radius:50%;background:var(--sc-color,#C9A84C);opacity:0.3;}
@@ -189,6 +191,26 @@
         .sc-question{font-size:13px;color:var(--gold);margin-bottom:18px;font-style:italic;}
         .sc-brand{font-family:'Jost',system-ui,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6B6460;margin-top:auto;}
         .sc-brand span{color:#C9A84C;}
+
+        /* QR code intégré */
+        .qr-wrapper{
+            position:absolute;
+            bottom:60px;right:20px;
+            background:rgba(0,0,0,0.5);
+            border-radius:10px;
+            padding:4px;
+            backdrop-filter:blur(4px);
+            border:1px solid rgba(201,168,76,0.2);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        #qr-code-container canvas,
+        #qr-code-container img{
+            width:55px !important;
+            height:55px !important;
+            border-radius:6px;
+        }
 
         /* ── MOBILE ── */
         @media(max-width:480px){
@@ -237,6 +259,10 @@
         <div class="sc-phrase" id="sc-phrase"></div>
         <div class="sc-question">Et vous, quel est votre masque ?</div>
         <div class="sc-brand">V.A.L.E.U.R<span>©</span> · valeur.psyh.fr</div>
+        <!-- QR code intégré -->
+        <div class="qr-wrapper" id="qr-wrapper">
+            <div id="qr-code-container"></div>
+        </div>
     </div>
 </div>
 
@@ -488,6 +514,7 @@ function buildPortrait(data, profile) {
             <p class="share-title">Partager mon portrait</p>
             <p class="share-subtitle">Téléchargez votre carte ou partagez-la directement.</p>
             <p class="share-generating" id="share-generating">Génération de la carte…</p>
+            <p class="share-note" id="share-note">Sur mobile, l'image s'envoie automatiquement. Sur ordinateur, l'image est téléchargée et le message WhatsApp s'ouvre.</p>
             <div class="share-buttons">
                 <button class="share-btn download" onclick="downloadCard()">⬇ Télécharger la carte</button>
                 <button class="share-btn whatsapp" id="shareWhatsAppBtn" onclick="shareViaWhatsApp()">📤 Partager sur WhatsApp</button>
@@ -496,7 +523,20 @@ function buildPortrait(data, profile) {
     </div>`;
 }
 
-// ═══════════════ SHARE CARD ══════════════
+// ═══════════════ SHARE CARD + QR CODE LOCAL ══════════════
+function generateQRCode() {
+    const container = document.getElementById('qr-code-container');
+    container.innerHTML = ''; // vider
+    new QRCode(container, {
+        text: 'https://valeur.psyh.fr/questionnaire-eclair.html',
+        width: 55,
+        height: 55,
+        colorDark: '#C9A84C',
+        colorLight: '#0B0A0A',
+        correctLevel: QRCode.CorrectLevel.M
+    });
+}
+
 function prepareShareCard(dom, mirror, color, maskImgUrl) {
     document.getElementById('sc-img').src = maskImgUrl;
     document.getElementById('sc-mask-name').textContent = 'Masque ' + MASK_LABELS[dom];
@@ -504,6 +544,10 @@ function prepareShareCard(dom, mirror, color, maskImgUrl) {
     document.getElementById('sc-phrase').textContent = mirror;
     document.getElementById('sc-overlay').style.background = color;
     document.documentElement.style.setProperty('--sc-color', color);
+    // générer le QR code s'il n'est pas déjà fait
+    if (!document.getElementById('qr-code-container').hasChildNodes()) {
+        generateQRCode();
+    }
 }
 
 let cardBlobUrl = null;
@@ -513,6 +557,8 @@ async function generateCard(dom, mirror, color, maskImgUrl) {
     prepareShareCard(dom, mirror, color, maskImgUrl);
     const sc = document.getElementById('share-card');
     await document.fonts.ready;
+    // attendre que le QR code soit rendu
+    await new Promise(resolve => setTimeout(resolve, 200)); // laisser le DOM se mettre à jour
     const canvas = await html2canvas(sc, {
         scale: 2.7,
         useCORS: true,
@@ -544,7 +590,9 @@ async function downloadCard() {
 
 async function shareViaWhatsApp() {
     const gen = document.getElementById('share-generating');
+    const note = document.getElementById('share-note');
     gen.style.display = 'block';
+    if (note) note.style.display = 'none';
     try {
         const { blob } = await generateCard(_dom, _mirror, _color, currentMaskImage);
         const file = new File([blob], `masque-valeur-${_dom}.png`, { type: 'image/png' });
@@ -555,13 +603,16 @@ async function shareViaWhatsApp() {
                 title: `Mon Masque ${MASK_LABELS[_dom]} · V.A.L.E.U.R©`,
                 text: shareText
             });
+            // succès, rien de plus
         } else {
-            // Fallback : télécharger l'image et ouvrir WhatsApp avec le message seul
+            // Fallback desktop : télécharger l'image, ouvrir WhatsApp avec message + lien
             const a = document.createElement('a');
             a.href = URL.createObjectURL(blob);
             a.download = `masque-valeur-${_dom}.png`;
             a.click();
-            window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
+            const waLink = `https://wa.me/?text=${encodeURIComponent(shareText + ' Faites le test : https://valeur.psyh.fr/questionnaire-eclair.html')}`;
+            window.open(waLink, '_blank');
+            if (note) note.style.display = 'block';
         }
     } catch(e) {
         if (e.name !== 'AbortError') console.warn('Share error:', e);
