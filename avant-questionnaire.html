@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Avant de commencer le test V.A.L.E.U.R© — Ce que ce questionnaire fait, et ce qu'il ne fait pas. Méthode Céline Bourbon, Psychologue.">
+<meta name="robots" content="noindex, follow">
+<title>Avant de commencer · V.A.L.E.U.R© · Céline Bourbon, Psychologue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>(function(){document.addEventListener('contextmenu',e=>e.preventDefault());document.addEventListener('keydown',function(e){if((e.ctrlKey||e.metaKey)&&['s','u','a','c','p'].includes(e.key.toLowerCase()))e.preventDefault();if(e.key==='F12'||e.key==='PrintScreen')e.preventDefault();});document.addEventListener('copy',e=>e.preventDefault());document.addEventListener('selectstart',e=>e.preventDefault());})();</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:#F9F5EE;color:#0E1120;overflow-x:hidden;-webkit-user-select:none;user-select:none;-webkit-font-smoothing:antialiased;font-size:19px;line-height:1.9;}
+input,textarea{-webkit-user-select:text;user-select:text}
+:root{
+  --cream:#F9F5EE;--cream2:#F2EDE3;--ink:#0E1120;--ink2:#1C2035;--ink3:#4A4F66;--ink4:#8589A0;--ink5:#B8BBCC;
+  --gold:#C9A84C;--gold-ink:#7A5E1A;--gold-pale:rgba(201,168,76,.10);--gold-border:rgba(201,168,76,.22);
+  --line:rgba(14,17,32,.08);--line2:rgba(14,17,32,.04);
+  --rouge:#B5312A;--orange:#C4581F;--jaune:#B8930A;--vert:#2D7A4F;--bleu:#1D5F8A;--indigo:#5C3280;--violet:#7A3594;
+  --max-w:760px;--pad:clamp(20px,5vw,52px);--r:6px;--r-lg:14px;
+}
+@keyframes riseUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse-ring{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.6;transform:scale(1.04)}}
+
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.018;pointer-events:none;z-index:9999;}
+
+/* NAV minimaliste */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(249,245,238,.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:900px;margin:0 auto;padding:0 var(--pad);height:62px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+.nav-logo sup{font-size:9px;vertical-align:super;letter-spacing:0}
+.nav-back{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink4);text-decoration:none;display:flex;align-items:center;gap:7px;transition:color .2s;}
+.nav-back:hover{color:var(--ink)}
+.nav-back::before{content:'←';font-size:13px;}
+
+/* CHROMA */
+.chroma{height:4px;display:flex;margin-top:62px}
+.cs{flex:1}
+
+/* LAYOUT */
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);}
+.page{padding-top:72px;padding-bottom:80px;min-height:100svh;display:flex;flex-direction:column;justify-content:center;}
+
+/* MASK CENTERED */
+.mask-header{text-align:center;padding:64px 0 52px;border-bottom:1px solid var(--line);margin-bottom:56px;}
+.mask-wrap{position:relative;width:160px;height:160px;margin:0 auto 36px;}
+.mask-ring{position:absolute;inset:-12px;border-radius:50%;border:1px solid var(--gold-border);animation:pulse-ring 5s ease-in-out infinite;}
+.mask-img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 12px 36px rgba(14,17,32,.12));animation:float 6s ease-in-out infinite;}
+.mask-eyebrow{font-size:10px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold-ink);margin-bottom:18px;display:block;}
+.mask-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,52px);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:16px;animation:riseUp .9s .1s both;}
+.mask-h1 em{font-style:italic;color:var(--gold-ink)}
+.mask-sub{font-size:19px;color:var(--ink3);line-height:1.85;max-width:540px;margin:0 auto;animation:riseUp .8s .25s both;}
+
+/* PHILOSOPHIE CENTRALE */
+.philo-block{
+  background:var(--ink);border-radius:var(--r-lg);padding:44px 48px;margin-bottom:40px;
+  animation:riseUp .8s .35s both;
+}
+.philo-text{font-family:'Cormorant Garamond',serif;font-size:clamp(21px,2.6vw,28px);font-weight:300;font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:14px;}
+.philo-text em{font-style:normal;font-weight:400;color:var(--gold)}
+.philo-author{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(249,245,238,.3);}
+@media(max-width:600px){.philo-block{padding:32px 28px}}
+
+/* SECTIONS */
+.section-block{margin-bottom:44px;}
+.sb-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--ink);margin-bottom:18px;display:flex;align-items:center;gap:14px;}
+.sb-title::after{content:'';flex:1;height:1px;background:var(--line);}
+.sb-body{font-size:18px;line-height:1.9;color:var(--ink3);}
+.sb-body strong{color:var(--ink);font-weight:500}
+.sb-body p{margin-bottom:14px;}
+.sb-body p:last-child{margin-bottom:0}
+
+/* DEUX NIVEAUX */
+.niveaux-mini{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0;}
+.nm-card{padding:22px 24px;border-radius:var(--r-lg);border:1px solid var(--line);}
+.nm-card.actif{background:var(--cream2);border-color:var(--gold-border);}
+.nm-card.inactif{background:#fff;opacity:.7;}
+.nm-tag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;padding:4px 10px;border-radius:12px;margin-bottom:12px;}
+.nm-tag.current{background:var(--gold-pale);color:var(--gold-ink);border:1px solid var(--gold-border);}
+.nm-tag.later{background:rgba(14,17,32,.04);color:var(--ink5);border:1px solid var(--line);}
+.nm-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--ink);margin-bottom:6px;}
+.nm-desc{font-size:14px;color:var(--ink4);line-height:1.7}
+@media(max-width:540px){.niveaux-mini{grid-template-columns:1fr}}
+
+/* CONSIGNES */
+.consignes-list{display:flex;flex-direction:column;gap:16px;margin:20px 0;}
+.consigne{display:flex;gap:16px;align-items:flex-start;}
+.consigne-num{
+  flex-shrink:0;width:32px;height:32px;border-radius:50%;
+  background:var(--gold-pale);border:1px solid var(--gold-border);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:var(--gold-ink);
+}
+.consigne-text{font-size:17px;color:var(--ink3);line-height:1.8;padding-top:4px;}
+.consigne-text strong{color:var(--ink);font-weight:500}
+
+/* ECHELLE */
+.echelle{
+  background:var(--cream2);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:24px 28px;margin:20px 0;
+}
+.echelle-title{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold-ink);margin-bottom:16px;}
+.echelle-row{display:flex;align-items:center;gap:0;margin-bottom:10px;}
+.ech-val{
+  flex:1;text-align:center;font-size:12px;color:var(--ink4);
+  padding:8px 4px;border-radius:var(--r);background:#fff;border:1px solid var(--line);
+}
+.ech-val:not(:first-child){margin-left:4px;}
+.ech-val.active{background:var(--ink);color:var(--cream);border-color:transparent;}
+.echelle-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--ink5);margin-top:6px;}
+
+/* NOTE DÉONTOLOGIQUE */
+.deo-note{
+  padding:22px 26px;border-radius:var(--r-lg);
+  background:rgba(45,122,79,.05);border:1px solid rgba(45,122,79,.15);
+  margin:28px 0;
+}
+.deo-note p{font-size:16px;color:var(--ink3);line-height:1.8;}
+.deo-note strong{color:var(--ink);font-weight:500}
+
+/* CTA */
+.cta-zone{
+  padding:48px 0 0;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+.cta-sub{font-size:17px;color:var(--ink4);margin-bottom:28px;line-height:1.8;}
+.btn-dark{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--ink);color:var(--cream);text-decoration:none;
+  font-family:'Jost',sans-serif;font-size:12px;font-weight:500;
+  letter-spacing:2.5px;text-transform:uppercase;
+  padding:20px 48px;border-radius:2px;border:none;cursor:pointer;
+  transition:background .25s,transform .2s,box-shadow .25s;
+}
+.btn-dark:hover{background:var(--ink2);transform:translateY(-2px);box-shadow:0 14px 44px rgba(14,17,32,.2)}
+.btn-dark .arr{transition:transform .2s}
+.btn-dark:hover .arr{transform:translateX(5px)}
+.cta-info{margin-top:16px;font-size:13px;color:var(--ink5);line-height:1.7;}
+.cta-cabinet{margin-top:36px;padding:20px 24px;background:var(--cream2);border-radius:var(--r-lg);border:1px solid var(--line);text-align:left;display:flex;align-items:center;gap:18px;}
+.cc-text{flex:1}
+.cc-label{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold-ink);margin-bottom:5px;}
+.cc-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--ink);margin-bottom:4px;}
+.cc-desc{font-size:14px;color:var(--ink4);line-height:1.6}
+.cc-btn{flex-shrink:0;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:10px 18px;border:1px solid rgba(14,17,32,.2);border-radius:2px;white-space:nowrap;transition:border-color .2s,color .2s;}
+.cc-btn:hover{border-color:var(--ink);color:var(--ink)}
+@media(max-width:540px){.cta-cabinet{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">V.A.L.E.U.R<sup>©</sup></a>
+    <a href="/" class="nav-back">Retour au site</a>
+  </div>
+</nav>
+
+<div class="chroma">
+  <div class="cs" style="background:var(--rouge)"></div><div class="cs" style="background:var(--orange)"></div>
+  <div class="cs" style="background:var(--jaune)"></div><div class="cs" style="background:var(--vert)"></div>
+  <div class="cs" style="background:var(--bleu)"></div><div class="cs" style="background:var(--indigo)"></div>
+  <div class="cs" style="background:var(--violet)"></div>
+</div>
+
+<div class="page">
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <div class="mask-header">
+      <div class="mask-wrap">
+        <div class="mask-ring"></div>
+        <img src="https://questionnaire.psyh.fr/LOGO_VALEUR_MASQUE_transparent.png" alt="V.A.L.E.U.R©" class="mask-img" loading="eager">
+      </div>
+      <span class="mask-eyebrow">V.A.L.E.U.R© · Céline Bourbon, Psychologue</span>
+      <h1 class="mask-h1">
+        Avant de commencer —<br>
+        <em>quelques mots</em>
+      </h1>
+      <p class="mask-sub">
+        Ce questionnaire ne vous dira pas qui vous êtes.<br>
+        Il vous aidera à voir ce qui vous empêche d'être vous-même.
+      </p>
+    </div>
+
+    <!-- PHILOSOPHIE CENTRALE -->
+    <div class="philo-block">
+      <p class="philo-text">
+        Personne ne peut dire qui vous êtes —
+        <em>c'est à vous de révéler votre nature profonde.</em>
+        Ce test vous aide à cela : identifier ce qui pèse, ce qui retient, ce qui empêche la joie d'être soi.
+      </p>
+      <span class="philo-author">Céline Bourbon · Psychologue humaniste · Méthode V.A.L.E.U.R©</span>
+    </div>
+
+    <!-- CE QUE CE TEST EST -->
+    <div class="section-block">
+      <h2 class="sb-title">Ce que ce test fait</h2>
+      <div class="sb-body">
+        <p>Ce questionnaire identifie vos <strong>masques dominants</strong> parmi les 7 peurs protectrices de la méthode V.A.L.E.U.R©. Il ne cherche pas à vous définir — il cherche à éclairer ce qui, en vous, s'est construit pour vous protéger et qui, aujourd'hui, peut vous peser.</p>
+        <p>Chaque masque est une <strong>version défensive de vous-même</strong>, construite au fil de votre histoire, face à des expériences difficiles. Il n'est pas vous. Il recouvre ce que vous êtes vraiment.</p>
+        <p>Ce test est un premier niveau d'analyse — il vous donnera des <strong>tendances significatives</strong>, un premier éclairage, une invitation à regarder plus près.</p>
+      </div>
+    </div>
+
+    <!-- CE QUE CE TEST N'EST PAS -->
+    <div class="section-block">
+      <h2 class="sb-title">Ce qu'il ne fait pas</h2>
+      <div class="sb-body">
+        <p>Ce test ne pose aucun diagnostic. Il ne désigne aucune pathologie. Il n'attribue aucune étiquette. <strong>Il n'y a pas de bonne ou de mauvaise réponse</strong> — seulement votre réalité, telle que vous la vivez.</p>
+        <p>Les résultats obtenus ici constituent une <strong>première orientation</strong>. La cartographie complète — précise, personnalisée, exploitable — est réalisée lors de la première séance en cabinet, avec l'accompagnement de Céline Bourbon.</p>
+      </div>
+      <div class="niveaux-mini">
+        <div class="nm-card actif">
+          <span class="nm-tag current">Maintenant · En ligne</span>
+          <div class="nm-title">Premier test de tendances</div>
+          <p class="nm-desc">21 questions · 5 minutes · Premier niveau d'analyse · Gratuit</p>
+        </div>
+        <div class="nm-card inactif">
+          <span class="nm-tag later">Pour aller plus loin · En cabinet</span>
+          <div class="nm-title">Portrait complet</div>
+          <p class="nm-desc">85 questions · Première séance · Cartographie unique</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSIGNES -->
+    <div class="section-block">
+      <h2 class="sb-title">Comment répondre</h2>
+      <div class="consignes-list">
+        <div class="consigne">
+          <div class="consigne-num">1</div>
+          <p class="consigne-text">Choisissez un <strong>moment calme</strong>, sans interruption. Ce questionnaire demande une vraie présence à soi.</p>
+        </div>
+        <div class="consigne">
+          <div class="consigne-num">2</div>
+          <p class="consigne-text">Répondez selon <strong>votre fonctionnement réel au cours des six derniers mois</strong> — non selon ce que vous voudriez être ou ce que vous pensez devoir répondre.</p>
+        </div>
+        <div class="consigne">
+          <div class="consigne-num">3</div>
+          <p class="consigne-text">Faites confiance à <strong>votre premier ressenti</strong>. L'analyse intellectuelle tend à biaiser les réponses. Ce qui vient en premier est souvent le plus juste.</p>
+        </div>
+        <div class="consigne">
+          <div class="consigne-num">4</div>
+          <p class="consigne-text"><strong>Suspendez tout jugement</strong> envers vous-même. Il n'y a rien à bien faire ici — seulement quelque chose à voir.</p>
+        </div>
+      </div>
+
+      <div class="echelle">
+        <div class="echelle-title">L'échelle de réponse</div>
+        <div class="echelle-row">
+          <div class="ech-val">0<br><span style="font-size:10px">Pas du tout</span></div>
+          <div class="ech-val">1</div>
+          <div class="ech-val">2</div>
+          <div class="ech-val active">3</div>
+          <div class="ech-val">4</div>
+          <div class="ech-val">5<br><span style="font-size:10px">Tout à fait</span></div>
+        </div>
+        <div class="echelle-labels">
+          <span>Pas du tout vrai pour moi</span>
+          <span>Décrit parfaitement mon expérience</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTE DÉONTOLOGIQUE -->
+    <div class="deo-note">
+      <p>Ce questionnaire est un <strong>outil psychoéducatif</strong>. Il ne remplace pas une évaluation professionnelle ni un suivi psychologique. Si vous traversez une période de détresse importante, n'hésitez pas à consulter un professionnel de santé mentale.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-zone">
+      <p class="cta-sub">Quand vous êtes prêt·e — à votre rythme, sans pression.</p>
+      <a href="https://questionnaire.psyh.fr" class="btn-dark">
+        Commencer le questionnaire <span class="arr">→</span>
+      </a>
+      <p class="cta-info">
+        21 questions · environ 5 minutes · Vos réponses sont sauvegardées automatiquement
+      </p>
+
+      <div class="cta-cabinet">
+        <div class="cc-text">
+          <div class="cc-label">Pour aller plus loin</div>
+          <div class="cc-title">Portrait complet — 85 questions en première séance</div>
+          <p class="cc-desc">La cartographie complète de vos masques, réalisée avec Céline Bourbon. Le fondement de tout accompagnement.</p>
+        </div>
+        <a href="accompagnement.html" class="cc-btn">En savoir plus →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
