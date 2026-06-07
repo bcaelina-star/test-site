@@ -125,8 +125,13 @@
         .progress-wrap{margin-bottom:28px;}
         .progress-bar{height:3px;background:rgba(255,255,255,0.08);
             border-radius:2px;overflow:hidden;}
-        .progress-fill{height:100%;background:var(--mask-gradient);
-            transition:width 0.4s ease;border-radius:2px;}
+        .progress-fill{
+            height:100%;
+            background:var(--mask-gradient);
+            transition:width 0.6s cubic-bezier(0.25,0.1,0.25,1);
+            border-radius:2px;
+            box-shadow:0 0 12px rgba(201,168,76,0.3);
+        }
         .counter{font-size:12px;color:var(--text-dim);
             text-align:center;margin-top:10px;letter-spacing:0.5px;}
 
@@ -134,12 +139,13 @@
         .q-card{
             background:var(--surface2);border:1px solid rgba(255,255,255,0.06);
             border-radius:var(--radius);padding:28px 24px;margin-bottom:18px;
+            transition:opacity 0.25s ease,transform 0.25s ease;
         }
         .q-text{
             font-family:var(--font-display);font-size:clamp(20px,4vw,26px);
             font-weight:400;color:var(--text);margin-bottom:28px;line-height:1.4;
         }
-        .likert{display:flex;gap:6px;justify-content:center;}
+        .likert{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
         .likert-btn{
             width:46px;height:46px;border-radius:50%;
             border:1.5px solid rgba(255,255,255,0.14);background:transparent;
@@ -158,6 +164,7 @@
         }
         .scale-labels{display:flex;justify-content:space-between;
             margin-top:14px;font-size:11px;color:var(--text-dim);}
+        .scale-labels span:first-child,.scale-labels span:last-child{color:var(--text-secondary);}
 
         /* ── NAV BUTTONS ── */
         .btn-nav{display:flex;gap:12px;justify-content:space-between;
@@ -195,12 +202,39 @@
             box-shadow:0 8px 28px rgba(201,168,76,0.2);transform:translateY(-2px);}
 
         /* ── MOBILE ── */
-        @media(max-width:480px){
+        @media(max-width:600px){
             .card{padding:32px 20px}
             .q-card{padding:24px 18px}
-            .likert-btn{width:42px;height:42px;font-size:15px}
+            .likert{gap:10px;}
+            .likert-btn{
+                width:52px;height:52px;font-size:18px;border-radius:30px;
+                transition:transform 0.15s ease,background 0.2s,border-color 0.2s,box-shadow 0.2s;
+            }
+            .likert-btn:active{
+                transform:scale(0.92);
+                background:var(--gold);color:var(--bg);
+                border-color:var(--gold);
+                box-shadow:0 0 24px var(--gold-glow);
+            }
+            .scale-labels{font-size:12px;margin-top:18px;padding:0 4px;}
+            .btn-nav{
+                position:fixed;bottom:20px;left:16px;right:16px;
+                background:rgba(19,18,17,0.92);
+                backdrop-filter:blur(12px);
+                padding:12px 16px;border-radius:60px;
+                border:1px solid rgba(255,255,255,0.08);
+                box-shadow:0 8px 32px rgba(0,0,0,0.5);
+                z-index:50;display:flex;gap:12px;
+            }
+            .btn-nav .btn{padding:14px 20px;font-size:14px;flex:1;}
+            .btn-nav .btn-secondary{flex:0 0 auto;}
+            body{padding-bottom:100px;}
             .btn{padding:13px 20px}
         }
+        /* Transition écran */
+        .screen{transition:opacity 0.4s ease,transform 0.4s ease;}
+        .screen.active{display:block;opacity:1;transform:translateY(0);}
+        .screen:not(.active){opacity:0;transform:translateY(16px);pointer-events:none;}
     </style>
 </head>
 <body>
@@ -400,40 +434,59 @@ function startQuiz() {
 }
 
 function renderQuestion() {
-    const q = shuffledQuestions[currentIndex];
     const container = document.getElementById('questionContainer');
-    const pct = Math.round((currentIndex / shuffledQuestions.length) * 100);
-    document.getElementById('progressFill').style.width = pct + '%';
-    document.getElementById('counter').textContent =
-        `Question ${currentIndex + 1} / ${shuffledQuestions.length}`;
-    const btnPrev = document.getElementById('btnPrev');
-    const btnNext = document.getElementById('btnNext');
-    btnPrev.style.display = currentIndex > 0 ? 'inline-flex' : 'none';
-    btnNext.textContent = currentIndex === shuffledQuestions.length - 1
-        ? '✔ Voir mon portrait' : 'Suivant →';
-    const existing = responses[q.id];
-    btnNext.disabled = existing === undefined;
+    // Micro-transition de sortie
+    container.style.opacity = '0';
+    container.style.transform = 'translateY(8px)';
+    container.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
 
-    container.innerHTML = `
-        <div class="q-card">
-            <div class="q-text">${q.text}</div>
-            <div class="likert">
-                ${[0,1,2,3,4,5].map(v => `
-                    <button class="likert-btn ${existing === v ? 'selected' : ''}"
-                        onclick="selectAnswer('${q.id}', ${v})" aria-label="${v}">
-                        ${v}
-                    </button>`).join('')}
-            </div>
-            <div class="scale-labels">
-                <span>Pas du tout moi</span>
-                <span>Tout à fait moi</span>
-            </div>
-        </div>`;
+    setTimeout(() => {
+        const q = shuffledQuestions[currentIndex];
+        const pct = Math.round((currentIndex / shuffledQuestions.length) * 100);
+        document.getElementById('progressFill').style.width = pct + '%';
+        document.getElementById('counter').textContent =
+            `Question ${currentIndex + 1} / ${shuffledQuestions.length}`;
+        const btnPrev = document.getElementById('btnPrev');
+        const btnNext = document.getElementById('btnNext');
+        btnPrev.style.display = currentIndex > 0 ? 'inline-flex' : 'none';
+        btnNext.textContent = currentIndex === shuffledQuestions.length - 1
+            ? '✔ Voir mon portrait' : 'Suivant →';
+        const existing = responses[q.id];
+        btnNext.disabled = existing === undefined;
+
+        container.innerHTML = `
+            <div class="q-card">
+                <div class="q-text">${q.text}</div>
+                <div class="likert">
+                    ${[0,1,2,3,4,5].map(v => `
+                        <button class="likert-btn ${existing === v ? 'selected' : ''}"
+                            onclick="selectAnswer('${q.id}', ${v})" aria-label="${v}">
+                            ${v}
+                        </button>`).join('')}
+                </div>
+                <div class="scale-labels">
+                    <span>Pas du tout moi</span>
+                    <span>Tout à fait moi</span>
+                </div>
+            </div>`;
+
+        // Rétablir l'opacité
+        container.style.opacity = '1';
+        container.style.transform = 'translateY(0)';
+    }, 120);
 }
 
 function selectAnswer(id, val) {
     responses[id] = val;
     document.getElementById('btnNext').disabled = false;
+
+    // Micro-feedback pulse sur le bouton sélectionné
+    const selectedBtn = document.querySelector(`.likert-btn.selected`);
+    if (selectedBtn) {
+        selectedBtn.style.transform = 'scale(1.15)';
+        setTimeout(() => { selectedBtn.style.transform = ''; }, 150);
+    }
+
     renderQuestion();
 }
 
