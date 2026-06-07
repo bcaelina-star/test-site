@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test Éclair V.A.L.E.U.R© – Identifiez en 5 minutes les peurs qui vous empêchent d'être vous-même. Psychologue Bordeaux, anxiété, schémas répétitifs.">
+    <title>Test Éclair · V.A.L.E.U.R© · Céline Bourbon, Psychologue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:#0B0A0A; --surface:#131211; --surface2:#1A1917;
+            --text:#F0EBE1; --text-secondary:#A89E90; --text-dim:#6B6460;
+            --gold:#C9A84C; --gold-dark:#A8873A; --gold-glow:rgba(201,168,76,0.15);
+            --error:#E05555;
+            --mask-gradient:linear-gradient(90deg,#B5312A,#C4581F,#B8930A,#2D7A4F,#1D5F8A,#5C3280,#7A3594);
+            --font-display:'Cormorant Garamond',Georgia,serif;
+            --font-body:'Jost',system-ui,sans-serif;
+            --radius:16px; --radius-sm:10px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{
+            background:var(--bg);color:var(--text);
+            font-family:var(--font-body);font-weight:300;
+            line-height:1.7;-webkit-font-smoothing:antialiased;
+            min-height:100svh;display:flex;flex-direction:column;
+            align-items:center;justify-content:flex-start;
+            padding:20px 16px 40px;
+        }
+        .container{max-width:560px;width:100%;margin:auto;}
+
+        /* ── SCREEN MANAGEMENT ── */
+        .screen{display:none;animation:fadeUp 0.5s ease both}
+        .screen.active{display:block}
+        @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+        /* ── CHROMA BAR ── */
+        .chroma{height:3px;background:var(--mask-gradient);border-radius:0 0 2px 2px;
+            position:fixed;top:0;left:0;right:0;z-index:100;}
+
+        /* ── CARD BASE ── */
+        .card{
+            background:var(--surface);border:1px solid rgba(255,255,255,0.07);
+            border-radius:var(--radius);padding:44px 32px;
+            box-shadow:0 24px 80px rgba(0,0,0,0.5);
+            position:relative;overflow:hidden;
+        }
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;
+            height:3px;background:var(--mask-gradient)}
+
+        /* ── INTRO ── */
+        .intro-logo{
+            font-family:var(--font-display);font-size:13px;font-weight:400;
+            letter-spacing:6px;text-transform:uppercase;
+            color:var(--text-secondary);text-align:center;
+            margin-bottom:32px;display:block;
+        }
+        .intro-logo span{color:var(--gold)}
+        .intro-h1{
+            font-family:var(--font-display);font-size:clamp(30px,6vw,42px);
+            font-weight:300;line-height:1.15;text-align:center;
+            margin-bottom:16px;
+        }
+        .intro-h1 em{font-style:italic;color:var(--gold)}
+        .intro-tagline{
+            font-family:var(--font-display);font-size:17px;font-style:italic;
+            color:var(--text-secondary);text-align:center;
+            margin-bottom:32px;line-height:1.6;
+        }
+        .intro-desc{font-size:15px;color:var(--text-secondary);text-align:center;
+            line-height:1.75;margin-bottom:36px;}
+
+        /* Scale visuel */
+        .scale-row{display:flex;align-items:center;justify-content:center;
+            gap:8px;margin:28px 0;flex-wrap:wrap;}
+        .scale-item{display:flex;flex-direction:column;align-items:center;gap:6px;
+            font-size:12px;color:var(--text-secondary)}
+        .scale-circle{
+            width:38px;height:38px;border-radius:50%;
+            border:1.5px solid rgba(255,255,255,0.18);
+            display:flex;align-items:center;justify-content:center;
+            font-size:15px;font-weight:500;color:var(--text-secondary);
+        }
+        .scale-circle.hi{border-color:var(--gold);color:var(--gold);
+            background:var(--gold-glow)}
+        .scale-arrow{color:var(--gold);font-size:16px}
+
+        /* ── IDENTITY FORM ── */
+        .id-h2{
+            font-family:var(--font-display);font-size:clamp(26px,5vw,34px);
+            font-weight:300;line-height:1.2;text-align:center;margin-bottom:10px;
+        }
+        .id-h2 em{font-style:italic;color:var(--gold)}
+        .id-sub{font-size:15px;color:var(--text-secondary);text-align:center;
+            line-height:1.7;margin-bottom:36px;}
+        .field-group{display:flex;flex-direction:column;gap:16px;margin-bottom:28px;}
+        .field{display:flex;flex-direction:column;gap:7px;}
+        .field label{font-size:11px;font-weight:500;letter-spacing:2.5px;
+            text-transform:uppercase;color:var(--text-secondary);}
+        .field input{
+            background:rgba(255,255,255,0.05);
+            border:1.5px solid rgba(255,255,255,0.12);
+            border-radius:var(--radius-sm);
+            padding:14px 18px;
+            font-family:var(--font-body);font-size:16px;font-weight:300;
+            color:var(--text);outline:none;
+            transition:border-color 0.2s,background 0.2s;
+            -webkit-appearance:none;
+        }
+        .field input:focus{
+            border-color:var(--gold);
+            background:rgba(201,168,76,0.05);
+        }
+        .field input.error{border-color:var(--error);}
+        .field-error{font-size:12px;color:var(--error);display:none;}
+        .field-error.show{display:block;}
+        .id-privacy{
+            font-size:12px;color:var(--text-dim);text-align:center;
+            line-height:1.6;margin-top:16px;
+        }
+        .id-privacy a{color:var(--text-secondary);text-decoration:none;}
+
+        /* ── PROGRESS ── */
+        .progress-wrap{margin-bottom:28px;}
+        .progress-bar{height:3px;background:rgba(255,255,255,0.08);
+            border-radius:2px;overflow:hidden;}
+        .progress-fill{height:100%;background:var(--mask-gradient);
+            transition:width 0.4s ease;border-radius:2px;}
+        .counter{font-size:12px;color:var(--text-dim);
+            text-align:center;margin-top:10px;letter-spacing:0.5px;}
+
+        /* ── QUESTION ── */
+        .q-card{
+            background:var(--surface2);border:1px solid rgba(255,255,255,0.06);
+            border-radius:var(--radius);padding:28px 24px;margin-bottom:18px;
+        }
+        .q-text{
+            font-family:var(--font-display);font-size:clamp(20px,4vw,26px);
+            font-weight:400;color:var(--text);margin-bottom:28px;line-height:1.4;
+        }
+        .likert{display:flex;gap:6px;justify-content:center;}
+        .likert-btn{
+            width:46px;height:46px;border-radius:50%;
+            border:1.5px solid rgba(255,255,255,0.14);background:transparent;
+            color:var(--text-secondary);font-family:var(--font-body);
+            font-size:16px;cursor:pointer;transition:all 0.2s;
+            display:flex;align-items:center;justify-content:center;
+            -webkit-tap-highlight-color:transparent;
+            touch-action:manipulation;
+        }
+        .likert-btn:hover{border-color:var(--gold);color:var(--gold);
+            background:var(--gold-glow)}
+        .likert-btn.selected{
+            background:var(--gold);border-color:var(--gold);
+            color:var(--bg);font-weight:500;
+            box-shadow:0 0 20px rgba(201,168,76,0.4);
+        }
+        .scale-labels{display:flex;justify-content:space-between;
+            margin-top:14px;font-size:11px;color:var(--text-dim);}
+
+        /* ── NAV BUTTONS ── */
+        .btn-nav{display:flex;gap:12px;justify-content:space-between;
+            align-items:center;margin-top:8px;}
+        .btn{
+            font-family:var(--font-body);font-size:13px;font-weight:500;
+            letter-spacing:1.5px;text-transform:uppercase;
+            padding:14px 28px;border-radius:40px;cursor:pointer;
+            transition:all 0.25s;border:none;-webkit-tap-highlight-color:transparent;
+        }
+        .btn-primary{
+            background:transparent;border:1.5px solid var(--gold);color:var(--gold);
+            flex:1;
+        }
+        .btn-primary:hover:not(:disabled){
+            background:rgba(201,168,76,0.1);color:#fff;
+            box-shadow:0 4px 20px rgba(201,168,76,0.25);transform:translateY(-1px);
+        }
+        .btn-primary:disabled{opacity:0.35;cursor:not-allowed;}
+        .btn-secondary{
+            background:transparent;border:1.5px solid rgba(255,255,255,0.15);
+            color:var(--text-secondary);padding:14px 20px;flex-shrink:0;
+        }
+        .btn-secondary:hover{border-color:rgba(255,255,255,0.3);color:var(--text)}
+        .btn-start{
+            display:flex;align-items:center;justify-content:center;gap:10px;
+            width:100%;background:transparent;border:1.5px solid var(--gold);
+            color:var(--gold);font-family:var(--font-body);font-size:14px;
+            font-weight:500;letter-spacing:2px;text-transform:uppercase;
+            padding:18px;border-radius:40px;cursor:pointer;
+            transition:all 0.3s;margin-top:28px;
+            -webkit-tap-highlight-color:transparent;
+        }
+        .btn-start:hover{background:rgba(201,168,76,0.1);color:#fff;
+            box-shadow:0 8px 28px rgba(201,168,76,0.2);transform:translateY(-2px);}
+
+        /* ── MOBILE ── */
+        @media(max-width:480px){
+            .card{padding:32px 20px}
+            .q-card{padding:24px 18px}
+            .likert-btn{width:42px;height:42px;font-size:15px}
+            .btn{padding:13px 20px}
+        }
+    </style>
+</head>
+<body>
+<div class="chroma"></div>
+
+<div class="container">
+
+    <!-- ══ SCREEN 0 : INTRO ══ -->
+    <div class="screen active" id="screen-intro">
+        <div class="card">
+            <span class="intro-logo">V.A.L.E.U.R<sup>©</sup> · <span>Test Éclair</span></span>
+            <h1 class="intro-h1">
+                Les 7 peurs<br>
+                qui <em>empêchent d'être soi</em>
+            </h1>
+            <p class="intro-tagline">Ce test ne dit pas qui vous êtes.<br>Il révèle ce qui vous empêche de l'être.</p>
+            <p class="intro-desc">
+                21 questions · 5 minutes · Résultats immédiats<br>
+                Répondez spontanément, selon vos six derniers mois.
+            </p>
+            <div class="scale-row">
+                <div class="scale-item"><div class="scale-circle">0</div><span>Pas du tout</span></div>
+                <div class="scale-arrow">→</div>
+                <div class="scale-item"><div class="scale-circle hi">3</div><span>Parfois</span></div>
+                <div class="scale-arrow">→</div>
+                <div class="scale-item"><div class="scale-circle">5</div><span>Tout à fait</span></div>
+            </div>
+            <p style="font-size:13px;color:var(--text-dim);text-align:center">
+                Aucune réponse n'est meilleure qu'une autre.
+            </p>
+            <button class="btn-start" onclick="showIdentity()">
+                Commencer <span>→</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ══ SCREEN 1 : IDENTITÉ ══ -->
+    <div class="screen" id="screen-identity">
+        <div class="card">
+            <h2 class="id-h2">
+                Avant de commencer —<br>
+                <em>quelques mots sur vous</em>
+            </h2>
+            <p class="id-sub">
+                Votre portrait personnalisé vous sera envoyé par email<br>
+                à la fin du test.
+            </p>
+            <div class="field-group">
+                <div class="field">
+                    <label for="input-prenom">Votre prénom</label>
+                    <input type="text" id="input-prenom" placeholder="Marie"
+                        autocomplete="given-name" inputmode="text"
+                        oninput="clearError('prenom')">
+                    <span class="field-error" id="error-prenom">Merci d'indiquer votre prénom.</span>
+                </div>
+                <div class="field">
+                    <label for="input-email">Votre email</label>
+                    <input type="email" id="input-email" placeholder="marie@exemple.fr"
+                        autocomplete="email" inputmode="email"
+                        oninput="clearError('email')">
+                    <span class="field-error" id="error-email">Adresse email invalide.</span>
+                </div>
+            </div>
+            <button class="btn-start" onclick="validateIdentity()">
+                Commencer le test <span>→</span>
+            </button>
+            <p class="id-privacy">
+                Vos données sont strictement confidentielles · 
+                <a href="mailto:contact@psyh.fr">contact@psyh.fr</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- ══ SCREEN 2 : QUIZ ══ -->
+    <div class="screen" id="screen-quiz">
+        <div class="progress-wrap">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width:0%"></div>
+            </div>
+            <div class="counter" id="counter">Question 1 / 21</div>
+        </div>
+        <div id="questionContainer"></div>
+        <div class="btn-nav" id="btnNav">
+            <button class="btn btn-secondary" id="btnPrev"
+                onclick="prevQuestion()" style="display:none">← Retour</button>
+            <button class="btn btn-primary" id="btnNext"
+                onclick="nextQuestion()" disabled>Suivant →</button>
+        </div>
+    </div>
+
+</div><!-- /container -->
+
+<script>
+// ══════════════════════════════════════════
+// DONNÉES
+// ══════════════════════════════════════════
+const QUESTIONS = [
+    // ROUGE (3)
+    { id:'R1', mask:'rouge', text:"Dès que j'ai un symptôme, je cherche ce qu'il pourrait signifier (Internet, livres, médecins)." },
+    { id:'R2', mask:'rouge', text:"Je scrute souvent mon corps (cœur, sensations) pour repérer un problème." },
+    { id:'R3', mask:'rouge', text:"Entendre parler de maladies graves m'angoisse facilement." },
+    // ORANGE (3)
+    { id:'O1', mask:'orange', text:"Je reste constamment occupé·e pour ne pas être seul·e avec ce que je ressens." },
+    { id:'O2', mask:'orange', text:"J'évite tout ce qui pourrait me bouleverser (personnes, films, lectures)." },
+    { id:'O3', mask:'orange', text:"Je plaisante ou fais de l'ironie pour ne pas vivre un moment trop sérieux ou émouvant." },
+    // JAUNE (3)
+    { id:'J1', mask:'jaune', text:"J'ai besoin d'anticiper pour me sentir en sécurité — improviser m'est difficile." },
+    { id:'J2', mask:'jaune', text:"J'imagine souvent tous les scénarios possibles, surtout les pires." },
+    { id:'J3', mask:'jaune', text:"Les situations imprévues me mettent mal à l'aise, même quand elles sont sans danger réel." },
+    // VERT (3)
+    { id:'V1', mask:'vert', text:"Je dis souvent oui pour ne pas décevoir, même quand je pense non." },
+    { id:'V2', mask:'vert', text:"J'ai tendance à mettre les besoins des autres avant les miens, même quand ça me coûte." },
+    { id:'V3', mask:'vert', text:"Je surveille les réactions des autres, par crainte d'être rejeté·e." },
+    // BLEU (3)
+    { id:'B1', mask:'bleu', text:"Je supporte mal qu'on m'impose des choix ou des façons de faire." },
+    { id:'B2', mask:'bleu', text:"J'ai du mal à déléguer, je crains que ce soit moins bien fait." },
+    { id:'B3', mask:'bleu', text:"Ne pas maîtriser comment les choses se déroulent me génère de l'inconfort, même pour des détails mineurs." },
+    // INDIGO (3)
+    { id:'I1', mask:'indigo', text:"J'ai besoin que les autres me rassurent sur ma valeur ou mes compétences." },
+    { id:'I2', mask:'indigo', text:"Quand j'échoue, je me parle durement à moi-même." },
+    { id:'I3', mask:'indigo', text:"Je me compare souvent, et je me sens moins bien que les autres." },
+    // VIOLET (3)
+    { id:'Vi1', mask:'violet', text:"Il m'arrive de ne plus savoir comment j'agirais si je n'avais pas à tenir compte du regard des autres." },
+    { id:'Vi2', mask:'violet', text:"J'ai tellement répondu aux attentes que je ne sais plus montrer qui je suis vraiment." },
+    { id:'Vi3', mask:'violet', text:"Hors de mes rôles (travail, famille), je ne sais pas bien qui je suis." }
+];
+
+const MASKS = ['rouge','orange','jaune','vert','bleu','indigo','violet'];
+const MASK_MAX = { rouge:15, orange:15, jaune:15, vert:15, bleu:15, indigo:15, violet:15 };
+
+// ══════════════════════════════════════════
+// ÉTAT
+// ══════════════════════════════════════════
+let userPrenom = '';
+let userEmail  = '';
+let shuffledQuestions = [];
+let currentIndex = 0;
+let responses = {};
+
+// ══════════════════════════════════════════
+// NAVIGATION ÉCRANS
+// ══════════════════════════════════════════
+function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    const el = document.getElementById(id);
+    el.classList.add('active');
+    window.scrollTo(0, 0);
+}
+
+function showIdentity() { showScreen('screen-identity'); }
+
+function validateIdentity() {
+    const p = document.getElementById('input-prenom').value.trim();
+    const e = document.getElementById('input-email').value.trim();
+    let ok = true;
+    if (!p) {
+        document.getElementById('input-prenom').classList.add('error');
+        document.getElementById('error-prenom').classList.add('show');
+        ok = false;
+    }
+    if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) {
+        document.getElementById('input-email').classList.add('error');
+        document.getElementById('error-email').classList.add('show');
+        ok = false;
+    }
+    if (!ok) return;
+    userPrenom = p;
+    userEmail  = e;
+    sessionStorage.setItem('vPrenom', p);
+    sessionStorage.setItem('vEmail',  e);
+    startQuiz();
+}
+
+function clearError(field) {
+    document.getElementById('input-' + field).classList.remove('error');
+    document.getElementById('error-'  + field).classList.remove('show');
+}
+
+// ══════════════════════════════════════════
+// QUIZ
+// ══════════════════════════════════════════
+function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+function startQuiz() {
+    shuffledQuestions = shuffle(QUESTIONS);
+    currentIndex = 0;
+    responses = {};
+    showScreen('screen-quiz');
+    renderQuestion();
+}
+
+function renderQuestion() {
+    const q = shuffledQuestions[currentIndex];
+    const container = document.getElementById('questionContainer');
+    const pct = Math.round((currentIndex / shuffledQuestions.length) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('counter').textContent =
+        `Question ${currentIndex + 1} / ${shuffledQuestions.length}`;
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    btnPrev.style.display = currentIndex > 0 ? 'inline-flex' : 'none';
+    btnNext.textContent = currentIndex === shuffledQuestions.length - 1
+        ? '✔ Voir mon portrait' : 'Suivant →';
+    const existing = responses[q.id];
+    btnNext.disabled = existing === undefined;
+
+    container.innerHTML = `
+        <div class="q-card">
+            <div class="q-text">${q.text}</div>
+            <div class="likert">
+                ${[0,1,2,3,4,5].map(v => `
+                    <button class="likert-btn ${existing === v ? 'selected' : ''}"
+                        onclick="selectAnswer('${q.id}', ${v})" aria-label="${v}">
+                        ${v}
+                    </button>`).join('')}
+            </div>
+            <div class="scale-labels">
+                <span>Pas du tout moi</span>
+                <span>Tout à fait moi</span>
+            </div>
+        </div>`;
+}
+
+function selectAnswer(id, val) {
+    responses[id] = val;
+    document.getElementById('btnNext').disabled = false;
+    renderQuestion();
+}
+
+function nextQuestion() {
+    if (currentIndex < shuffledQuestions.length - 1) {
+        currentIndex++;
+        renderQuestion();
+    } else {
+        computeAndRedirect();
+    }
+}
+
+function prevQuestion() {
+    if (currentIndex > 0) { currentIndex--; renderQuestion(); }
+}
+
+function computeAndRedirect() {
+    const scores = {};
+    MASKS.forEach(m => {
+        const items = QUESTIONS.filter(q => q.mask === m);
+        const sum = items.reduce((acc, q) => acc + (responses[q.id] || 0), 0);
+        scores[m] = Math.round(sum / MASK_MAX[m] * 100);
+    });
+    const params = new URLSearchParams();
+    MASKS.forEach(m => params.append(m, scores[m]));
+    params.append('prenom', encodeURIComponent(userPrenom));
+    window.location.href = 'portrait-flash.html?' + params.toString();
+}
+</script>
+</body>
+</html>
