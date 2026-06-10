@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="V.A.L.E.U.R© · Céline Bourbon">
+    <meta property="og:title" content="Mon portrait V.A.L.E.U.R© — Ce qui est plus fort que moi, enfin nommé">
+    <meta property="og:description" content="V.A.L.E.U.R© identifie le masque qui vous empêche d'être vous-même. Test gratuit · Méthode Céline Bourbon, Psychologue.">
+    <meta property="og:image" content="https://valeur.psyh.fr/valeur-og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="V.A.L.E.U.R© — Ce qui vous empêche d'être vous-même a enfin un nom.">
+    <meta property="og:url" content="https://valeur.psyh.fr/portrait-flash.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mon portrait V.A.L.E.U.R©">
+    <meta name="twitter:description" content="Ce qui est plus fort que moi — enfin nommé. Méthode V.A.L.E.U.R© · Céline Bourbon, Psychologue.">
+    <meta name="twitter:image" content="https://valeur.psyh.fr/valeur-og-image.png">
     <meta name="description" content="Votre portrait V.A.L.E.U.R© — Découvrez le masque qui vous empêche d'être vous-même. Psychologue Bordeaux, anxiété, schémas répétitifs.">
     <title>Mon Portrait · V.A.L.E.U.R© · Céline Bourbon, Psychologue</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
     <style>
@@ -100,19 +112,18 @@
 
         /* ── MIRROR ── */
         .mirror-phrase{
-            font-family:var(--font-display);font-size:2rem;font-style:italic;
-            color:var(--text);padding:24px 28px;
-            border-left:5px solid var(--mc);
-            background:rgba(201,168,76,0.04);
-            border-radius:0 var(--radius-md) var(--radius-md) 0;
-            line-height:1.5;margin:20px 0;
+            font-family:var(--font-display);font-size:2.6rem;font-style:italic;
+            color:var(--text);padding:44px 20px;
+            text-align:center;
+            line-height:1.45;margin:8px 0;
             position:relative;z-index:1;
         }
-        .mirror-phrase::before{content:"“";position:absolute;top:-20px;left:10px;font-size:6rem;color:var(--mc);opacity:0.3;line-height:1;}
+        .mirror-phrase::before{content:'"';position:absolute;top:0;left:50%;transform:translateX(-50%);font-size:9rem;color:var(--mc);opacity:0.14;line-height:1;pointer-events:none;}
+
 
         /* ── BEHAVIOURS (ligne discrète) ── */
         .behaviours-inline{
-            font-size:0.95rem;color:var(--text-dim);text-align:center;
+            font-size:1rem;color:var(--text-dim);text-align:center;
             line-height:1.8;z-index:1;letter-spacing:0.3px;
             margin:8px 0 16px;
         }
@@ -135,7 +146,7 @@
         .spa-text strong{color:var(--gold);}
 
         /* ── DEO NOTE ── */
-        .deo-note{margin:24px 0 0;padding:18px 24px;background:rgba(255,255,255,0.02);border-left:2px solid rgba(255,255,255,0.08);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:0.9rem;color:var(--text-dim);line-height:1.7;z-index:1;}
+        .deo-note{margin:24px 0 0;padding:18px 24px;background:rgba(255,255,255,0.02);border-left:2px solid rgba(255,255,255,0.08);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:1rem;color:var(--text-dim);line-height:1.7;z-index:1;}
         .deo-note a{color:var(--text-secondary);text-decoration:none;}
         .deo-note a:hover{color:var(--gold);}
 
@@ -173,60 +184,97 @@
         .share-generating{text-align:center;font-size:0.85rem;color:var(--text-dim);padding:12px;display:none;}
         .share-note{font-size:0.75rem;color:var(--text-dim);margin-top:10px;display:none;}
 
-        /* ── SHARE CARD (off-screen, avec QR code) ── */
-        #share-card{
-            position:fixed;left:-9999px;top:-9999px;
-            width:400px;height:400px;
-            background:#0B0A0A;overflow:hidden;
-            font-family:'Cormorant Garamond',Georgia,serif;
-        }
-        .sc-chroma{height:5px;background:linear-gradient(90deg,#B5312A,#C4581F,#B8930A,#2D7A4F,#1D5F8A,#5C3280,#7A3594);}
-        .sc-body{display:flex;flex-direction:column;align-items:center;justify-content:center;height:calc(100% - 5px);padding:24px 28px;text-align:center;position:relative;}
-        .sc-img-wrap{width:100px;height:100px;border-radius:50%;overflow:hidden;position:relative;margin-bottom:16px;flex-shrink:0;}
-        .sc-img{width:100%;height:100%;object-fit:cover;}
-        .sc-overlay{position:absolute;inset:0;border-radius:50%;background:var(--sc-color,#C9A84C);opacity:0.3;}
-        .sc-mask-name{font-size:44px;font-weight:300;line-height:1.1;margin-bottom:6px;}
-        .sc-protect{font-size:14px;font-style:italic;color:#A89E90;margin-bottom:14px;}
-        .sc-phrase{font-size:15px;font-style:italic;color:#F0EBE1;line-height:1.45;margin-bottom:12px;}
-        .sc-question{font-size:13px;color:var(--gold);margin-bottom:18px;font-style:italic;}
-        .sc-brand{font-family:'Jost',system-ui,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6B6460;margin-top:auto;}
-        .sc-brand span{color:#C9A84C;}
+        /* ── NOUVEAUX BLOCS PORTRAIT ── */
+        .block-label{font-family:var(--font-body);font-size:0.68rem;font-style:normal;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;display:block;margin-bottom:10px;}
+        .voice-block{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-left:3px solid var(--mc);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:24px 28px;margin:18px 0;font-family:var(--font-display);font-size:1.2rem;font-style:italic;color:var(--text-secondary);line-height:1.75;}
+        .voice-block .block-label{color:var(--mc);}
+        .scene-block{background:rgba(255,255,255,0.02);border-radius:var(--radius-md);padding:20px 24px;margin:14px 0;font-size:1.05rem;color:var(--text-secondary);line-height:1.8;}
+        .scene-block .block-label{color:var(--text-dim);}
+        .scene-block strong{color:var(--text);font-weight:400;}
+        .cout-block{padding:14px 0 6px;font-family:var(--font-display);font-size:1.2rem;font-style:italic;color:var(--text-secondary);border-top:1px solid rgba(255,255,255,0.06);margin:4px 0 14px;line-height:1.65;}
+        .cout-block .block-label{font-family:var(--font-body);font-style:normal;color:var(--text-dim);}
+        .reframe-block{background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.12);border-radius:var(--radius-md);padding:22px 26px;margin:16px 0;}
+        .reframe-q{font-size:1rem;color:var(--text-dim);font-style:italic;margin-bottom:10px;line-height:1.65;}
+        .reframe-q::before{content:'\201C';color:var(--gold);margin-right:2px;}
+        .reframe-q::after{content:'\201D';color:var(--gold);margin-left:2px;}
+        .reframe-r{font-size:1.05rem;color:var(--text);line-height:1.7;}
+        .reframe-r::before{content:'\2192  ';color:var(--gold);}
 
-        /* QR code intégré */
-        .qr-wrapper{
-            position:absolute;
-            bottom:60px;right:20px;
-            background:rgba(0,0,0,0.5);
-            border-radius:10px;
-            padding:4px;
-            backdrop-filter:blur(4px);
-            border:1px solid rgba(201,168,76,0.2);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-        }
-        #qr-code-container canvas,
-        #qr-code-container img{
-            width:55px !important;
-            height:55px !important;
-            border-radius:6px;
+        /* ── NARRATIVE STRUCTURE ── */
+        .section-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);margin:28px 0;}
+        .section-title{display:block;font-family:var(--font-body);font-size:.78rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--mc);margin-bottom:14px;opacity:.9;}
+        .opening-def{font-size:1.1rem;color:var(--text-secondary);line-height:1.85;text-align:center;padding:0 4px;font-style:italic;margin-top:8px;}
+        .section-bridge{font-size:1rem;color:var(--text-dim);font-style:italic;margin-top:14px;line-height:1.75;}
+        .behaviour-prose{font-size:1.05rem;color:var(--text-secondary);line-height:1.8;margin-top:14px;}
+        .voice-intro{font-size:1rem;color:var(--text-secondary);margin-bottom:12px;font-style:italic;}
+        .force-intro{font-size:1.05rem;color:var(--text-secondary);line-height:1.8;margin-bottom:14px;}
+        .combo-intro{font-size:1.05rem;color:var(--text-secondary);line-height:1.8;margin-bottom:14px;font-style:italic;}
+        .cta-zone{text-align:center;margin:8px 0 4px;}
+        .cta-text{font-size:1.1rem;color:var(--text-secondary);line-height:1.8;margin-bottom:20px;text-align:center;}
+        .reframe-universal{font-size:1.1rem;color:var(--text);line-height:1.85;margin-bottom:18px;}
+        .btn-liberation{display:block;width:fit-content;margin:0 auto;background:transparent;border:1.5px solid var(--mc);color:var(--mc);font-family:var(--font-body);font-size:.75rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;padding:14px 36px;border-radius:2px;text-decoration:none;transition:all .25s;}
+        .btn-liberation:hover{background:rgba(201,168,76,.08);color:var(--text);transform:translateY(-1px);}
+
+        /* ── LAYOUT ÉDITORIAL ── */
+        .cout-band{margin:0 -40px;padding:36px 48px;background:rgba(0,0,0,.35);text-align:center;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);}
+        .cout-band .section-title{text-align:center;}
+        .reframe-block{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);border-radius:var(--radius-md);padding:24px 28px;margin:4px 0;}
+        @media(max-width:720px){
+            .cout-band{margin:0 -20px;padding:28px 24px;}
+            .mirror-phrase{font-size:1.9rem;padding:28px 16px;}
         }
 
-        /* ── MOBILE ── */
-        @media(max-width:480px){
-            .page{padding:44px 12px 80px;}
-            .portrait-card{padding:40px 20px 36px;gap:36px;}
-            .mask-circle{width:180px;height:180px;}
-            .mask-name{font-size:3.2rem;}
-            .mirror-phrase{font-size:1.6rem;padding:18px 20px;}
-            .force-text{font-size:1.3rem;}
-            .btn-cta{padding:20px;font-size:1rem;}
-            .share-btn{padding:12px 28px;font-size:0.9rem;}
-        }
+        /* ── MODAL CARTE ── */
+        #card-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;align-items:center;justify-content:center;flex-direction:column;padding:20px;backdrop-filter:blur(8px);}
+        #card-modal.open{display:flex;}
+        #card-modal canvas,#card-modal img{max-width:100%;max-height:70vh;border-radius:4px;box-shadow:0 24px 80px rgba(0,0,0,.6);}
+        .modal-close{position:absolute;top:20px;right:24px;background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:8px;}
+        .modal-close:hover{color:#fff;}
+        .modal-actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;justify-content:center;}
+        .modal-btn{font-family:var(--font-body);font-size:.72rem;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;padding:12px 28px;border-radius:2px;cursor:pointer;transition:all .2s;border:1.5px solid;}
+        .modal-btn-dl{background:var(--mc);color:var(--bg);border-color:var(--mc);}
+        .modal-btn-dl:hover{filter:brightness(1.1);}
+        .modal-btn-wa{background:transparent;color:var(--text);border-color:rgba(255,255,255,.2);}
+        .modal-btn-wa:hover{border-color:var(--text);}
+        .modal-generating{font-size:.85rem;color:var(--text-secondary);margin-top:12px;font-style:italic;}
+
+        /* ── BOUTONS RÉSEAUX SOCIAUX ── */
+        .share-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px;max-width:480px;margin-left:auto;margin-right:auto;}
+        .sn-btn{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);cursor:pointer;font-family:var(--font-body);font-size:.82rem;font-weight:400;color:var(--text);transition:all .2s;text-decoration:none;-webkit-tap-highlight-color:transparent;user-select:none;}
+        .sn-btn:hover{background:rgba(255,255,255,.07);transform:translateY(-1px);}
+        .sn-ico{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+        .sn-btn.wa{border-color:rgba(37,211,102,.25);} .sn-btn.wa:hover{background:rgba(37,211,102,.07);}
+        .sn-btn.fb{border-color:rgba(24,119,242,.25);} .sn-btn.fb:hover{background:rgba(24,119,242,.07);}
+        .sn-btn.tw{border-color:rgba(255,255,255,.15);} .sn-btn.tw:hover{background:rgba(255,255,255,.07);}
+        .sn-btn.ig{border-color:rgba(225,48,108,.25);} .sn-btn.ig:hover{background:rgba(225,48,108,.07);}
+        .ico-wa{background:#25D366;}
+        .ico-fb{background:#1877F2;}
+        .ico-tw{background:#000;border:1px solid rgba(255,255,255,.2);}
+        /* Toast */
+        #share-toast{position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(20px);background:#1A1917;color:var(--text);font-size:.88rem;padding:14px 26px;border-radius:8px;border:1px solid rgba(201,168,76,.3);opacity:0;transition:all .35s;pointer-events:none;z-index:2000;text-align:center;max-width:90vw;}
+        #share-toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+        /* Flèches pour la boucle */
+        .loop-flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px;}
+        .loop-step{font-size:0.95rem;color:var(--text-secondary);line-height:1.6;}
+        .loop-arrow{color:var(--gold);font-size:1.1rem;margin:0 2px;}
     </style>
 </head>
 <body>
 <div class="chroma"></div>
+<div id="share-toast"></div>
+
+<!-- MODAL PRÉVISUALISATION CARTE -->
+<div id="card-modal">
+    <button class="modal-close" onclick="closeCardModal()">×</button>
+    <div id="modal-canvas-container"></div>
+    <p class="modal-generating" id="modal-generating-text" style="display:none">Génération en cours…</p>
+    <div class="modal-actions">
+        <button class="modal-btn modal-btn-dl" onclick="downloadCardFromModal()">⬇ Télécharger</button>
+        <button class="modal-btn modal-btn-wa" onclick="shareViaWhatsApp()">📤 WhatsApp</button>
+    </div>
+</div>
+
 
 <!-- LOADING -->
 <div id="loading">
@@ -246,23 +294,20 @@
     <div id="portrait-content"></div>
 </div>
 
-<!-- SHARE CARD (off-screen) -->
-<div id="share-card">
-    <div class="sc-chroma"></div>
-    <div class="sc-body">
-        <div class="sc-img-wrap" id="sc-img-wrap">
-            <img class="sc-img" src="" alt="Masque V.A.L.E.U.R©" id="sc-img">
-            <div class="sc-overlay" id="sc-overlay"></div>
+<!-- CARTE OFF-SCREEN (pour le QR code de la carte) -->
+<div id="share-card" style="position:fixed;left:-9999px;top:-9999px;width:400px;height:400px;background:#0B0A0A;overflow:hidden;font-family:'Cormorant Garamond',Georgia,serif;">
+    <div class="sc-chroma" style="height:5px;background:linear-gradient(90deg,#B5312A,#C4581F,#B8930A,#2D7A4F,#1D5F8A,#5C3280,#7A3594);"></div>
+    <div class="sc-body" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:calc(100% - 5px);padding:24px 28px;text-align:center;position:relative;">
+        <div class="sc-img-wrap" id="sc-img-wrap" style="width:100px;height:100px;border-radius:50%;overflow:hidden;position:relative;margin-bottom:16px;">
+            <img class="sc-img" src="" alt="Masque" id="sc-img" style="width:100%;height:100%;object-fit:cover;">
+            <div class="sc-overlay" id="sc-overlay" style="position:absolute;inset:0;border-radius:50%;background:var(--sc-color,#C9A84C);opacity:0.3;"></div>
         </div>
-        <div class="sc-mask-name" id="sc-mask-name"></div>
-        <div class="sc-protect">Ce n'est pas vous. C'est votre protection.</div>
-        <div class="sc-phrase" id="sc-phrase"></div>
-        <div class="sc-question">Et vous, quel est votre masque ?</div>
-        <div class="sc-brand">V.A.L.E.U.R<span>©</span> · valeur.psyh.fr</div>
-        <!-- QR code intégré -->
-        <div class="qr-wrapper" id="qr-wrapper">
-            <div id="qr-code-container"></div>
-        </div>
+        <div class="sc-mask-name" id="sc-mask-name" style="font-size:44px;font-weight:300;line-height:1.1;margin-bottom:6px;"></div>
+        <div class="sc-protect" style="font-size:14px;font-style:italic;color:#A89E90;margin-bottom:14px;">Ce n'est pas vous. C'est votre protection.</div>
+        <div class="sc-phrase" id="sc-phrase" style="font-size:15px;font-style:italic;color:#F0EBE1;line-height:1.45;margin-bottom:12px;"></div>
+        <div class="sc-question" style="font-size:13px;color:var(--gold);margin-bottom:18px;font-style:italic;">Et vous, quel est votre masque ?</div>
+        <div class="sc-brand" style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#6B6460;margin-top:auto;">V.A.L.E.U.R<span>©</span> · valeur.psyh.fr</div>
+        <div class="qr-wrapper" id="qr-wrapper" style="position:absolute;bottom:60px;right:20px;background:rgba(0,0,0,0.5);border-radius:10px;padding:4px;backdrop-filter:blur(4px);border:1px solid rgba(201,168,76,0.2);"><div id="qr-code-container"></div></div>
     </div>
 </div>
 
@@ -284,7 +329,7 @@ const DOCTOLIB_URL = 'https://www.doctolib.fr/psychologue/bordeaux/celine-bourbo
 const API_URL = 'https://valeur-backend-api.vercel.app/api/profiles';
 const API_SECRET = 'valeur-cab-2026';
 
-// ═══════════════ DONNÉES PORTRAIT ══════════════
+// ═══════════════ DONNÉES PORTRAIT (inchangées) ══════════════
 const MIRROR = {
     rouge:  "Je surveille de près mon corps et ma santé… et je ne me sens jamais vraiment en sécurité.",
     orange: "Même si ça ne se voit pas forcément, je ressens très fort les émotions — alors je coupe pour ne pas souffrir.",
@@ -322,45 +367,45 @@ const FEARS = {
 };
 
 const DYADS = {
-    "jaune+rouge":   { name:"Anxiété de santé amplifiée", loop:"Un symptôme → recherche de réassurance → certitude impossible → angoisse plus forte." },
-    "orange+vert":   { name:"Distance Paradoxale", loop:"Besoin de lien → peur de ressentir trop fort → retrait protecteur → incompréhension et solitude." },
-    "jaune+vert":    { name:"Surveillance Relationnelle", loop:"Signal ambigu → besoin de certitude → analyse constante → pression sur l'autre → distance." },
-    "orange+rouge":  { name:"Le Corps sans Voix", loop:"Sensation corporelle → alerte → coupure émotionnelle → symptôme amplifié." },
-    "bleu+jaune":    { name:"Contrôle Absolu", loop:"Imprévu → tentative de tout contrôler → épuisement → frustration → nouvel imprévu." },
-    "bleu+indigo":   { name:"Exigence Totale", loop:"Standard élevé → peur de mal faire → sur-contrôle → épuisement." },
-    "indigo+vert":   { name:"Le Sacrifice de Soi", loop:"Exigence de perfection → peur de décevoir → effacement → retrait → tristesse." },
-    "indigo+jaune":  { name:"La Peur de l'Erreur", loop:"Nouveau projet → peur de mal faire → procrastination → anxiété → ruminations." },
-    "jaune+violet":  { name:"L'Identité sans Boussole", loop:"Changement perçu → menace identitaire → besoin de certitude → routines rigides → anxiété." },
-    "bleu+rouge":    { name:"Le Corps sous Contrôle", loop:"Sensation corporelle → plan d'action → optimisation → résistance du corps → contrôle renforcé." },
-    "rouge+vert":    { name:"Le Corps comme Lien", loop:"Symptôme → anxiété → besoin de présence → dépendance affective → prochain symptôme." },
-    "indigo+rouge":  { name:"Le Corps sous Exigence", loop:"Fatigue → jugement → standards rigides → épuisement → nouveaux signaux." },
-    "rouge+violet":  { name:"L'Identité par la Santé", loop:"Préoccupation santé → comblement identitaire → rôle de patient → symptômes persistants." },
-    "jaune+orange":  { name:"Planifier sans Habiter", loop:"Imprévu → planification → coupure émotionnelle → vide → plus de planification." },
-    "bleu+orange":   { name:"La Réussite sans Joie", loop:"Réussite → absence de satisfaction → nouvelle quête de contrôle → vide persistant." },
-    "indigo+orange": { name:"Performer sans Ressentir", loop:"Travail terminé → évaluation → absence de fierté → standard plus élevé → épuisement." },
-    "orange+violet": { name:"L'Absence à Soi", loop:"Identification aux rôles → perte de repères intérieurs → sensation de vide → angoisse." },
-    "bleu+vert":     { name:"Tenir pour ne pas Perdre", loop:"Peur de l'abandon → comportements de contrôle → pression sur l'autre → éloignement." },
-    "vert+violet":   { name:"Fusion Identitaire", loop:"Relation → adaptation → fusion → dissolution de soi → peur de la séparation." },
-    "bleu+violet":   { name:"Le Contrôle de Soi", loop:"Rôle menacé → accroche au contrôle → identité réduite → rigidité." },
-    "indigo+violet": { name:"Le Doute Profond", loop:"Projet → standards flottants → imposture → nouvelle situation → même question." }
+    "jaune+rouge":   { name:"Anxiété de santé amplifiée", loop:"" },
+    "orange+vert":   { name:"Distance Paradoxale", loop:"" },
+    "jaune+vert":    { name:"Surveillance Relationnelle", loop:"" },
+    "orange+rouge":  { name:"Le Corps sans Voix", loop:"" },
+    "bleu+jaune":    { name:"Contrôle Absolu", loop:"" },
+    "bleu+indigo":   { name:"Exigence Totale", loop:"" },
+    "indigo+vert":   { name:"Le Sacrifice de Soi", loop:"" },
+    "indigo+jaune":  { name:"La Peur de l'Erreur", loop:"" },
+    "jaune+violet":  { name:"L'Identité sans Boussole", loop:"" },
+    "bleu+rouge":    { name:"Le Corps sous Contrôle", loop:"" },
+    "rouge+vert":    { name:"Le Corps comme Lien", loop:"" },
+    "indigo+rouge":  { name:"Le Corps sous Exigence", loop:"" },
+    "rouge+violet":  { name:"L'Identité par la Santé", loop:"" },
+    "jaune+orange":  { name:"Planifier sans Habiter", loop:"" },
+    "bleu+orange":   { name:"La Réussite sans Joie", loop:"" },
+    "indigo+orange": { name:"Performer sans Ressentir", loop:"" },
+    "orange+violet": { name:"L'Absence à Soi", loop:"" },
+    "bleu+vert":     { name:"Tenir pour ne pas Perdre", loop:"" },
+    "vert+violet":   { name:"Fusion Identitaire", loop:"" },
+    "bleu+violet":   { name:"Le Contrôle de Soi", loop:"" },
+    "indigo+violet": { name:"Le Doute Profond", loop:"" }
 };
 
 const TRIADS = {
-    "jaune+orange+rouge":   { name:"Le Corps en Alerte Permanente",  loop:"Sensation → exigence de certitude → coupure émotionnelle → symptôme amplifié." },
-    "bleu+indigo+jaune":    { name:"L'Exigence sans Seuil",          loop:"Projet → perfection + certitude + contrôle → épuisement → nouveau projet." },
-    "indigo+orange+vert":   { name:"L'Épuisement Invisible",         loop:"Attente → adaptation → perfection → coupure → épuisement." },
-    "bleu+jaune+rouge":     { name:"Contrôle Total",                 loop:"Sensation → planification + contrôle → déviation → réaction en chaîne → épuisement." },
-    "indigo+orange+violet": { name:"L'Identité en Suspens",          loop:"Question identitaire → coupure → perfection → vide → doute." },
-    "jaune+rouge+vert":     { name:"La Triade de l'Alerte Relationnelle", loop:"Symptôme → solitude → besoin de lien → demande de certitude → réassurance temporaire." },
-    "bleu+jaune+vert":      { name:"Ne Jamais Lâcher le Lien",       loop:"Inquiétude relationnelle → contrôle → vérifications → pression → éloignement." },
-    "orange+rouge+violet":  { name:"La Triade du Silence Profond",   loop:"Symptôme → surveillance → coupure → rôle de patient → menace de guérison." },
-    "bleu+indigo+orange":   { name:"La Réussite sans Joie",          loop:"Réussite → absence d'émotion → jugement → nouvelle quête → vide." },
-    "jaune+orange+vert":    { name:"La Triade de la Rumination Émotionnelle", loop:"Attentes → adaptation → planification → coupure → perte de soi." },
-    "indigo+jaune+rouge":   { name:"La Triade de la Performance Anxieuse", loop:"Sensation → alarme → perfection → protocoles → stress → fatigue." },
-    "bleu+vert+violet":     { name:"Fusionner pour Exister",         loop:"Relation → contrôle → fusion → dissolution → menace existentielle." },
-    "bleu+jaune+orange":    { name:"L'Efficacité Froide",            loop:"Situation → contrôle + anticipation → coupure → relations appauvries → solitude." },
-    "rouge+vert+violet":    { name:"La Triple Fragilité",            loop:"Symptôme → besoin de l'autre → question identitaire → confusion → anxiété." },
-    "indigo+jaune+violet":  { name:"La Triade du Doute Existentiel", loop:"Décision → perfection → certitude → absence de soi → épuisement." }
+    "jaune+orange+rouge":   { name:"Le Corps en Alerte Permanente",  loop:"" },
+    "bleu+indigo+jaune":    { name:"L'Exigence sans Seuil",          loop:"" },
+    "indigo+orange+vert":   { name:"L'Épuisement Invisible",         loop:"" },
+    "bleu+jaune+rouge":     { name:"Contrôle Total",                 loop:"" },
+    "indigo+orange+violet": { name:"L'Identité en Suspens",          loop:"" },
+    "jaune+rouge+vert":     { name:"La Triade de l'Alerte Relationnelle", loop:"" },
+    "bleu+jaune+vert":      { name:"Ne Jamais Lâcher le Lien",       loop:"" },
+    "orange+rouge+violet":  { name:"La Triade du Silence Profond",   loop:"" },
+    "bleu+indigo+orange":   { name:"La Réussite sans Joie",          loop:"" },
+    "jaune+orange+vert":    { name:"La Triade de la Rumination Émotionnelle", loop:"" },
+    "indigo+jaune+rouge":   { name:"La Triade de la Performance Anxieuse", loop:"" },
+    "bleu+vert+violet":     { name:"Fusionner pour Exister",         loop:"" },
+    "bleu+jaune+orange":    { name:"L'Efficacité Froide",            loop:"" },
+    "rouge+vert+violet":    { name:"La Triple Fragilité",            loop:"" },
+    "indigo+jaune+violet":  { name:"La Triade du Doute Existentiel", loop:"" }
 };
 
 const PAN_MASQUE = {
@@ -369,7 +414,222 @@ const PAN_MASQUE = {
     loop:"Une situation active un masque → un deuxième s'active avant désactivation du premier → les masques s'empilent → fatigue chronique."
 };
 
-// ═══════════════ FONCTIONS ══════════════
+// ══ BOUCLES HUMANISÉES (affichage public) ══
+const DYADS_HUMAN = {
+    "jaune+rouge": [
+        "Une sensation traverse votre corps.",
+        "Immédiatement, quelque chose en vous cherche à savoir ce que c’est, avec une exigence de réponse absolue.",
+        "Vous consultez, vous vous renseignez, vous vérifiez. Mais aucune réponse n’est jamais assez certaine.",
+        "L’incertitude demeure, et la moindre nouvelle sensation est perçue encore plus fort. C’est un réflexe de protection, pas un choix."
+    ],
+    "orange+vert": [
+        "Vous avez profondément besoin des autres.",
+        "Quand la proximité devient réelle, une partie de vous se ferme automatiquement, sans que vous l’ayez décidé.",
+        "L’autre perçoit ce retrait comme du désintérêt, alors que vous êtes justement en train de lutter pour rester présent·e.",
+        "Ce malentendu répété crée la distance que vous redoutiez. La peur du rejet et la coupure des émotions se renforcent mutuellement."
+    ],
+    "jaune+vert": [
+        "Un message un peu plus court, un ton légèrement différent.",
+        "Aussitôt, une partie de vous interprète ce signal comme une menace pour le lien, et une autre exige de savoir ce que cela signifie vraiment.",
+        "Vous analysez, relisez, cherchez des indices. Mais l’incertitude ne se résout jamais complètement.",
+        "L’autre ressent cette attention constante comme une pression, ce qui crée la distance que vous vouliez éviter. La peur de l’abandon et le besoin de certitude s’alimentent."
+    ],
+    "orange+rouge": [
+        "Votre corps émet un signal d’inconfort.",
+        "Une partie de vous l’interprète comme une alerte sérieuse, tandis qu’une autre coupe l’accès à ce que vous ressentez vraiment.",
+        "L’inquiétude ne peut pas être traversée émotionnellement, alors elle s’exprime par le corps, encore plus fort.",
+        "Plus vous surveillez votre corps, plus les sensations s’intensifient. C’est un circuit de protection, pas une faiblesse."
+    ],
+    "bleu+jaune": [
+        "Quelque chose échappe à votre contrôle.",
+        "Une partie de vous veut absolument reprendre la main, tandis qu’une autre exige de tout prévoir pour éviter l’imprévu.",
+        "Vous planifiez, organisez, vérifiez. Mais l’incertitude persiste et l’épuisement s’installe.",
+        "Plus vous essayez de tout maîtriser, plus la moindre déviation devient insupportable. La fatigue alimente le besoin de contrôle, en boucle."
+    ],
+    "bleu+indigo": [
+        "Un résultat est attendu, et vous voulez qu’il soit parfait.",
+        "Une partie de vous exige des standards très élevés, tandis qu’une autre reprend la main pour s’assurer que tout est fait exactement comme il faut.",
+        "Vous travaillez dur, mais même quand c’est réussi, ce n’est jamais assez bien à vos yeux.",
+        "Le niveau d’exigence monte à chaque fois, et vous ne pouvez jamais vous arrêter. C’est un mécanisme de protection, pas un caprice."
+    ],
+    "indigo+vert": [
+        "Vous avez peur que l’autre vous juge ou vous rejette.",
+        "Pour éviter cela, vous vous effacez, vous vous adaptez, et vous donnez beaucoup.",
+        "Mais vous avez aussi des exigences très élevées envers vous-même, qui vous poussent à en faire toujours plus.",
+        "Vous disparaissez derrière vos efforts, jusqu’à ne plus savoir ce dont vous avez besoin. C’est une double protection, pas un manque de valeur."
+    ],
+    "indigo+jaune": [
+        "Un nouveau projet se présente, et vous voulez qu’il soit parfait.",
+        "Mais vous ne supportez pas l’incertitude du résultat. Alors vous attendez, vous préparez, vous repoussez.",
+        "Plus vous attendez, plus la pression monte, et plus la peur de mal faire grandit.",
+        "Quand vous finissez par agir, l’insatisfaction est immédiate. C’est un cercle de protection, pas de la procrastination."
+    ],
+    "jaune+violet": [
+        "Un changement approche, même petit.",
+        "Une partie de vous a besoin de tout prévoir pour se sentir en sécurité, tandis qu’une autre craint de perdre ses repères.",
+        "Vous vous accrochez à ce qui est connu, même si cela vous enferme.",
+        "La nouveauté déclenche une anxiété disproportionnée. C’est un réflexe de survie, pas un manque de souplesse."
+    ],
+    "bleu+rouge": [
+        "Votre corps vous envoie un signal.",
+        "Une partie de vous le perçoit comme une menace à maîtriser, et une autre transforme cette inquiétude en plan d’action.",
+        "Vous voulez contrôler votre corps, l’optimiser, le rendre parfait.",
+        "Mais le corps résiste à la maîtrise totale. Plus vous le contrôlez, plus la tension augmente. C’est une protection, pas une lubie."
+    ],
+    "rouge+vert": [
+        "Un symptôme physique apparaît.",
+        "Vous vous inquiétez, et la solitude amplifie cette inquiétude.",
+        "Vous avez besoin de la présence de quelqu’un pour vous rassurer. Cette présence apaise, mais l’effet ne dure pas.",
+        "Le prochain symptôme vous semblera encore plus difficile à traverser seul·e. C’est un besoin de sécurité, pas une faiblesse."
+    ],
+    "indigo+rouge": [
+        "Votre corps montre un signe de fatigue ou de limite.",
+        "Une partie de vous le juge sévèrement : « je devrais pouvoir gérer ça ».",
+        "Vous vous imposez des standards très élevés, même pour votre corps.",
+        "Le corps s’épuise sous l’exigence, ce qui déclenche de nouveaux signaux. C’est un mécanisme inconscient, pas un manque de volonté."
+    ],
+    "rouge+violet": [
+        "Vous avez appris à surveiller votre santé de près.",
+        "Cette vigilance est devenue un repère, quelque chose de stable dans votre vie.",
+        "L’idée de ne plus surveiller crée une angoisse profonde, car vous perdriez ce repère.",
+        "Ce n’est pas que vous voulez être malade : c’est une protection qui vous donne une place. Et c’est plus fort que vous."
+    ],
+    "jaune+orange": [
+        "L’imprévu survient.",
+        "Vous vous mettez à planifier, à structurer, à anticiper – pour ne pas être pris·e au dépourvu.",
+        "Mais en même temps, vous ne ressentez pas vraiment l’anxiété qui motive tout cela.",
+        "Vous avancez, efficace, mais un peu comme si vous n’étiez pas tout à fait là. La vie devient une suite de tâches, sans saveur."
+    ],
+    "bleu+orange": [
+        "Vous réussissez quelque chose d’important.",
+        "Pourtant, vous ne ressentez pas de fierté, pas de joie. C’est comme si le succès ne vous appartenait pas.",
+        "Alors vous cherchez la réussite suivante, en espérant qu’elle comblera ce vide.",
+        "Mais le vide persiste, car le mécanisme qui coupe les émotions est toujours actif. Ce n’est pas de l’ingratitude, c’est une protection."
+    ],
+    "indigo+orange": [
+        "Vous terminez un travail.",
+        "Immédiatement, vous l’évaluez, vous cherchez ce qui ne va pas.",
+        "Mais vous ne ressentez ni satisfaction ni fierté, car quelque chose en vous bloque l’accès à ces émotions.",
+        "Vous haussez alors les exigences, en espérant que la prochaine fois vous sentirez enfin quelque chose. C’est un cercle automatique, pas un choix."
+    ],
+    "orange+violet": [
+        "Un moment de calme arrive, et vous vous demandez qui vous êtes vraiment.",
+        "Mais la réponse ne vient pas, car vous ne ressentez pas non plus ce qui se passe à l’intérieur.",
+        "Vous continuez à fonctionner, en pilote automatique, en vous adaptant aux attentes des autres.",
+        "Un sentiment de vide peut s’installer, sans que vous sachiez vraiment pourquoi. C’est une double protection, pas une fatalité."
+    ],
+    "bleu+vert": [
+        "Vous avez peur que l’autre s’éloigne.",
+        "Pour éviter cela, vous cherchez à contrôler la relation : vous vérifiez, vous questionnez, vous anticipez.",
+        "L’autre ressent cette pression, et s’éloigne un peu plus.",
+        "Ce qui renforce votre peur de l’abandon, et vous pousse à contrôler encore davantage. C’est un cercle de survie, pas un défaut."
+    ],
+    "vert+violet": [
+        "Une relation importante se développe.",
+        "Vous vous adaptez naturellement à l’autre, au point que vos propres goûts et envies s’estompent.",
+        "Vous trouvez dans cette relation un sentiment d’identité, une place.",
+        "Mais si la relation venait à se rompre, vous perdriez plus qu’un lien : vous perdriez une partie de vous-même. Ce n’est pas de la dépendance, c’est une stratégie de survie identitaire."
+    ],
+    "bleu+violet": [
+        "Votre rôle – professionnel, familial – est devenu une grande partie de qui vous êtes.",
+        "Vous le maîtrisez, vous le contrôlez, car c’est là que vous vous sentez exister.",
+        "Si ce rôle est menacé, c’est votre identité tout entière qui vacille.",
+        "Alors vous tenez bon, parfois au prix d’un épuisement profond. Ce n’est pas de l’orgueil, c’est une protection."
+    ],
+    "indigo+violet": [
+        "Vous avez des exigences élevées envers vous-même.",
+        "Mais vous ne savez pas vraiment qui doit atteindre ces standards, car votre identité est floue.",
+        "Vous cherchez à être parfait·e, sans savoir exactement pour qui ni pourquoi.",
+        "Le sentiment d’imposture peut devenir écrasant, comme si vous viviez la vie de quelqu’un d’autre. C’est une double protection, pas un manque de talent."
+    ]
+};
+
+// ── VOIX DU MASQUE ──────────────────────────────────────────────────────
+var VOICE = {
+    rouge:  "Mon corps n'est jamais vraiment sûr. Je dois surveiller. Je dois savoir. Si je relâche, quelque chose va m'échapper.",
+    orange: "Les émotions — je les vis, forcément. Ce que je ne sais pas toujours faire, c'est rester avec elles. Quelque chose déborde, alors j'avance — et ça passe. Si je m'arrêtais vraiment pour regarder ce qui se passe en moi... je ne saurais pas très bien ce que je trouverais.",
+    jaune:  "Si je ne contrôle pas ça, quelque chose va m'échapper. Et si quelque chose m'échappe, ça va mal tourner. Je dois anticiper. Je dois savoir. Je dois prévoir.",
+    vert:   "Si je réponds mal, il va se distancer. Je dois trouver la formulation qui ne va pas l'éloigner. Je ne peux pas me permettre de le perdre.",
+    bleu:   "Si je ne le surveille pas, ça va partir dans le mauvais sens. Les autres ne voient pas les détails comme moi. Je ne peux pas me permettre que ça rate.",
+    indigo: "Je ne mérite pas vraiment cette place. Un jour, on va voir que je ne suis pas à la hauteur. Je dois continuer à prouver, encore et encore, que j'ai ma place ici.",
+    violet: "J'ai construit une version de moi qui fonctionne très bien. Je ne suis jamais tout à fait sûr·e de savoir ce que moi, vraiment, je voudrais. Et si c'était ça, le vrai moi — cette version adaptée — et que l'autre n'existait plus ?"
+};
+
+// ── SCÈNES DÉCLENCHEURS ──────────────────────────────────────────────────
+var SCENE = {
+    rouge:  "Vous venez d'avoir un bilan parfait. Vous souriez, vous remerciez. Dans l'escalier en sortant : <strong>«&nbsp;Mais il n'a peut-être pas bien regardé…&nbsp;»</strong>",
+    orange: "Un événement difficile vous touche. Vous faites ce qu'il faut — vous gérez, vous agissez, vous avancez. Quelques semaines plus tard, votre corps tombe. <strong>Vous ne l'aviez pas vu venir. Vous pensiez aller bien.</strong>",
+    jaune:  "Un dîner prévu est annulé deux heures avant. Vous êtes déjà en train de construire un plan B — et un plan C — <strong>avant même d'avoir raccroché.</strong>",
+    vert:   "Un ami vous envoie un message deux mots plus court, sans emoji. Rien d'anormal — objectivement. <strong>Vous calibrez déjà la prochaine réponse pour réparer quelque chose qui n'est peut-être pas cassé.</strong>",
+    bleu:   "Vous avez confié une tâche. Elle est rendue — pas mal, mais pas comme vous l'auriez fait. <strong>Vous avez délégué la tâche. Vous n'avez jamais lâché le contrôle.</strong>",
+    indigo: "Quelqu'un vous félicite chaleureusement. Vous remerciez. Dans votre tête : <strong>«&nbsp;Ils ne voient pas ce que j'ai raté. La prochaine fois, ils vont s'en rendre compte.&nbsp;»</strong>",
+    violet: "Vous venez de passer une excellente soirée. Vous avez été exactement ce qu'il fallait être. En rentrant, quelque chose de vide. <strong>Comme si vous n'étiez pas vraiment venu·e. Comme si quelqu'un d'autre avait passé cette soirée à votre place.</strong>"
+};
+
+// ── CE QU'IL VOUS A PRIS ─────────────────────────────────────────────────
+var COUT = {
+    rouge:  "Des consultations qui soulagent sur le moment — puis l'inquiétude revient, intacte, comme si elle n'avait jamais été calmée.",
+    orange: "Vos proches vous trouvent présent·e — et parfois difficile à vraiment atteindre. Non par manque d'envie, mais parce que l'accès à ce qui vous touche vraiment s'est verrouillé si progressivement que vous ne l'avez pas remarqué.",
+    jaune:  "Des plaisirs spontanés inaccessibles — l'imprévu joyeux qui stresse avant de réjouir, si tant est qu'il réjouisse.",
+    vert:   "Vous ne savez plus très bien ce que vous voulez, ce que vous pensez, ce qui vous plaît vraiment — à force de vous modeler sur les besoins des autres.",
+    bleu:   "Vous portez une fatigue de tout devoir tenir — sans pouvoir vraiment vous reposer, sans pouvoir vraiment recevoir de l'aide.",
+    indigo: "Des réussites qui ne nourrissent pas — « j'ai eu de la chance », « ça ne compte pas vraiment » — une sévérité envers vous-même que vous n'infligeriez jamais à quelqu'un que vous aimez.",
+    violet: "Des moments réussis dont vous ne gardez pas vraiment le souvenir d'y avoir été — présent·e à l'extérieur, quelque part en retrait à l'intérieur."
+};
+
+// ── REFRAMES ─────────────────────────────────────────────────────────────
+var REFRAME = {
+    rouge:  { q: "Je suis prudent·e et attentif·ve à ma santé.", r: "Ce n'est pas de la prudence — votre vigilance tourne en permanence, même quand tout va bien. La vraie prudence choisit quand s'activer. La vôtre ne s'éteint jamais." },
+    orange: { q: "Je suis une personne rationnelle et stable émotionnellement.", r: "Votre stabilité est réelle — et partiellement construite sur un contournement automatique. Les émotions sont là. Mais leur message est intercepté avant qu'il vous parvienne vraiment." },
+    jaune:  { q: "J'ai besoin de comprendre les choses avant d'agir.", r: "Vous n'attendez pas de comprendre — vous attendez la certitude que ça ne peut pas mal se passer. Ce n'est pas de la rigueur. C'est l'évitement de l'incertitude déguisé en méthode." },
+    vert:   { q: "Je préfère éviter les conflits — je suis quelqu'un de pacifique.", r: "Vous évitez les conflits parce que vous interprétez la contradiction comme un danger pour le lien. Ce n'est pas du pacifisme — c'est de la survie relationnelle. Le vrai pacifisme peut dire non." },
+    bleu:   { q: "Je prends les décisions parce que les autres ne le font pas assez.", r: "Votre besoin de maîtrise crée parfois le vide de leadership que vous comblez ensuite. C'est un cycle invisible — et il s'alimente seul." },
+    indigo: { q: "Je suis exigeant·e parce que j'ai des standards élevés.", r: "Vos standards sont réels — mais alimentés par la peur. Vous êtes exigeant.e parce que vous avez appris que seule la performance vous garantissait une place." },
+    violet: { q: "Je suis quelqu'un de flexible et d'ouvert aux autres.", r: "Votre flexibilité est réelle — et vous vous adaptez aussi parce que vous n'avez pas encore eu assez d'espace pour être pleinement vous-même sans risque. Ce n'est pas de la fausseté. C'est de la prudence existentielle." }
+};
+
+// ── PHRASES VIRALES ──────────────────────────────────────────────────────
+var VIRAL = {
+    rouge:  "Pourquoi l'inquiétude revient toujours — même après un bilan de santé parfait ? Voilà ce que je viens de comprendre.",
+    orange: "Pourquoi je me sens parfois vide de l'intérieur, même quand tout va bien ? Voilà ce que je viens de comprendre.",
+    jaune:  "Pourquoi mon cerveau ne s'arrête jamais, même la nuit, même en vacances ? Voilà ce que je viens de comprendre.",
+    vert:   "Pourquoi je n'arrive pas à dire non — même quand je le veux vraiment ? Voilà ce que je viens de comprendre.",
+    bleu:   "Pourquoi je ne peux pas m'empêcher de reprendre le contrôle — même quand je décide de lâcher prise ? Voilà ce que je viens de comprendre.",
+    indigo: "Pourquoi ça ne suffit jamais — même quand j'ai vraiment bien fait ? Voilà ce que je viens de comprendre.",
+    violet: "Pourquoi je ne me reconnais plus dans ce que je fais — depuis si longtemps ? Voilà ce que je viens de comprendre.",
+    pan:    "Pourquoi je m'adapte à tout, tout le temps — sans jamais vraiment être moi ? Voilà ce que je viens de comprendre.",
+    adaptatif: "Voilà ce que j'ai découvert sur moi — et sur la façon dont je me protège."
+};
+
+
+// ── PROFILS ADAPTATIFS ────────────────────────────────────────────────────
+var ADAPTATIF = {
+    eq: {
+        label:  "Profil Équilibré",
+        mirror: "Aucun masque ne s'impose vraiment. Votre système nerveux a trouvé un équilibre — rare, précieux, à connaître avec précision.",
+        force:  "Votre équilibre n'est pas l'absence de peurs — c'est la capacité à les traverser sans vous y figer. Une ressource rare, que l'évaluation complète de 85 questions pourra cartographier avec précision.",
+        note:   "Ce profil indique une faible activation défensive en ce moment. L'évaluation complète permettra de confirmer votre configuration réelle et de mesurer votre Score de Présence Authentique."
+    },
+    vig: {
+        label:  "Profil Vigilant",
+        mirror: "Quelque chose cherche encore son équilibre. Une tendance s'esquisse — pas encore dominante, mais présente. Quelque chose en vous qui surveille.",
+        force:  "Cette sensibilité vigilante, bien orientée, devient une finesse relationnelle remarquable. L'évaluation complète en révélera la nature précise.",
+        note:   "Une tendance émerge mais n'est pas encore dominante. Le portrait complet de 85 questions est nécessaire pour dessiner votre configuration réelle."
+    }
+};
+
+
+// ── COMPORTEMENTS EN PROSE ────────────────────────────────────────────────
+var BEHAVIOUR_PROSE = {
+    rouge:  "Dans votre quotidien, ça ressemble à surveiller vos sensations, à chercher des réponses, à repartir rassuré·e d'une consultation — puis recommencer.",
+    orange: "Dans votre quotidien, ça ressemble à rester constamment occupé·e, à esquiver les conversations trop intimes, à ne pas vraiment savoir ce que vous ressentez.",
+    jaune:  "Dans votre quotidien, ça ressemble à planifier en détail, à imaginer les pires scénarios, à ressentir un malaise réel face à ce qui n'était pas prévu.",
+    vert:   "Dans votre quotidien, ça ressemble à dire oui quand vous pensez non, à surveiller les humeurs des autres, à éviter les conflits pour ne pas perdre le lien.",
+    bleu:   "Dans votre quotidien, ça ressemble à vérifier, à intervenir, à reprendre discrètement ce que vous aviez confié — sans jamais vraiment lâcher prise.",
+    indigo: "Dans votre quotidien, ça ressemble à minimiser vos réussites, à vous comparer défavorablement, à n'être jamais tout à fait satisfait·e de ce que vous faites.",
+    violet: "Dans votre quotidien, ça ressemble à vous adapter selon les personnes, à répondre « peu importe » quand on vous demande ce que vous voulez, à vous sentir ailleurs dans votre propre vie."
+};
+
 function readData() {
     const p = new URLSearchParams(location.search);
     const scores = {};
@@ -422,26 +682,49 @@ function getComboHTML(profile, scores) {
         bleu:{p:'indigo',k:'bleu+indigo'},indigo:{p:'jaune',k:'indigo+jaune'},
         violet:{p:'orange',k:'orange+violet'}
     };
-    if (profile.type==='pan') return `<div class="combo-box"><span class="combo-name">${PAN_MASQUE.name}</span>${PAN_MASQUE.desc}<br><br><em>Boucle :</em> ${PAN_MASQUE.loop}</div>`;
-    if (profile.type==='triade') {
-        const key = [...profile.masks].sort().join('+');
-        const t = TRIADS[key];
-        if (t) return `<div class="combo-box"><span class="combo-name">Triade · ${t.name}</span><em>Boucle :</em> ${t.loop}</div>`;
+    if (profile.type==='pan') {
+        return `<div class="combo-box"><span class="combo-name">${PAN_MASQUE.name}</span>${PAN_MASQUE.desc}<br><br><em>Boucle :</em> ${PAN_MASQUE.loop}</div>`;
     }
     if (profile.type==='dyade'||profile.type==='dyade_moderee') {
         const key = [...profile.masks].sort().join('+');
-        const d = DYADS[key];
-        if (d) return `<div class="combo-box"><span class="combo-name">Dyade · ${d.name}</span><em>Boucle :</em> ${d.loop}</div>`;
+        const steps = DYADS_HUMAN[key];
+        if (steps) {
+            const stepsHTML = steps.map((s,i) => 
+                `<span class="loop-step">${s}</span>${i < steps.length-1 ? '<span class="loop-arrow">→</span>' : ''}`
+            ).join('');
+            return `<div class="combo-box">
+                <span class="combo-name">Deux protections qui se renforcent</span>
+                <p class="combo-intro">Quand ces deux peurs s’activent en même temps, elles créent une boucle automatique — plus forte que chacune seule.</p>
+                <div class="loop-flow">${stepsHTML}</div>
+            </div>`;
+        }
     }
     if (profile.type==='mono'&&profile.secondary) {
         const key=[profile.primary,profile.secondary].sort().join('+');
-        const d=DYADS[key];
-        if(d) return `<div class="combo-box"><span class="combo-name">Dyade probable · ${d.name}</span>Un second masque semble actif — Masque ${MASK_LABELS[profile.secondary]}.<br><em>Boucle typique :</em> ${d.loop}</div>`;
+        const steps = DYADS_HUMAN[key];
+        if(steps) {
+            const stepsHTML = steps.map((s,i) => 
+                `<span class="loop-step">${s}</span>${i < steps.length-1 ? '<span class="loop-arrow">→</span>' : ''}`
+            ).join('');
+            return `<div class="combo-box">
+                <span class="combo-name">Une seconde protection discrète</span>
+                <p class="combo-intro">Un deuxième masque semble parfois s’activer à côté du premier. Voici comment ils se répondent.</p>
+                <div class="loop-flow">${stepsHTML}</div>
+            </div>`;
+        }
     }
     const s = SUGGEST[profile.primary];
     if (s) {
-        const d = DYADS[s.k];
-        if (d) return `<div class="combo-box"><em>D'après votre profil, un second masque pourrait être actif :</em><br><span class="combo-name">${d.name}</span>Masque ${MASK_LABELS[s.p]} — <em>Boucle :</em> ${d.loop}</div>`;
+        const steps = DYADS_HUMAN[s.k];
+        if (steps) {
+            const stepsHTML = steps.map((s,i) => 
+                `<span class="loop-step">${s}</span>${i < steps.length-1 ? '<span class="loop-arrow">→</span>' : ''}`
+            ).join('');
+            return `<div class="combo-box">
+                <em>D'après votre profil, un second masque pourrait être actif :</em>
+                <div class="loop-flow">${stepsHTML}</div>
+            </div>`;
+        }
     }
     return '';
 }
@@ -451,75 +734,159 @@ function getMaskImage(profile) {
     return 'masque-' + profile.primary + '.png';
 }
 
-// ═══════════════ CONSTRUCTION PORTRAIT ══════════════
 function buildPortrait(data, profile) {
     const { scores, prenom } = data;
     const dom   = profile.primary;
     const color = MASK_COLORS[dom];
-    const mirror = profile.type==='pan' ? PAN_MIRROR : MIRROR[dom];
     const greeting = prenom ? `Bonjour <em>${prenom}</em> —` : 'Votre portrait V.A.L.E.U.R©';
     const maskImg = getMaskImage(profile);
+    const isAdaptatif = profile.type === 'adaptatif_eq' || profile.type === 'adaptatif_vig';
+    const adaptData   = profile.type === 'adaptatif_eq' ? ADAPTATIF.eq
+                      : profile.type === 'adaptatif_vig' ? ADAPTATIF.vig : null;
+    const mirror = profile.type==='pan' ? PAN_MIRROR
+                 : isAdaptatif          ? adaptData.mirror
+                 : (MIRROR[dom] || '');
 
     let profileLabel = '';
-    if (profile.type==='pan') profileLabel = 'Profil Pan-masques';
-    else if (profile.type==='triade') profileLabel = 'Configuration Triade';
+    if (profile.type==='pan')               profileLabel = 'Profil Pan-masques';
+    else if (profile.type==='triade')       profileLabel = 'Configuration Triade';
     else if (profile.type.startsWith('dyade')) profileLabel = 'Configuration Dyade';
-    else if (profile.type==='mono') profileLabel = 'Masque Dominant';
-    else if (profile.type==='mono_fort') profileLabel = 'Masque Fort';
-    else if (profile.type.startsWith('adaptatif')) profileLabel = 'Profil Adaptatif';
+    else if (profile.type==='mono')         profileLabel = 'Masque Dominant';
+    else if (profile.type==='mono_fort')    profileLabel = 'Masque Fort';
+    else if (profile.type==='adaptatif_eq') profileLabel = 'Profil Équilibré';
+    else if (profile.type==='adaptatif_vig') profileLabel = 'Profil Vigilant';
     else profileLabel = 'Votre Masque';
 
-    const behavioursList = (BEHAVIOURS[dom] || []).join(' <span>·</span> ');
+    const comboHTML   = isAdaptatif ? '' : getComboHTML(profile, scores);
+    const bprose      = BEHAVIOUR_PROSE[dom] || '';
 
     return `
     <div class="portrait-card" id="portrait-card" style="--mc:${color}">
+
+        <!-- Header -->
         <div class="profile-header">
             <p class="greeting">${greeting}</p>
             <div class="mask-circle">
                 <img src="${maskImg}" alt="Masque ${MASK_LABELS[dom]}" onerror="this.src='pan-masque.png'">
             </div>
             <div class="profile-type-badge">${profileLabel}</div>
-            <h1 class="mask-name">Masque ${MASK_LABELS[dom]}</h1>
-            <p class="mask-protect">Ce n'est pas vous. C'est votre protection.</p>
+            <h1 class="mask-name" style="${isAdaptatif ? 'color:var(--gold)' : ''}">
+                ${isAdaptatif ? profileLabel : 'Masque ' + MASK_LABELS[dom]}
+            </h1>
         </div>
 
+        <!-- Définition — une fois, claire -->
+        <p class="opening-def">${isAdaptatif
+            ? (adaptData ? adaptData.mirror : '')
+            : "Ce n'est pas vous. C'est ce que la peur a construit pour vous protéger — non une identité, une stratégie. Construite à une époque où vous n'aviez pas d'autre choix. Elle a rempli son rôle. Et vous pouvez maintenant en choisir un autre."
+        }</p>
+
+        ${!isAdaptatif ? `
+
+        <!-- ① MANIFESTATION -->
+        <div class="section-divider"></div>
+        <span class="section-title">Voilà comment ce masque se manifeste chez vous</span>
         <div class="mirror-phrase">"${mirror}"</div>
-        <div class="behaviours-inline">${behavioursList}</div>
+        <p class="behaviour-prose">${bprose}</p>
+        <p class="section-bridge">Cette peur génère aussi des pensées — si rapidement que vous les croyez vôtres.</p>
 
-        <div class="force-block">
-            <span class="force-label">Force cachée</span>
-            <div class="force-text">${FORCE[dom]}</div>
+        <!-- ② PENSÉES AUTOMATIQUES -->
+        <div class="section-divider"></div>
+        <span class="section-title">Les pensées automatiques que cette peur génère</span>
+        <p class="voice-intro">Avant même que vous ayez eu le temps de décider, cette peur vous souffle :</p>
+        <div class="voice-block">${VOICE[dom] || ''}</div>
+        <p class="section-bridge">Dans votre vie concrète, voilà comment elle décide à votre place.</p>
+
+        <!-- ③ SCÈNE -->
+        <div class="section-divider"></div>
+        <span class="section-title">Cette peur en action — une situation concrète</span>
+        <div class="scene-block">${SCENE[dom] || ''}</div>
+        <p class="section-bridge">Vous n'avez pas choisi cette réaction. La peur a décidé avant vous. Et ça a un coût.</p>
+
+        <!-- ④ COÛT -->
+        <div class="section-divider"></div>
+        <div class="cout-band">
+            <span class="section-title">Ce que ce masque a coûté à votre vie</span>
+            <p class="cout-block">${COUT[dom] || ''}</p>
         </div>
+        <p class="section-bridge">Mais il y a autre chose — quelque chose qui existe en vous, derrière cette peur.</p>
 
-        ${getComboHTML(profile, scores)}
+        <!-- ⑤ FORCE -->
+        <div class="section-divider"></div>
+        <span class="section-title">Ce que vous êtes — ce qui attend d'être libéré derrière ce masque</span>
+        <p class="force-intro">La peur prend de la place. Et là où elle s'est installée, quelque chose n'a pas pu s'exprimer pleinement.</p>
+        <div class="force-block">
+            <div class="force-text">${FORCE[dom] || ''}</div>
+        </div>
+        <p class="section-bridge" style="margin-top:8px;">Ce n'est pas perdu. C'est là — derrière le masque.</p>
 
+        <!-- ⑥ REFRAME -->
+        <div class="section-divider"></div>
+        <span class="section-title">Pourquoi c'est plus fort que vous</span>
+        <p class="reframe-universal">Cette réaction n'est pas un défaut de caractère. Votre esprit a résolu un problème. Le problème a changé, mais la solution est restée. Ce n'est pas vous qui dysfonctionnez — c'est une protection qui continue de tourner alors que le danger est passé.</p>
+        ${REFRAME[dom] ? '<div class="reframe-block"><p class="reframe-q">' + REFRAME[dom].q + '</p><p class="reframe-r">' + REFRAME[dom].r + '</p></div>' : ''}
+
+        <!-- ⑦ COMBO (dyades humanisées, sans triades) -->
+        ${comboHTML ? '<div class="section-divider"></div><span class="section-title">Quand deux masques s\'activent ensemble</span><p class="combo-intro">Chez vous, deux masques s\'activent souvent dans les mêmes situations. Quand c\'est le cas, ils se renforcent — et la peur devient plus difficile à voir.</p>' + comboHTML : ''}
+
+        ` : `
+        <!-- ADAPTATIF -->
+        <div class="section-divider"></div>
+        <div class="force-block">
+            <div class="force-text">${adaptData ? adaptData.force : ''}</div>
+        </div>
+        <div class="section-divider"></div>
+        <div class="combo-box">${adaptData ? adaptData.note : ''}</div>
+        `}
+
+        <!-- SPA -->
+        <div class="section-divider"></div>
         <div class="spa-block">
             <span class="spa-sun">☀</span>
             <p class="spa-text">
                 <strong>Score de Présence Authentique</strong><br>
-                Ce score mesure votre espace de liberté existant. Il est évalué avec précision lors de l'évaluation complète de 85 questions en cabinet.
+                Ce score mesure votre espace de liberté intérieur. Il est évalué avec précision lors de l'évaluation complète de 85 questions en cabinet.
             </p>
         </div>
+        <!-- Message important : test éclair non définitif -->
+        <p style="color:var(--text-dim); font-size:0.9rem; margin-top:8px; text-align:center; font-style:italic;">
+            Ce test éclair donne une première tendance. Il n’est pas le test validé en cabinet. Des combinaisons plus complexes de masques ne peuvent être confirmées qu’avec le portrait complet de 85 questions.
+        </p>
 
-        <a href="${DOCTOLIB_URL}" target="_blank" rel="noopener" class="btn-cta"
-            style="background:${color};color:${dom==='jaune'?'#0B0A0A':'#F0EBE1'}">
-            Faire le test complet en cabinet →
+        <!-- ⑧ CTA -->
+        <div class="section-divider"></div>
+        <span class="section-title">Ce que vous pouvez faire maintenant</span>
+        <p class="cta-text">Ce masque peut être vu. Nommé. Traversé. V.A.L.E.U.R© vous libère des 7 peurs qui empêchent d'être soi.</p>
+        <a href="${DOCTOLIB_URL}" target="_blank" rel="noopener" class="btn-liberation">
+            Se libérer des peurs →
         </a>
 
+        <!-- NOTE DÉONTOLOGIQUE -->
         <div class="deo-note">
-            <strong>Note :</strong> Ce résultat repose sur un premier niveau d'analyse (21 questions). Il donne une orientation — pas un portrait fiable. Seule l'évaluation approfondie de 85 questions, réalisée avec Céline Bourbon en première séance, permet de dessiner votre profil complet. <a href="accompagnement.html">En savoir plus →</a>
+            Ce test donne une première orientation. Ce qu'il indique est réel — mais la profondeur de ce qui est plus fort que vous se révèle avec le portrait complet de 85 questions. C'est là que le changement commence vraiment.
+            <a href="accompagnement.html">En savoir plus →</a>
         </div>
 
+        <!-- PARTAGE -->
         <div class="share-section">
             <p class="share-title">Partager mon portrait</p>
-            <p class="share-subtitle">Téléchargez votre carte ou partagez-la directement.</p>
-            <p class="share-generating" id="share-generating">Génération de la carte…</p>
-            <p class="share-note" id="share-note">Sur mobile, l'image s'envoie automatiquement. Sur ordinateur, l'image est téléchargée et le message WhatsApp s'ouvre.</p>
-            <div class="share-buttons">
-                <button class="share-btn download" onclick="downloadCard()">⬇ Télécharger la carte</button>
-                <button class="share-btn whatsapp" id="shareWhatsAppBtn" onclick="shareViaWhatsApp()">📤 Partager sur WhatsApp</button>
+            <p class="share-subtitle">Téléchargez votre carte ou partagez le message viral.</p>
+            <div class="share-grid" style="grid-template-columns:1fr 1fr;max-width:420px;margin-left:auto;margin-right:auto;">
+                <button class="sn-btn" onclick="openCardModal()" style="grid-column:1/-1;border-color:rgba(201,168,76,.3);">
+                    <span style="font-size:.85rem;">👁</span> Aperçu &amp; téléchargement
+                </button>
+                <button class="sn-btn wa" onclick="shareViaWhatsApp()">
+                    <span class="sn-ico ico-wa"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zm-5.42 7.4h-.004a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37A9.86 9.86 0 012.16 11.9C2.16 6.44 6.6 2 12.05 2c2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.45-4.44 9.89-9.89 9.89zm8.41-18.3A11.82 11.82 0 0012.05 0C5.5 0 .15 5.34.15 11.9c0 2.1.55 4.14 1.59 5.94L.06 24l6.31-1.65a11.88 11.88 0 005.68 1.45h.005c6.55 0 11.9-5.34 11.9-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></svg></span>WhatsApp
+                </button>
+                <button class="sn-btn fb" onclick="shareViaFacebook()">
+                    <span class="sn-ico ico-fb"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg></span>Facebook
+                </button>
+                <button class="sn-btn tw" onclick="shareViaTwitter()">
+                    <span class="sn-ico ico-tw"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.213 5.567 5.952-5.567zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>Twitter / X
+                </button>
             </div>
         </div>
+
     </div>`;
 }
 
@@ -537,93 +904,190 @@ function generateQRCode() {
     });
 }
 
-function prepareShareCard(dom, mirror, color, maskImgUrl) {
-    document.getElementById('sc-img').src = maskImgUrl;
-    document.getElementById('sc-mask-name').textContent = 'Masque ' + MASK_LABELS[dom];
-    document.getElementById('sc-mask-name').style.color = color;
-    document.getElementById('sc-phrase').textContent = mirror;
-    document.getElementById('sc-overlay').style.background = color;
-    document.documentElement.style.setProperty('--sc-color', color);
-    // générer le QR code s'il n'est pas déjà fait
-    if (!document.getElementById('qr-code-container').hasChildNodes()) {
-        generateQRCode();
-    }
+// ══════════════════════════════════════════
+// CARTE PREMIUM — CANVAS 2D NATIF
+// ══════════════════════════════════════════
+
+async function loadImg(src) {
+    try {
+        var res = await fetch(src);
+        if (!res.ok) return null;
+        var blob = await res.blob();
+        var blobUrl = URL.createObjectURL(blob);
+        return new Promise(function(resolve) {
+            var img = new Image();
+            img.onload  = function() { URL.revokeObjectURL(blobUrl); resolve(img); };
+            img.onerror = function() { URL.revokeObjectURL(blobUrl); resolve(null); };
+            img.src = blobUrl;
+        });
+    } catch(e) { return null; }
 }
 
-let cardBlobUrl = null;
-let currentMaskImage = '';
+function wrapLines(ctx, text, maxW) {
+    var words = text.split(' ');
+    var lines = [], line = '';
+    for (var i = 0; i < words.length; i++) {
+        var test = line + words[i] + ' ';
+        if (ctx.measureText(test).width > maxW && i > 0) {
+            lines.push(line.trim());
+            line = words[i] + ' ';
+        } else { line = test; }
+    }
+    if (line.trim()) lines.push(line.trim());
+    return lines;
+}
 
-async function generateCard(dom, mirror, color, maskImgUrl) {
-    prepareShareCard(dom, mirror, color, maskImgUrl);
-    const sc = document.getElementById('share-card');
-    await document.fonts.ready;
-    // attendre que le QR code soit rendu
-    await new Promise(resolve => setTimeout(resolve, 200)); // laisser le DOM se mettre à jour
-    const canvas = await html2canvas(sc, {
-        scale: 2.7,
-        useCORS: true,
-        allowTaint: false,
-        backgroundColor: '#0B0A0A',
-        logging: false
+async function generatePremiumCard() {
+    var W=1080, H=1920;
+    var cvs=document.createElement('canvas'); cvs.width=W; cvs.height=H;
+    var ctx=cvs.getContext('2d');
+    var col=MASK_COLORS[_dom]||'#C9A84C', viral=VIRAL[_dom]||'', mName='Masque '+MASK_LABELS[_dom];
+    try{await document.fonts.ready;}catch(e){}
+    var img=await loadImg((_dom==='pan')?'pan-masque.png':'masque-'+_dom+'.png');
+    var rgb=(function(h){return[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];})(col);
+    var ca=function(a){return 'rgba('+rgb[0]+','+rgb[1]+','+rgb[2]+','+a+')';};
+    ctx.fillStyle='#09080A'; ctx.fillRect(0,0,W,H);
+    var amb=ctx.createRadialGradient(W/2,H*.24,0,W/2,H*.24,H*.38);
+    amb.addColorStop(0,ca(.2)); amb.addColorStop(1,'transparent');
+    ctx.fillStyle=amb; ctx.fillRect(0,0,W,H);
+    var CX=W/2, CY=H*.24, R=W*.245;
+    var go=ctx.createRadialGradient(CX,CY,R*.4,CX,CY,R*2.1);
+    go.addColorStop(0,ca(.44)); go.addColorStop(.5,ca(.12)); go.addColorStop(1,'transparent');
+    ctx.fillStyle=go; ctx.beginPath(); ctx.arc(CX,CY,R*2.1,0,Math.PI*2); ctx.fill();
+    ctx.save(); ctx.beginPath(); ctx.arc(CX,CY,R,0,Math.PI*2); ctx.clip();
+    if(img){
+        var iw=img.naturalWidth||R*2, ih=img.naturalHeight||R*2;
+        var sc=Math.min(R*2/iw,R*2/ih), dw=iw*sc, dh=ih*sc;
+        ctx.drawImage(img,CX-dw/2,CY-dh/2,dw,dh);
+        ctx.fillStyle=ca(.16); ctx.fillRect(CX-R,CY-R,R*2,R*2);
+    } else {
+        var sp=ctx.createRadialGradient(CX-R*.3,CY-R*.32,0,CX,CY,R);
+        sp.addColorStop(0,'rgba(255,255,255,.28)'); sp.addColorStop(.3,ca(.95));
+        sp.addColorStop(.75,ca(.68)); sp.addColorStop(1,ca(.22));
+        ctx.fillStyle=sp; ctx.beginPath(); ctx.arc(CX,CY,R,0,Math.PI*2); ctx.fill();
+    }
+    ctx.restore();
+    ctx.strokeStyle=ca(.5); ctx.lineWidth=1.5; ctx.beginPath(); ctx.arc(CX,CY,R,0,Math.PI*2); ctx.stroke();
+    ctx.textAlign='center'; ctx.fillStyle=col;
+    ctx.font='300 '+(W*.098)+'px "Cormorant Garamond",Georgia,serif';
+    ctx.fillText(mName,CX,H*.535);
+    var lg=ctx.createLinearGradient(CX-110,0,CX+110,0);
+    lg.addColorStop(0,'transparent'); lg.addColorStop(.5,ca(.6)); lg.addColorStop(1,'transparent');
+    ctx.strokeStyle=lg; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(CX-110,H*.555); ctx.lineTo(CX+110,H*.555); ctx.stroke();
+    ctx.fillStyle='rgba(240,235,225,.46)';
+    ctx.font='italic 300 '+(W*.030)+'px "Cormorant Garamond",Georgia,serif';
+    ctx.fillText("Ce n\u2019est pas vous. C\u2019est votre protection.",CX,H*.578);
+    ctx.fillStyle='#EDE8DF';
+    var vSize=W*.048; ctx.font='italic 300 '+vSize+'px "Cormorant Garamond",Georgia,serif';
+    var vLines=wrapLines(ctx,viral,W*.83), lH=vSize*1.58, bH=vLines.length*lH;
+    var zTop=H*.60, zH=H*.21, sY=zTop+(zH-bH)/2+lH;
+    vLines.forEach(function(l,i){ctx.fillText(l,CX,sY+i*lH);});
+    var sg=ctx.createLinearGradient(W*.12,0,W*.88,0);
+    sg.addColorStop(0,'transparent'); sg.addColorStop(.4,ca(.4)); sg.addColorStop(.6,ca(.4)); sg.addColorStop(1,'transparent');
+    ctx.strokeStyle=sg; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(W*.12,H*.865); ctx.lineTo(W*.88,H*.865); ctx.stroke();
+    ctx.fillStyle='rgba(201,168,76,.95)'; ctx.font='500 '+(W*.027)+'px "Jost",sans-serif';
+    ctx.fillText('V.A.L.E.U.R\u00A9',CX,H*.900);
+    ctx.fillStyle='rgba(107,100,96,.8)'; ctx.font='300 '+(W*.020)+'px "Jost",sans-serif';
+    ctx.fillText('VALEUR.PSYH.FR',CX,H*.922);
+    ['#B5312A','#C4581F','#B8930A','#2D7A4F','#1D5F8A','#5C3280','#7A3594'].forEach(function(c7,i){
+        ctx.fillStyle=c7; ctx.fillRect(i*W/7,0,W/7+1,7); ctx.fillRect(i*W/7,H-7,W/7+1,7);
     });
-    return new Promise(resolve => {
-        canvas.toBlob(blob => {
-            if (cardBlobUrl) URL.revokeObjectURL(cardBlobUrl);
-            cardBlobUrl = URL.createObjectURL(blob);
-            resolve({ blob, dataUrl: canvas.toDataURL('image/png'), blobUrl: cardBlobUrl });
-        }, 'image/png');
-    });
+    return cvs;
 }
 
 async function downloadCard() {
-    const gen = document.getElementById('share-generating');
-    gen.style.display = 'block';
+    var gen = document.getElementById('share-generating');
+    if (gen) gen.style.display = 'block';
     try {
-        const { blobUrl } = await generateCard(_dom, _mirror, _color, currentMaskImage);
-        const a = document.createElement('a');
-        a.href = blobUrl;
-        a.download = `masque-valeur-${_dom}.png`;
-        a.click();
-    } catch(e) { alert('Impossible de générer la carte.'); }
-    finally { gen.style.display = 'none'; }
+        var canvas = await generatePremiumCard();
+        canvas.toBlob(function(blob) {
+            var url = URL.createObjectURL(blob);
+            var a   = document.createElement('a');
+            a.href  = url;
+            a.download = 'mon-masque-valeur-' + (_dom||'') + '.png';
+            a.click();
+            setTimeout(function(){ URL.revokeObjectURL(url); }, 3000);
+        }, 'image/png');
+    } catch(e) {
+        console.warn('Card error:', e);
+        alert('Impossible de générer la carte. Réessayez depuis un autre navigateur.');
+    }
+    if (gen) gen.style.display = 'none';
 }
 
 async function shareViaWhatsApp() {
-    const gen = document.getElementById('share-generating');
-    const note = document.getElementById('share-note');
-    gen.style.display = 'block';
-    if (note) note.style.display = 'none';
+    var viral = VIRAL[_dom] || '';
+    var shareT = viral + ' C\u2019est plus fort que la volont\u00E9 \u2014 parce que c\u2019est inconscient. V.A.L.E.U.R\u00A9 met un nom dessus. Faites le test : https://valeur.psyh.fr/questionnaire-eclair.html';
+    window.open('https://wa.me/?text=' + encodeURIComponent(shareT), '_blank');
+    showToast('Message WhatsApp prêt. Envoyez-le, puis joignez votre carte téléchargée.');
+}
+
+// ── MODAL CARTE ────────────────────────────────────────────────────────────
+var _modalCanvas = null;
+
+async function openCardModal() {
+    var modal = document.getElementById('card-modal');
+    var container = document.getElementById('modal-canvas-container');
+    var genTxt = document.getElementById('modal-generating-text');
+    modal.classList.add('open');
+    container.innerHTML = '';
+    genTxt.style.display = 'block';
     try {
-        const { blob } = await generateCard(_dom, _mirror, _color, currentMaskImage);
-        const file = new File([blob], `masque-valeur-${_dom}.png`, { type: 'image/png' });
-        const shareText = `J'ai découvert mon Masque ${MASK_LABELS[_dom]} avec V.A.L.E.U.R©. Et vous ?`;
-        if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
-            await navigator.share({
-                files: [file],
-                title: `Mon Masque ${MASK_LABELS[_dom]} · V.A.L.E.U.R©`,
-                text: shareText
-            });
-            // succès, rien de plus
-        } else {
-            // Fallback desktop : télécharger l'image, ouvrir WhatsApp avec message + lien
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = `masque-valeur-${_dom}.png`;
-            a.click();
-            const waLink = `https://wa.me/?text=${encodeURIComponent(shareText + ' Faites le test : https://valeur.psyh.fr/questionnaire-eclair.html')}`;
-            window.open(waLink, '_blank');
-            if (note) note.style.display = 'block';
-        }
+        var canvas = await generatePremiumCard();
+        _modalCanvas = canvas;
+        var preview = document.createElement('canvas');
+        var scale = Math.min(1, (window.innerHeight * 0.68) / canvas.height);
+        preview.width  = canvas.width  * scale;
+        preview.height = canvas.height * scale;
+        var pctx = preview.getContext('2d');
+        pctx.drawImage(canvas, 0, 0, preview.width, preview.height);
+        container.appendChild(preview);
     } catch(e) {
-        if (e.name !== 'AbortError') console.warn('Share error:', e);
-        const { blob } = await generateCard(_dom, _mirror, _color, currentMaskImage);
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = `masque-valeur-${_dom}.png`;
-        a.click();
-    } finally {
-        gen.style.display = 'none';
+        container.innerHTML = '<p style="color:var(--text-secondary);font-size:.9rem">Impossible de générer la carte.</p>';
     }
+    genTxt.style.display = 'none';
+}
+
+function closeCardModal() {
+    document.getElementById('card-modal').classList.remove('open');
+}
+
+document.addEventListener('click', function(e) {
+    var modal = document.getElementById('card-modal');
+    if (e.target === modal) closeCardModal();
+});
+
+async function downloadCardFromModal() {
+    var canvas = _modalCanvas || await generatePremiumCard();
+    canvas.toBlob(function(blob) {
+        var url = URL.createObjectURL(blob);
+        var a   = document.createElement('a');
+        a.href  = url;
+        a.download = 'mon-masque-valeur-' + (_dom||'') + '.png';
+        a.click();
+        setTimeout(function(){ URL.revokeObjectURL(url); }, 3000);
+    }, 'image/png');
+}
+
+
+// ── PARTAGE RÉSEAUX SOCIAUX ────────────────────────────────────────────────
+function showToast(msg) {
+    var t = document.getElementById('share-toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(function(){ t.classList.remove('show'); }, 3000);
+}
+
+function shareViaFacebook() {
+    var url = encodeURIComponent(window.location.href);
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
+}
+
+function shareViaTwitter() {
+    var viral  = VIRAL[_dom] || '';
+    var text   = encodeURIComponent(viral + ' V.A.L.E.U.R\u00A9 met un nom dessus.');
+    var url    = encodeURIComponent('https://valeur.psyh.fr/questionnaire-eclair.html');
+    window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, '_blank');
 }
 
 // ═══════════════ BACKEND / EMAIL ══════════════
@@ -655,24 +1119,20 @@ function sendPortraitEmail(data, profile) {
     const dom = profile.primary;
     try {
         emailjs.init({ publicKey: 'Qamyb35cCRJ5Pulqs' });
-        emailjs.send('service_valeur', 'template_inscription', {
-            to_email: data.email,
-            prenom: data.prenom || 'vous',
+        emailjs.send('service_valeur', 'template_c2ru3wm', {
+            to_email:        data.email,
+            prenom:          data.prenom || 'vous',
             masque_dominant: MASK_LABELS[dom],
-            peur_centrale: FEARS[dom],
-            message_accueil: `Votre test éclair V.A.L.E.U.R© — Masque ${MASK_LABELS[dom]}`,
-            lien_rapport: window.location.href,
-            lien_livret: 'https://valeur.psyh.fr/accompagnement.html',
-            lien_psycho: 'https://valeur.psyh.fr/accompagnement.html',
-            lien_fiche: 'https://valeur.psyh.fr/methode.html',
-            lien_recuperation: window.location.href,
-            date_passation: new Date().toLocaleDateString('fr-FR')
+            peur_centrale:   FEARS[dom],
+            lien_rapport:    window.location.href,
+            lien_psycho:     'https://www.doctolib.fr/psychologue/bordeaux/celine-bourbon/booking/motives?specialityId=14&telehealth=false&placeId=practice-362188&pid=practice-362188&source=profile',
+            date_passation:  new Date().toLocaleDateString('fr-FR')
         });
     } catch(e) { console.warn('Email skipped:', e.message); }
 }
 
 // ═══════════════ INIT ══════════════
-let _dom, _mirror, _color;
+let _dom, _mirror, _color, _viral;
 
 async function init() {
     const data = readData();
@@ -683,10 +1143,10 @@ async function init() {
     }
 
     const profile = detectProfile(data.scores);
-    _dom   = profile.primary;
+    _dom    = profile.primary;
     _mirror = profile.type==='pan' ? PAN_MIRROR : MIRROR[_dom];
-    _color = MASK_COLORS[_dom];
-    currentMaskImage = getMaskImage(profile);
+    _color  = MASK_COLORS[_dom];
+    _viral  = VIRAL[_dom] || (profile.type==='pan' ? VIRAL.pan : VIRAL.adaptatif);
 
     document.getElementById('portrait-content').innerHTML = buildPortrait(data, profile);
 
