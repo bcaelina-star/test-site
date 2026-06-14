@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="D = e × r² : pourquoi lutter contre une émotion la fait durer. La formule au cœur de la méthode V.A.L.E.U.R© — la souffrance n'est pas l'émotion, c'est la résistance qu'on lui oppose. Stoïciens, Jung, neurosciences et thérapie ACT réunis.">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <title>La formule D = e × r² — Pourquoi la résistance amplifie la souffrance | V.A.L.E.U.R©</title>
+    <meta property="og:title" content="La formule D = e × r²">
+    <meta property="og:description" content="Ce n'est pas l'émotion qui fait souffrir — c'est la lutte contre elle. La clé de la méthode V.A.L.E.U.R©.">
+    <meta property="og:image" content="https://valeur.psyh.fr/og-image.png">
+    <meta property="og:url" content="https://valeur.psyh.fr/formule.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://valeur.psyh.fr/formule.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:'Jost',sans-serif;background:#F9F5EE;color:#0E1120;overflow-x:hidden;-webkit-user-select:none;user-select:none;-webkit-font-smoothing:antialiased;font-size:18px;line-height:1.9;}
+        :root{
+            --cream:#F9F5EE;--cream2:#F2EDE3;--ink:#0E1120;--ink2:#1C2035;--ink3:#4A4F66;--ink4:#8589A0;
+            --gold:#C9A84C;--gold-ink:#7A5E1A;--gold-pale:rgba(201,168,76,.10);--gold-border:rgba(201,168,76,.22);
+            --line:rgba(14,17,32,.08);--line2:rgba(14,17,32,.04);
+            --rouge:#B5312A;--orange:#C4581F;--jaune:#B8930A;--vert:#2D7A4F;--bleu:#1D5F8A;--indigo:#5C3280;--violet:#7A3594;
+            --max-w:860px;--pad:clamp(20px,5vw,52px);
+        }
+        nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(249,245,238,.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--line);}
+        .nav-inner{max-width:1060px;margin:0 auto;padding:0 var(--pad);height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+        .nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--ink);text-decoration:none;flex-shrink:0;}
+        .nav-logo sup{font-size:10px;vertical-align:super;letter-spacing:0}
+        .nav-links{display:flex;align-items:center;gap:28px}
+        .nav-link{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink4);text-decoration:none;transition:color .2s;white-space:nowrap;}
+        .nav-link:hover{color:var(--ink)}
+        .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--cream);text-decoration:none;font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;padding:11px 24px;border-radius:2px;transition:all .2s;white-space:nowrap;flex-shrink:0;}
+        .nav-cta:hover{background:var(--ink2);transform:translateY(-1px)}
+        .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+        .burger span{display:block;width:22px;height:1.5px;background:var(--ink);border-radius:2px;transition:all .3s}
+        .burger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
+        .burger.open span:nth-child(2){opacity:0}
+        .burger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
+        .mobile-nav{position:fixed;top:68px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--line);padding:8px 0 28px;display:none;flex-direction:column;z-index:899;}
+        .mobile-nav.open{display:flex}
+        .mobile-nav a{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-decoration:none;padding:16px var(--pad);border-bottom:1px solid var(--line2);}
+        .mobile-nav .m-cta{margin:18px var(--pad) 0;background:var(--ink);color:var(--cream);text-align:center;padding:16px;border-radius:2px;border-bottom:none;font-weight:500;}
+        @media(max-width:920px){.nav-links{display:none}}
+        @media(max-width:680px){.nav-cta{display:none}.burger{display:flex}}
+        .chroma{height:4px;display:flex;margin-top:68px}
+        .cs{flex:1}
+        .wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+        .eyebrow{font-size:11px;font-weight:500;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold-ink);margin-bottom:18px;}
+        h1{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5.5vw,52px);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:16px;}
+        h1 em{color:var(--gold-ink);font-style:italic}
+        .hero-sub{font-size:17px;color:var(--ink3);max-width:660px;}
+        section.sec{padding:clamp(44px,6vw,72px) 0;border-top:1px solid var(--line2);}
+        section.sec.alt{background:var(--cream2);border-top:none;}
+        h2.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(25px,3.8vw,36px);font-weight:300;line-height:1.22;color:var(--ink);margin-bottom:20px;}
+        h2.sec-title em{color:var(--gold-ink);font-style:italic;}
+        p.body{font-size:17px;color:var(--ink3);margin-bottom:16px;max-width:720px;}
+        .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:clamp(22px,4vw,32px);margin:18px 0;}
+        .card-gold{background:var(--gold-pale);border:1px solid var(--gold-border);}
+        footer{background:var(--ink);padding:56px 0;margin-top:clamp(40px,6vw,64px);}
+        .footer-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start}
+        .footer-logo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(249,245,238,.65);text-decoration:none;display:block;margin-bottom:12px;}
+        .footer-copy{font-size:13px;color:rgba(249,245,238,.3);line-height:1.9}
+        .footer-copy a{color:rgba(249,245,238,.35);text-decoration:none}
+        .footer-copy a:hover{color:var(--gold)}
+        .footer-links{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+        .footer-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(249,245,238,.3);text-decoration:none}
+        .footer-links a:hover{color:rgba(249,245,238,.65)}
+        @media(max-width:600px){.footer-grid{grid-template-columns:1fr}.footer-links{align-items:flex-start;flex-direction:row;flex-wrap:wrap}}
+        .reveal{opacity:0;transform:translateY(24px);transition:all .8s cubic-bezier(.2,.8,.25,1);}
+        .reveal.vis{opacity:1;transform:none;}
+
+        /* ── Hero formule ── */
+        .fmla-hero{background:var(--ink);padding:clamp(72px,10vw,116px) 0 clamp(56px,8vw,88px);position:relative;overflow:hidden;text-align:center;}
+        .fmla-hero::before{content:'';position:absolute;top:-45%;left:50%;transform:translateX(-50%);width:760px;height:760px;background:radial-gradient(circle,rgba(201,168,76,.16),transparent 62%);pointer-events:none;}
+        .fmla-ey{position:relative;color:var(--gold);font-size:11px;font-weight:500;letter-spacing:3.5px;text-transform:uppercase;margin-bottom:26px;}
+        .fmla-eq{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(60px,12vw,128px);font-weight:300;color:var(--gold);letter-spacing:6px;line-height:1;}
+        .fmla-eq sup{font-size:.42em;vertical-align:super;}
+        .fmla-legend{position:relative;margin-top:24px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.5vw,22px);color:rgba(249,245,238,.78);line-height:1.6;max-width:620px;margin-left:auto;margin-right:auto;}
+        .fmla-quote{position:relative;margin-top:38px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,3vw,27px);font-weight:300;color:var(--cream);}
+        .fmla-quote-who{position:relative;margin-top:12px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(249,245,238,.45);}
+        /* ── Décorticage ── */
+        .decode{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;}
+        @media(max-width:720px){.decode{grid-template-columns:1fr;}}
+        .decode-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px 26px;text-align:center;transition:all .3s;}
+        .decode-card:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(14,17,32,.08);}
+        .dc-sym{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:var(--gold-ink);line-height:1;margin-bottom:14px;}
+        .dc-sym sup{font-size:.42em;}
+        .dc-name{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink2);margin-bottom:12px;}
+        .dc-body{font-size:15px;color:var(--ink3);line-height:1.8;}
+        .insight-band{background:var(--ink);border-radius:12px;padding:clamp(28px,5vw,44px);margin:36px 0;text-align:center;}
+        .insight-band p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,3vw,27px);font-weight:300;color:var(--cream);line-height:1.5;}
+        .insight-band p strong{color:var(--gold);font-weight:400;font-style:normal;}
+        /* ── Science cards ── */
+        .sci-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:32px;}
+        .sci-c{background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px 26px;border-top:3px solid var(--gold);transition:all .3s;}
+        .sci-c:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(14,17,32,.08);}
+        .sci-c-tag{font-size:10.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold-ink);margin-bottom:12px;}
+        .sci-c-find{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink2);line-height:1.35;margin-bottom:12px;}
+        .sci-c-body{font-size:14.5px;color:var(--ink3);line-height:1.8;}
+        .sci-c-ref{margin-top:14px;font-size:12px;color:var(--ink4);font-style:italic;}
+        /* ── Stoïciens / calèche ── */
+        .wisdom{background:var(--cream2);}
+        .wisdom-quote{border-left:3px solid var(--gold);padding:6px 0 6px 26px;margin:24px 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.7vw,23px);color:var(--ink2);line-height:1.55;}
+        .wisdom-quote .who{display:block;margin-top:10px;font-family:'Jost',sans-serif;font-style:normal;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-ink);}
+        /* ── Pratique 3 étapes ── */
+        .practice{counter-reset:prac;display:flex;flex-direction:column;gap:16px;margin-top:32px;}
+        .prac-step{display:flex;gap:20px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px 28px;align-items:flex-start;}
+        .prac-num{counter-increment:prac;width:42px;height:42px;border-radius:50%;background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;flex-shrink:0;}
+        .prac-num::before{content:counter(prac);}
+        .prac-title{font-weight:600;color:var(--ink2);margin-bottom:8px;font-size:17px;}
+        .prac-title em{color:var(--gold-ink);font-style:italic;font-weight:400;}
+        .prac-body{font-size:15.5px;color:var(--ink3);line-height:1.85;}
+        .closing{background:var(--ink);text-align:center;padding:clamp(56px,8vw,90px) 0;}
+        .closing-q{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(22px,3.6vw,32px);color:var(--cream);line-height:1.5;max-width:760px;margin:0 auto 30px;}
+        .closing-q em{color:var(--gold);}
+        .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--ink);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:17px 36px;border-radius:2px;transition:all .25s;}
+        .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(201,168,76,.35);}
+        .science-link{text-align:center;margin-top:28px;}
+        .science-link a{color:var(--gold-ink);font-weight:500;text-decoration:underline;text-underline-offset:4px;font-size:16px;}
+        .science-link a:hover{color:var(--ink);}
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">V.A.L.E.U.R<sup>©</sup></a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Accueil</a>
+            <a href="methode.html" class="nav-link">La méthode</a>
+            <a href="formule.html" class="nav-link active">La formule</a>
+            <a href="accompagnement.html" class="nav-link">En cabinet</a>
+            <a href="livre.html" class="nav-link">Le livre</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <a href="questionnaire-eclair.html" class="nav-cta">Test éclair <span>→</span></a>
+        <button class="burger" id="burger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+    <a href="/" onclick="closeNav()">Accueil</a>
+    <a href="methode.html" onclick="closeNav()">La méthode</a>
+    <a href="formule.html" onclick="closeNav()">La formule</a>
+    <a href="accompagnement.html" onclick="closeNav()">En cabinet</a>
+    <a href="livre.html" onclick="closeNav()">Le livre</a>
+    <a href="contact.html" onclick="closeNav()">Contact</a>
+    <a href="questionnaire-eclair.html" class="m-cta" onclick="closeNav()">Faire le test éclair →</a>
+</div>
+
+<div class="chroma">
+    <div class="cs" style="background:var(--rouge)"></div>
+    <div class="cs" style="background:var(--orange)"></div>
+    <div class="cs" style="background:var(--jaune)"></div>
+    <div class="cs" style="background:var(--vert)"></div>
+    <div class="cs" style="background:var(--bleu)"></div>
+    <div class="cs" style="background:var(--indigo)"></div>
+    <div class="cs" style="background:var(--violet)"></div>
+</div>
+
+<main>
+    <section class="fmla-hero">
+        <div class="wrap">
+            <p class="fmla-ey">La clé de la méthode</p>
+            <div class="fmla-eq">D&nbsp;=&nbsp;e&nbsp;×&nbsp;r<sup>2</sup></div>
+            <p class="fmla-legend">Durée de la souffrance = intensité de l'émotion × (résistance de l'ego)<sup>2</sup></p>
+            <p class="fmla-quote">«&thinsp;Tout ce à quoi l'on résiste persiste.&thinsp;»</p>
+            <p class="fmla-quote-who">Sagesse attribuée à C. G. Jung</p>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="wrap">
+            <p class="eyebrow reveal">L'idée centrale</p>
+            <h2 class="sec-title reveal">Ce n'est pas l'émotion qui fait souffrir.<br>C'est la <em>lutte</em> contre elle.</h2>
+            <p class="body reveal">Une émotion, laissée libre, traverse le corps et s'en va — quelques minutes, parfois quelques secondes. Ce qui la fait durer, gonfler, revenir, c'est tout ce que nous faisons pour ne pas la ressentir : juger, analyser sans fin, se distraire, se débattre. Cette résistance ne calme rien — elle alimente. Et elle le fait de façon exponentielle, parce que lutter contre une émotion crée une seconde souffrance : celle de lutter.</p>
+            <p class="body reveal">Marc Aurèle, il y a près de deux mille ans, formulait déjà la distinction décisive : avoir la force de changer ce qui peut l'être, d'accueillir ce qui ne le peut pas, et la sagesse de distinguer l'un de l'autre. La formule V.A.L.E.U.R© en est la traduction moderne.</p>
+        </div>
+    </section>
+
+    <section class="sec alt">
+        <div class="wrap">
+            <p class="eyebrow reveal">Décortiquer la formule</p>
+            <h2 class="sec-title reveal">Trois termes, <em>un mécanisme</em></h2>
+            <div class="decode">
+                <div class="decode-card reveal">
+                    <div class="dc-sym">D</div>
+                    <div class="dc-name">La durée</div>
+                    <div class="dc-body">Le temps passé à ruminer, à se débattre, à chercher une solution impossible. Ce n'est pas l'intensité d'un instant — c'est la souffrance qui s'installe et dure.</div>
+                </div>
+                <div class="decode-card reveal">
+                    <div class="dc-sym">e</div>
+                    <div class="dc-name">L'émotion brute</div>
+                    <div class="dc-body">La vague initiale, avant toute tentative de contrôle. Tristesse, peur, colère. Elle n'est ni bonne ni mauvaise : elle est une information qui demande à passer.</div>
+                </div>
+                <div class="decode-card reveal">
+                    <div class="dc-sym">r<sup>2</sup></div>
+                    <div class="dc-name">La résistance, au carré</div>
+                    <div class="dc-body">Tout ce qu'on fait pour ne pas ressentir : juger, fuir, refouler, combattre. Élevée au carré, parce que la lutte se nourrit d'elle-même — on souffre, puis on souffre de souffrir.</div>
+                </div>
+            </div>
+            <div class="insight-band reveal">
+                <p>Plus vous luttez contre ce que vous ressentez, <strong>plus la souffrance dure</strong> — de façon exponentielle.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="wrap">
+            <p class="eyebrow reveal">Ce que la science en dit</p>
+            <h2 class="sec-title reveal">La résistance, <em>observée en laboratoire</em></h2>
+            <div class="sci-grid">
+                <div class="sci-c reveal">
+                    <div class="sci-c-tag">L'effet rebond</div>
+                    <div class="sci-c-find">Plus on chasse une pensée, plus elle revient.</div>
+                    <div class="sci-c-body">À qui l'on demande de ne surtout pas penser à un ours blanc, on y pense deux fois plus. Vouloir supprimer une pensée la rend intrusive — la preuve directe que la résistance amplifie.</div>
+                    <div class="sci-c-ref">Wegner et al., 1987</div>
+                </div>
+                <div class="sci-c reveal">
+                    <div class="sci-c-tag">Le cerveau qui accepte</div>
+                    <div class="sci-c-find">Accueillir une émotion calme le centre de la peur.</div>
+                    <div class="sci-c-body">En imagerie, les personnes qui acceptent leurs émotions plutôt que de les réprimer montrent une nette baisse de l'activité de l'amygdale — et davantage de contrôle conscient.</div>
+                    <div class="sci-c-ref">Goldin et al., 2008</div>
+                </div>
+                <div class="sci-c reveal">
+                    <div class="sci-c-tag">L'acceptation qui soigne</div>
+                    <div class="sci-c-find">Réduire le « r » réduit durablement la détresse.</div>
+                    <div class="sci-c-body">Les approches fondées sur l'acceptation diminuent significativement l'anxiété et la dépression, avec des effets maintenus dans le temps. Leur mécanisme clé : faire baisser la résistance à l'expérience interne.</div>
+                    <div class="sci-c-ref">Hayes et al. (ACT), 2006</div>
+                </div>
+            </div>
+            <div class="science-link reveal">
+                <a href="science.html">Explorer tous les fondements scientifiques de V.A.L.E.U.R© →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec wisdom">
+        <div class="wrap">
+            <p class="eyebrow reveal">La sagesse des anciens</p>
+            <h2 class="sec-title reveal">Guider le cheval fougueux —<br>ne pas le <em>tuer</em></h2>
+            <p class="body reveal">Platon comparait l'âme à un attelage : un cheval docile, la raison ; un cheval fougueux, les passions. Le cocher — la conscience — ne cherche pas à abattre le cheval fougueux. Il apprend à le guider, à composer avec lui. Vous n'êtes pas là pour supprimer vos émotions, mais pour les écouter sans vous laisser emporter.</p>
+            <div class="wisdom-quote reveal">«&thinsp;Ce qui trouble les hommes, ce ne sont pas les choses, mais les opinions qu'ils en ont.&thinsp;»
+                <span class="who">Épictète</span>
+            </div>
+            <p class="body reveal">La résistance — le «&nbsp;r&nbsp;» de la formule — n'est pas l'émotion elle-même. C'est l'opinion que vous portez sur cette émotion : le jugement qui la transforme en problème. Et un jugement, contrairement à une émotion, peut se transformer.</p>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="wrap">
+            <p class="eyebrow reveal">Au quotidien</p>
+            <h2 class="sec-title reveal">Faire baisser le «&nbsp;r&nbsp;»,<br>en <em>trois temps</em></h2>
+            <div class="practice">
+                <div class="prac-step reveal">
+                    <div class="prac-num"></div>
+                    <div>
+                        <div class="prac-title">Reconnaître l'émotion <em>— le « e »</em></div>
+                        <div class="prac-body">Nommez simplement : «&nbsp;il y a de la colère en moi&nbsp;», «&nbsp;il y a de la tristesse en moi&nbsp;». Ce constat, à lui seul, défait déjà la fusion — vous n'êtes plus l'émotion, vous l'observez.</div>
+                    </div>
+                </div>
+                <div class="prac-step reveal">
+                    <div class="prac-num"></div>
+                    <div>
+                        <div class="prac-title">Identifier la résistance <em>— le « r »</em></div>
+                        <div class="prac-body">Est-ce que je me juge&nbsp;? Est-ce que je cherche à tout prix une solution&nbsp;? Est-ce que je m'agite pour ne pas ressentir&nbsp;? Voir la résistance, c'est déjà cesser de la subir.</div>
+                    </div>
+                </div>
+                <div class="prac-step reveal">
+                    <div class="prac-num"></div>
+                    <div>
+                        <div class="prac-title">Choisir l'acceptation <em>active</em></div>
+                        <div class="prac-body">Ce n'est pas de la résignation, c'est un acte conscient : «&nbsp;j'accepte que cette émotion soit là, je la laisse circuler dans mon corps sans la combattre.&nbsp;» Le «&nbsp;r&nbsp;» diminue — et la souffrance avec lui.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing">
+        <div class="wrap">
+            <p class="closing-q">«&thinsp;La liberté, ce n'est pas l'absence d'émotion. C'est la capacité à rester présent face à ce qui est, <em>sans avoir besoin de fuir</em>.&thinsp;»</p>
+            <a href="questionnaire-eclair.html" class="btn-gold">Découvrir votre profil avec le test éclair <span>→</span></a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <a href="/" class="footer-logo">V.A.L.E.U.R<sup>©</sup></a>
+                <p class="footer-copy">
+                    Méthode Céline Bourbon, Psychologue · Bordeaux<br>
+                    <a href="mailto:contact@psyh.fr">contact@psyh.fr</a> ·
+                    <a href="mentions-legales.html">Mentions légales</a> ·
+                    <a href="contact.html#pro">Professionnels</a><br>
+                    © Céline Bourbon · V.A.L.E.U.R© · Tous droits réservés
+                </p>
+                <p class="footer-copy" style="margin-top:12px;">
+                    Les 7 masques :
+                    <a href="masque-rouge.html" style="color:#B5312ACC;text-decoration:none;">Rouge</a> ·
+                    <a href="masque-orange.html" style="color:#C4581FCC;text-decoration:none;">Orange</a> ·
+                    <a href="masque-jaune.html" style="color:#B8930ACC;text-decoration:none;">Jaune</a> ·
+                    <a href="masque-vert.html" style="color:#2D7A4FCC;text-decoration:none;">Vert</a> ·
+                    <a href="masque-bleu.html" style="color:#1D5F8ACC;text-decoration:none;">Bleu</a> ·
+                    <a href="masque-indigo.html" style="color:#5C3280CC;text-decoration:none;">Indigo</a> ·
+                    <a href="masque-violet.html" style="color:#7A3594CC;text-decoration:none;">Violet</a>
+                </p>
+            </div>
+            <div class="footer-links">
+                <a href="/">Accueil</a>
+                <a href="methode.html">La méthode</a>
+                <a href="formule.html">La formule</a>
+                <a href="science.html">La science</a>
+                <a href="accompagnement.html">En cabinet</a>
+                <a href="livre.html">Le livre</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleNav(){
+        document.getElementById('burger').classList.toggle('open');
+        document.getElementById('mobile-nav').classList.toggle('open');
+    }
+    function closeNav(){
+        document.getElementById('burger').classList.remove('open');
+        document.getElementById('mobile-nav').classList.remove('open');
+    }
+
+    window.addEventListener('scroll', () => {
+        document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(14,17,32,.06)' : 'none';
+    });
+
+    const io = new IntersectionObserver(es => es.forEach(e => {
+        if(e.isIntersecting){
+            e.target.classList.add('vis');
+            io.unobserve(e.target);
+        }
+    }), { threshold: .12 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    (function(){
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    })();
+</script>
+</body>
+</html>
