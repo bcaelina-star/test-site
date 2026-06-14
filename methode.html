@@ -2,248 +2,169 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="description" content="La méthode V.A.L.E.U.R© de Céline Bourbon, psychologue à Bordeaux : née du terrain, construite sur les grandes théories de la psychologie. 7 masques de protection, un test de ciblage précis, un chemin vers la liberté d'être soi.">
-<title>La méthode V.A.L.E.U.R© · Née du terrain, ancrée dans la science · Céline Bourbon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Comment la méthode V.A.L.E.U.R© identifie ce qui vous bloque — et vous en libère. Née du terrain, ancrée dans la science. Par Céline Bourbon, Psychologue.">
+<meta property="og:title" content="La méthode V.A.L.E.U.R© — Du blocage à la liberté d'être soi">
+<meta property="og:description" content="7 masques de protection. Un test de ciblage précis. Un chemin vers la liberté.">
+<meta property="og:image" content="https://valeur.psyh.fr/og-image.png">
+<meta property="og:url" content="https://valeur.psyh.fr/methode.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta property="og:title" content="La méthode V.A.L.E.U.R© — Née du terrain, ancrée dans la science">
-<meta property="og:description" content="7 masques de protection, un ciblage précis, un chemin vers la liberté d'être soi.">
-<meta property="og:image" content="https://valeur.psyh.fr/og-image.png">
-<meta property="og:url" content="https://valeur.psyh.fr/methode.html">
-<meta property="og:type" content="website">
-<link rel="canonical" href="https://valeur.psyh.fr/methode.html">
+<title>La méthode V.A.L.E.U.R© — Du blocage à la liberté d'être soi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:#F9F5EE;color:#0E1120;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-user-select:none;user-select:none;font-size:17px;line-height:1.7;}
+/* ══════ SYSTEM DESIGN (identique à l'index) ══════ */
 :root{
   --cream:#F9F5EE;--cream2:#F2EDE3;--ink:#0E1120;--ink2:#1C2035;--ink3:#4A4F66;--ink4:#8589A0;
-  --gold:#C9A84C;--gold-bright:#E5CB7B;--gold-ink:#7A5E1A;--gold-pale:rgba(201,168,76,.10);--gold-border:rgba(201,168,76,.24);
-  --line:rgba(14,17,32,.08);--line2:rgba(14,17,32,.04);
-  --rouge:#B5312A;--orange:#C4581F;--jaune:#B8930A;--vert:#2D7A4F;--bleu:#1D5F8A;--indigo:#5C3280;--violet:#7A3594;
-  --maxw:920px;--pad:clamp(20px,5vw,52px);
+  --gold:#C9A84C;--gold-ink:#7A5E1A;--gold-pale:rgba(201,168,76,.08);--gold-border:rgba(201,168,76,.18);
+  --line:rgba(14,17,32,.07);
+  --text-xs:0.75rem;--text-sm:0.875rem;--text-base:1rem;--text-lg:1.25rem;
+  --text-xl:1.563rem;--text-2xl:1.953rem;--text-3xl:2.441rem;--text-4xl:3.052rem;
+  --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--s7:96px;
+  --max-text:640px;--max-grid:1100px;
 }
-nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(249,245,238,.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--line);}
-.nav-inner{max-width:1140px;margin:0 auto;padding:0 var(--pad);height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
-.nav-logo{display:flex;align-items:center;gap:9px;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--ink);text-decoration:none;flex-shrink:0;}
-.nav-logo sup{font-size:10px;vertical-align:super;letter-spacing:0}
-.nav-mask{width:26px;height:26px;object-fit:contain;}
-.nav-links{display:flex;align-items:center;gap:22px}
-.nav-link{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink4);text-decoration:none;transition:color .2s;white-space:nowrap;}
-.nav-link:hover,.nav-link.active{color:var(--ink)}
-.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--cream);text-decoration:none;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:11px 20px;border-radius:2px;transition:all .2s;white-space:nowrap;flex-shrink:0;}
-.nav-cta:hover{background:var(--ink2);transform:translateY(-1px)}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
-.burger span{display:block;width:22px;height:1.5px;background:var(--ink);border-radius:2px;transition:all .3s}
-.burger.open span:nth-child(1){transform:rotate(45deg) translate(4.5px,4.5px)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){transform:rotate(-45deg) translate(4.5px,-4.5px)}
-.mobile-nav{position:fixed;top:68px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--line);padding:8px 0 28px;display:none;flex-direction:column;z-index:899;max-height:calc(100vh - 68px);overflow-y:auto;}
-.mobile-nav.open{display:flex}
-.mobile-nav a{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);text-decoration:none;padding:15px var(--pad);border-bottom:1px solid var(--line2);}
-.mobile-nav .m-cta{margin:18px var(--pad) 0;background:var(--ink);color:var(--cream);text-align:center;padding:16px;border-radius:2px;border-bottom:none;font-weight:500;}
-@media(max-width:1080px){.nav-links{display:none}}
-@media(max-width:680px){.nav-cta{display:none}.burger{display:flex}}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
-.wrap-wide{max-width:1080px;margin:0 auto;padding:0 var(--pad)}
-.eyebrow{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold-ink);margin-bottom:18px;}
-section{padding:clamp(60px,9vw,100px) 0;}
-section.alt{background:var(--cream2);}
-.sec-head{text-align:center;max-width:640px;margin:0 auto clamp(40px,6vw,60px);}
-h2.sec-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,4.5vw,42px);line-height:1.18;color:var(--ink);margin-bottom:18px;}
-h2.sec-title em{font-style:italic;color:var(--gold-ink);}
-.sec-lead{font-size:clamp(16px,2.2vw,18px);color:var(--ink3);line-height:1.8;}
-.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--ink);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:17px 34px;border-radius:2px;transition:all .25s;border:none;cursor:pointer;font-family:'Jost',sans-serif;}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(201,168,76,.35);}
-.btn-dark{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:17px 34px;border-radius:2px;transition:all .25s;border:none;cursor:pointer;font-family:'Jost',sans-serif;}
-.btn-dark:hover{transform:translateY(-2px);background:var(--ink2);}
-.btn-ghost{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid var(--line);color:var(--ink2);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:16px 30px;border-radius:2px;transition:all .25s;}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold-ink);}
-.btn-ghost-light{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(249,245,238,.25);color:var(--cream);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;padding:17px 30px;border-radius:2px;transition:all .25s;}
-.btn-ghost-light:hover{border-color:var(--gold);color:var(--gold-bright);}
-/* ACCORDÉONS */
-.acc-wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
-.acc{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:all .3s;}
-.acc.open{border-color:var(--gold-border);box-shadow:0 14px 40px rgba(14,17,32,.07);}
-.acc-trigger{width:100%;background:none;border:none;cursor:pointer;padding:clamp(20px,3vw,26px) clamp(22px,3.5vw,30px);display:flex;align-items:center;justify-content:space-between;gap:18px;text-align:left;font-family:'Jost',sans-serif;}
-.acc-q{font-size:clamp(16px,2.2vw,18px);font-weight:500;color:var(--ink2);line-height:1.4;}
-.acc-icon{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold-ink);display:flex;align-items:center;justify-content:center;transition:all .35s;font-size:18px;line-height:1;}
-.acc.open .acc-icon{background:var(--gold);color:#fff;transform:rotate(45deg);}
-.acc-body{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
-.acc-body-inner{padding:0 clamp(22px,3.5vw,30px) clamp(22px,3vw,26px);font-size:15.5px;color:var(--ink3);line-height:1.8;}
-.acc-body-inner strong{color:var(--ink2);font-weight:600;}
-.acc-body-inner em{color:var(--gold-ink);font-style:italic;}
-/* FOOTER */
-footer{background:var(--ink);padding:56px 0;}
-.footer-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start}
-.footer-logo{display:flex;align-items:center;gap:8px;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(249,245,238,.65);text-decoration:none;margin-bottom:12px;}
-.footer-mask{width:24px;height:24px;object-fit:contain;opacity:.9;}
-.footer-copy{font-size:13px;color:rgba(249,245,238,.3);line-height:1.9}
-.footer-copy a{color:rgba(249,245,238,.35);text-decoration:none}
-.footer-copy a:hover{color:var(--gold)}
-.fsep{display:block;height:6px}
-.footer-links{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
-.footer-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(249,245,238,.3);text-decoration:none}
-.footer-links a:hover{color:rgba(249,245,238,.65)}
-@media(max-width:600px){.footer-grid{grid-template-columns:1fr}.footer-links{align-items:flex-start;flex-direction:row;flex-wrap:wrap}}
-.reveal{opacity:0;transform:translateY(26px);transition:all .8s cubic-bezier(.2,.8,.25,1);}
-.reveal.vis{opacity:1;transform:none;}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}.reveal{opacity:1;transform:none;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:var(--text-base);line-height:1.7;}
 
-/* HERO méthode */
-.hero{position:relative;background:var(--ink);padding:clamp(110px,16vw,150px) 0 clamp(70px,10vw,110px);overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-25%;right:-8%;width:640px;height:640px;background:radial-gradient(circle,rgba(201,168,76,.13),transparent 62%);pointer-events:none;}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;}
-@media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:34px;text-align:center;}}
-.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);filter:brightness(1.3);margin-bottom:22px;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px,6.5vw,64px);line-height:1.1;color:var(--cream);margin-bottom:24px;}
-.hero h1 em{font-style:italic;color:var(--gold-bright);}
-.hero-sub{font-size:clamp(16px,2.2vw,19px);color:rgba(249,245,238,.7);line-height:1.8;max-width:48ch;margin-bottom:34px;}
-@media(max-width:820px){.hero-sub{margin-left:auto;margin-right:auto;}.hero-cta-row{justify-content:center;}}
-.hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;}
-.hero-mask{display:flex;justify-content:center;}
-.hero-mask img{width:clamp(190px,30vw,290px);height:auto;filter:drop-shadow(0 20px 50px rgba(0,0,0,.45));}
-/* Citation */
-.quote-band{background:var(--ink2);padding:clamp(50px,7vw,80px) 0;text-align:center;}
-.quote-band blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(22px,3.4vw,32px);line-height:1.5;color:var(--cream);max-width:28ch;margin:0 auto 20px;}
-.quote-band blockquote em{color:var(--gold-bright);}
-.quote-band .qauthor{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
-/* Texte narratif */
-.prose{max-width:680px;margin:0 auto;}
-.prose p{font-size:17px;color:var(--ink3);line-height:1.85;margin-bottom:22px;}
-.prose p strong{color:var(--ink2);font-weight:600;}
-.prose .lead{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,2.8vw,25px);color:var(--ink2);line-height:1.5;margin-bottom:28px;}
-.pull{border-left:3px solid var(--gold);padding:14px 0 14px 26px;margin:30px 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.6vw,23px);line-height:1.5;color:var(--ink2);}
-/* Formule */
-.formula-box{background:var(--ink);border-radius:18px;padding:clamp(36px,6vw,60px);text-align:center;max-width:720px;margin:0 auto;position:relative;overflow:hidden;}
-.formula-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(201,168,76,.14),transparent 70%);}
-.formula-eq{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(48px,9vw,84px);font-weight:300;color:var(--gold-bright);margin-bottom:16px;letter-spacing:2px;}
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(249,245,238,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:var(--max-grid);margin:0 auto;padding:0 var(--s2);height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:var(--text-base);font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:var(--s3)}
+.nav-link{font-size:var(--text-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--ink4);text-decoration:none;transition:color .2s;}
+.nav-link:hover,.nav-link.active{color:var(--ink)}
+.nav-cta{background:var(--ink);color:var(--cream);text-decoration:none;font-size:var(--text-xs);font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:10px 20px;border-radius:2px;transition:all .2s;min-height:44px;display:inline-flex;align-items:center;}
+.nav-cta:hover{background:var(--ink2);transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px;}
+.burger span{display:block;width:22px;height:1.5px;background:var(--ink);border-radius:2px}
+@media(max-width:860px){.nav-links,.nav-cta{display:none}.burger{display:flex}}
+.mobile-nav{position:fixed;top:64px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--line);padding:var(--s2) 0 var(--s4);display:none;flex-direction:column;z-index:899;}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:var(--text-sm);letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);text-decoration:none;padding:14px 20px;border-bottom:1px solid rgba(14,17,32,.04);min-height:44px;display:flex;align-items:center;}
+
+.chroma{height:3px;display:flex;margin-top:64px}.cs{flex:1}
+.wrap{max-width:var(--max-grid);margin:0 auto;padding:0 var(--s2)}
+section{padding:var(--s7) 0}
+
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:var(--text-xs);font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:var(--s3);}
+.eyebrow::after{content:'';width:32px;height:1px;background:var(--gold);opacity:.5}
+.eyebrow.center{justify-content:center}.eyebrow.center::before{content:'';width:32px;height:1px;background:var(--gold);opacity:.5}
+.eyebrow.on-dark{color:var(--gold)}.eyebrow.on-dark::after,.eyebrow.on-dark::before{background:var(--gold)}
+
+h1{font-family:'Cormorant Garamond',serif;font-size:var(--text-4xl);font-weight:300;line-height:1.06;}
+h2{font-family:'Cormorant Garamond',serif;font-size:var(--text-2xl);font-weight:300;line-height:1.15;}
+h2 em{font-style:italic;color:var(--gold-ink)}
+h3{font-family:'Cormorant Garamond',serif;font-size:var(--text-xl);font-weight:400;line-height:1.25;}
+
+.cta-primary{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);text-decoration:none;font-size:var(--text-sm);font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:16px 32px;border-radius:2px;transition:all .25s;min-height:44px;}
+.cta-primary:hover{background:var(--ink2);transform:translateY(-2px);box-shadow:0 14px 40px rgba(14,17,32,.15)}
+.cta-link{display:inline-flex;align-items:center;gap:8px;color:var(--gold);text-decoration:none;font-size:var(--text-sm);font-weight:500;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:4px;transition:all .2s;min-height:44px;}
+.cta-link:hover{gap:14px;border-color:var(--gold)}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:var(--s4);transition:all .3s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(14,17,32,.08);}
+
+.acc-wrap{max-width:var(--max-text);margin:0 auto;display:flex;flex-direction:column;gap:var(--s1);}
+.acc{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:all .3s;}
+.acc.open{border-color:var(--gold-border);}
+.acc-trigger{width:100%;background:none;border:none;cursor:pointer;padding:var(--s2) var(--s3);display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:'Jost',sans-serif;min-height:44px;}
+.acc-q{font-size:var(--text-base);font-weight:500;color:var(--ink2);}
+.acc-icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold-ink);display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .3s;}
+.acc.open .acc-icon{background:var(--gold);color:#fff;transform:rotate(45deg);}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.acc-body-inner{padding:0 var(--s3) var(--s2);font-size:var(--text-sm);color:var(--ink3);line-height:1.8;max-width:65ch;}
+
+.pull{font-family:'Cormorant Garamond',serif;font-size:var(--text-xl);font-style:italic;color:var(--ink2);line-height:1.5;padding:var(--s3) var(--s4);border-left:3px solid var(--gold);background:var(--gold-pale);border-radius:0 14px 14px 0;margin:var(--s4) 0;}
+
+.formula-box{background:var(--ink);border-radius:14px;padding:var(--s6);text-align:center;position:relative;overflow:hidden;}
+.formula-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(201,168,76,.14),transparent 70%);}
+.formula-eq{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,5rem);font-weight:300;color:#E5CB7B;margin-bottom:var(--s2);}
 .formula-eq sup{font-size:.5em;}
-.formula-legend{position:relative;display:flex;justify-content:center;gap:clamp(20px,5vw,48px);flex-wrap:wrap;margin-top:8px;}
+.formula-legend{position:relative;display:flex;justify-content:center;gap:var(--s5);flex-wrap:wrap;margin:var(--s2) 0;}
 .formula-legend div{text-align:center;}
-.formula-legend .fl-sym{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold);}
-.formula-legend .fl-txt{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(249,245,238,.55);margin-top:4px;}
-.formula-caption{position:relative;margin-top:30px;font-size:16px;color:rgba(249,245,238,.8);line-height:1.7;max-width:48ch;margin-left:auto;margin-right:auto;}
-.formula-caption strong{color:var(--gold-bright);}
-/* 3 cartes nature */
-.nature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-@media(max-width:760px){.nature-grid{grid-template-columns:1fr;}}
-.nature-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(26px,4vw,34px);transition:all .3s;}
-.nature-card:hover{transform:translateY(-4px);box-shadow:0 18px 46px rgba(14,17,32,.08);border-color:var(--gold-border);}
-.nature-card h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--ink2);margin-bottom:12px;line-height:1.25;}
-.nature-card p{font-size:15px;color:var(--ink3);line-height:1.7;}
-/* 4 composantes */
-.comp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
-@media(max-width:680px){.comp-grid{grid-template-columns:1fr;}}
-.comp{background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(26px,4vw,32px);position:relative;}
-.comp-num{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold);line-height:1;margin-bottom:14px;}
-.comp h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:21px;color:var(--ink2);margin-bottom:10px;}
-.comp p{font-size:15px;color:var(--ink3);line-height:1.7;}
-/* SPA examples */
-.spa-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;}
-@media(max-width:680px){.spa-row{grid-template-columns:1fr;}}
-.spa-ex{background:var(--cream2);border-radius:12px;padding:24px;text-align:center;}
-.spa-ex-val{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;line-height:1;margin-bottom:8px;}
-.spa-ex-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-ink);margin-bottom:10px;}
-.spa-ex p{font-size:13.5px;color:var(--ink3);line-height:1.6;}
-/* Portraits */
-.portraits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-@media(max-width:900px){.portraits-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto;}}
-.portrait-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--pc);border-radius:14px;padding:clamp(24px,3.5vw,30px);}
-.pc-badge{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--pc);}
-.pc-name{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;color:var(--ink2);margin:8px 0 4px;}
-.pc-fear{font-size:13px;color:var(--ink4);margin-bottom:20px;}
-.pc-block{margin-bottom:16px;}
-.pc-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--pc);display:block;margin-bottom:5px;}
-.pc-block p,.pc-spa p{font-size:14px;color:var(--ink3);line-height:1.6;}
-.pc-spa{border-top:1px solid var(--line);padding-top:16px;margin-top:4px;}
-/* CTA final */
-.final-cta{background:var(--ink);text-align:center;padding:clamp(64px,9vw,100px) 0;position:relative;overflow:hidden;}
-.final-cta::before{content:'';position:absolute;bottom:-40%;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(201,168,76,.12),transparent 65%);}
-.final-cta .eyebrow{color:var(--gold);}
-.final-cta h2{position:relative;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,5vw,48px);color:var(--cream);margin-bottom:18px;line-height:1.15;}
-.final-cta h2 em{font-style:italic;color:var(--gold-bright);}
-.final-cta p{position:relative;color:rgba(249,245,238,.65);max-width:44ch;margin:0 auto 30px;font-size:16px;}
-.final-note{position:relative;margin-top:20px;font-size:12px;letter-spacing:1px;color:rgba(249,245,238,.4);}
+.fl-sym{font-family:'Cormorant Garamond',serif;font-size:var(--text-2xl);color:var(--gold);}
+.fl-txt{font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:rgba(249,245,238,.5);margin-top:4px;}
+.formula-caption{position:relative;font-size:var(--text-base);color:rgba(249,245,238,.8);max-width:500px;margin:var(--s4) auto 0;line-height:1.8;}
+
+.valeur-row{display:flex;justify-content:center;gap:var(--s2);flex-wrap:wrap;margin-bottom:var(--s5);}
+.valeur-letter{text-align:center;width:80px;}
+.vl-letter{font-family:'Cormorant Garamond',serif;font-size:var(--text-3xl);font-weight:300;color:var(--gold);line-height:1;}
+.vl-word{font-size:var(--text-xs);font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ink4);margin-top:4px;}
+
+.reveal{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.2,.8,.25,1);}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+
+.lead{font-size:var(--text-lg);color:var(--ink3);line-height:1.8;max-width:var(--max-text);}
+.body-text{font-size:var(--text-base);color:var(--ink3);line-height:1.8;max-width:var(--max-text);}
+.text-center{text-align:center}
+
+footer{background:var(--ink);padding:var(--s5) 0;text-align:center;}
+.footer-text{font-size:var(--text-sm);color:rgba(249,245,238,.35);line-height:2}
+.footer-text a{color:rgba(249,245,238,.3);text-decoration:none;transition:color .2s}
+.footer-text a:hover{color:var(--gold)}
+.footer-masks{display:flex;gap:var(--s2);justify-content:center;flex-wrap:wrap;margin-top:var(--s2);}
+.footer-masks a{font-size:var(--text-xs);color:rgba(249,245,238,.25);text-decoration:none;transition:color .2s}
+.footer-masks a:hover{color:var(--gold)}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="LOGO-VALEUR.png" alt="" class="nav-mask">V.A.L.E.U.R<sup>©</sup></a>
+    <a href="/" class="nav-logo">V.A.L.E.U.R<sup>©</sup></a>
     <div class="nav-links">
-      <a href="/" class="nav-link">Accueil</a>
       <a href="methode.html" class="nav-link active">La méthode</a>
-      <a href="formule.html" class="nav-link">La formule</a>
       <a href="accompagnement.html" class="nav-link">En cabinet</a>
       <a href="livre.html" class="nav-link">Le livre</a>
       <a href="les-7-miroirs.html" class="nav-link">Les 7 miroirs</a>
-      <a href="contact.html" class="nav-link">Contact</a>
     </div>
-    <a href="https://www.doctolib.fr/psychologue/bordeaux/celine-bourbon/booking/motives?specialityId=14&telehealth=false&placeId=practice-362188&profile_skipped=true&source=external_referral" class="nav-cta" target="_blank" rel="noopener">Prendre rendez-vous <span>→</span></a>
+    <a href="https://www.doctolib.fr/psychologue/bordeaux/celine-bourbon/booking/motives?specialityId=14&telehealth=false&placeId=practice-362188&profile_skipped=true&source=external_referral" class="nav-cta" target="_blank" rel="noopener">Prendre RDV →</a>
     <button class="burger" id="burger" onclick="toggleNav()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
-  <a href="/" onclick="closeNav()">Accueil</a>
-  <a href="methode.html" onclick="closeNav()">La méthode</a>
-  <a href="formule.html" onclick="closeNav()">La formule</a>
-  <a href="accompagnement.html" onclick="closeNav()">En cabinet</a>
-  <a href="livre.html" onclick="closeNav()">Le livre</a>
-  <a href="les-7-miroirs.html" onclick="closeNav()">Les 7 miroirs</a>
-  <a href="contact.html" onclick="closeNav()">Contact</a>
-  <a href="https://www.doctolib.fr/psychologue/bordeaux/celine-bourbon/booking/motives?specialityId=14&telehealth=false&placeId=practice-362188&profile_skipped=true&source=external_referral" target="_blank" rel="noopener" class="m-cta">Prendre rendez-vous →</a>
+  <a href="methode.html">La méthode</a><a href="accompagnement.html">En cabinet</a><a href="livre.html">Le livre</a><a href="les-7-miroirs.html">Les 7 miroirs</a>
+</div>
+
+<div class="chroma">
+  <div class="cs" style="background:#B5312A"></div><div class="cs" style="background:#C4581F"></div><div class="cs" style="background:#B8930A"></div><div class="cs" style="background:#2D7A4F"></div><div class="cs" style="background:#1D5F8A"></div><div class="cs" style="background:#5C3280"></div><div class="cs" style="background:#7A3594"></div>
 </div>
 
 <!-- HERO -->
-<header class="hero">
-  <div class="wrap-wide">
-    <div class="hero-grid">
-      <div>
-        <p class="hero-eyebrow">La méthode V.A.L.E.U.R© · Céline Bourbon, Psychologue</p>
-        <h1>« C'est plus fort <em>que moi</em>. »</h1>
-        <p class="hero-sub">La question revenue des centaines de fois en séance. Celle qui a tout changé. V.A.L.E.U.R© est née de cette question — posée à chaque séance, pendant des années.</p>
-        <div class="hero-cta-row">
-          <a href="les-7-miroirs.html" class="btn-gold">Explorer les 7 masques <span>→</span></a>
-          <a href="formule.html" class="btn-ghost-light">La formule fondatrice</a>
-        </div>
-      </div>
-      <div class="hero-mask"><img src="LOGO-VALEUR.png" alt="Le masque V.A.L.E.U.R© — mosaïque des 7 protections" loading="eager"></div>
-    </div>
-  </div>
-</header>
-
-<!-- POURQUOI -->
-<section>
+<section style="text-align:center;">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">La question qui a tout changé</p>
-      <h2 class="sec-title">Pourquoi les mêmes peurs reviennent, <em>malgré la volonté de changer</em> ?</h2>
-    </div>
-    <div class="prose reveal">
-      <p class="lead">Pourquoi la personnalité se fige sur ses défenses — et n'en sort pas ? Qu'est-ce qui est, précisément, plus fort que nous ?</p>
-      <p>En séance, j'entendais la même chose. Des mots différents, une même impuissance : <em>« Je sais très bien ce que je devrais faire. Mais quelque chose en moi refuse. »</em> Des personnes intelligentes, lucides, qui comprenaient leurs schémas — et les reproduisaient quand même.</p>
-      <div class="pull">Ce n'est pas un manque de volonté. Ce n'est pas un défaut de caractère. C'est quelque chose d'autre — de plus profond, de plus ancien.</div>
-      <p>J'ai voulu comprendre. J'ai lu, cherché, confronté mes observations aux grandes théories de la psychologie et des neurosciences. Et un constat s'est imposé : <strong>ces blocages sont des protections inconscientes</strong> — héritées des premières expériences, gravées dans le système nerveux, universelles dans leur nature.</p>
-      <p>Des centaines de chercheurs l'avaient étudié avant moi, sous des angles différents. Ce que j'ai fait, c'est réunir ces éclairages en un système cohérent : <strong>un test de ciblage précis, suivi de solutions orientées résultats</strong>.</p>
+    <p class="hero-trust reveal" style="font-size:var(--text-sm);color:var(--ink4);margin-bottom:var(--s1);"><strong>Céline Bourbon</strong>, Psychologue · <span style="color:var(--gold-ink)">Auteure chez L'Harmattan</span></p>
+    <div class="eyebrow center reveal d1">La méthode</div>
+    <h1 class="reveal d1">Née du terrain.<br><em style="font-style:italic;color:var(--gold-ink)">Ancrée dans la science.</em></h1>
+    <p class="lead reveal d2" style="margin:var(--s4) auto;">Comment la méthode V.A.L.E.U.R© identifie ce qui vous bloque — et vous en libère. Pas des mois à parler. Un ciblage précis, un chemin structuré.</p>
+  </div>
+</section>
+
+<!-- GENÈSE -->
+<section style="background:var(--cream2)">
+  <div class="wrap">
+    <div class="eyebrow reveal">La genèse</div>
+    <h2 class="reveal">La question qui <em>a tout changé</em></h2>
+    <div class="body-text reveal" style="margin-top:var(--s3)">
+      <p style="margin-bottom:var(--s2)">En séance, j'entendais la même chose. Des mots différents, une même impuissance : <em>« Je sais très bien ce que je devrais faire. Mais quelque chose en moi refuse. »</em></p>
+      <div class="pull reveal">Ce n'est pas un manque de volonté. Ce n'est pas un défaut de caractère. C'est une protection inconsciente — plus profonde, plus ancienne, plus puissante que la conscience.</div>
+      <p style="margin-bottom:var(--s2)">Des centaines de chercheurs l'avaient étudié avant moi. Ce que j'ai fait, c'est réunir ces éclairages en un système cohérent : <strong>un test de ciblage précis, suivi de solutions orientées résultats.</strong></p>
     </div>
   </div>
 </section>
 
 <!-- FORMULE -->
-<section class="alt">
+<section>
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">La formule fondatrice</p>
-      <h2 class="sec-title">Ce qui fait <em>vraiment</em> souffrir</h2>
-    </div>
+    <div class="eyebrow center reveal">La formule fondatrice</div>
+    <h2 style="text-align:center;margin-bottom:var(--s4)" class="reveal">Ce qui fait <em>vraiment</em> souffrir</h2>
     <div class="formula-box reveal">
       <div class="formula-eq">D = e × r<sup>2</sup></div>
       <div class="formula-legend">
@@ -251,283 +172,75 @@ footer{background:var(--ink);padding:56px 0;}
         <div><div class="fl-sym">e</div><div class="fl-txt">Émotion</div></div>
         <div><div class="fl-sym">r</div><div class="fl-txt">Résistance du masque</div></div>
       </div>
-      <p class="formula-caption">La souffrance n'est pas proportionnelle à l'émotion ressentie. Elle est proportionnelle au <strong>carré de la résistance du masque</strong>. Ce n'est pas le masque qui fait souffrir — c'est la lutte contre lui.</p>
+      <p class="formula-caption">La souffrance n'est pas proportionnelle à l'émotion ressentie. Elle est proportionnelle au <strong style="color:#E5CB7B">carré de la résistance du masque</strong>. Ce n'est pas le masque qui fait souffrir — c'est la lutte contre lui.</p>
     </div>
-    <p class="sec-lead reveal" style="text-align:center;max-width:48ch;margin:30px auto 0;">C'est pourquoi V.A.L.E.U.R© commence par <em>accueillir</em> — pas par corriger. <a href="formule.html" style="color:var(--gold-ink);">Comprendre la formule en détail →</a></p>
+    <p class="lead text-center reveal" style="margin-top:var(--s4)">C'est pourquoi V.A.L.E.U.R© commence par <em>accueillir</em> — pas par corriger. <a href="formule.html" class="cta-link" style="display:inline-flex;">Comprendre la formule en détail →</a></p>
   </div>
 </section>
 
-<!-- NATURE DES PEURS -->
-<section>
-  <div class="wrap-wide">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Ce que sont vraiment ces peurs</p>
-      <h2 class="sec-title">Ces peurs ne sont pas des faiblesses —<br><em>ce sont des protections héritées</em></h2>
-      <p class="sec-lead">Universelles dans leur nature. Biologiquement ancrées. Façonnées par les premières expériences affectives. Chaque être humain les porte.</p>
-    </div>
-    <div class="nature-grid">
-      <div class="nature-card reveal">
-        <h3>Protections inconscientes</h3>
-        <p>Ces peurs ne sont pas des défauts de caractère. Ce sont des réponses intelligentes, biologiquement gravées, à un environnement qui a un jour exigé de se protéger.</p>
-      </div>
-      <div class="nature-card reveal">
-        <h3>Des automatismes défensifs</h3>
-        <p>Le masque s'active automatiquement, hors du champ de la conscience — avant même que vous ayez eu le temps de penser. Ce n'est pas vous qui décidez : c'est lui.</p>
-      </div>
-      <div class="nature-card reveal">
-        <h3>Une nature profonde intacte</h3>
-        <p>Derrière chaque masque, une valeur vous attend — intacte, intègre, prête à exister pleinement quand la peur cesse de décider à votre place.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOURCES SCIENTIFIQUES (accordéons ENRICHIS) -->
-<section class="alt">
+<!-- SOURCES -->
+<section style="background:var(--cream2)">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Sur les épaules des géants</p>
-      <h2 class="sec-title">Les courants qui ont <em>nourri</em> la méthode</h2>
-      <p class="sec-lead">Ces courants ont nourri V.A.L.E.U.R© au fil des années de pratique. La méthode ne les applique pas directement — elle les réunit en un système cohérent. Cliquez sur chaque domaine pour découvrir l'essentiel.</p>
-    </div>
-    <div class="acc-wrap">
-      <div class="acc reveal">
-        <button class="acc-trigger"><span class="acc-q">Théorie de l'attachement</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><div class="acc-body-inner">
-            <strong>Les styles d'attachement & l'origine des masques défensifs</strong><br><span style="font-size:13.5px;color:var(--ink4)">Bowlby (1969) · Ainsworth et al. (1978) · Fraley & Shaver (2000)</span>
-            <p style="margin-top:12px;">Dès la naissance, nous développons un <strong>style d'attachement</strong> — sécure, anxieux, évitant ou désorganisé — qui influence toutes nos relations futures. Ces schémas, forgés par la qualité des premières réponses à nos besoins, deviennent des modèles internes qui prédisent comment nous réagissons au stress relationnel.</p>
-            <p>Si vous ressentez une peur intense du rejet ou une difficulté à faire confiance, ces réactions sont les échos de schémas anciens. <strong>Dans V.A.L.E.U.R©</strong>, les 7 masques sont directement issus de ces patterns d'attachement insécure. Le test de ciblage révèle quel style de protection vous a été nécessaire, et les fiches-actions vous guident vers un attachement plus sécure, sans avoir à revivre le passé.</p>
-        </div></div>
-      </div>
-      <div class="acc reveal">
-        <button class="acc-trigger"><span class="acc-q">Neurosciences — Régulation émotionnelle</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><div class="acc-body-inner">
-            <strong>Théorie polyvagale · Fenêtre de tolérance · Mémoires corporelles</strong><br><span style="font-size:13.5px;color:var(--ink4)">Porges (2011) · Dana (2018) · Siegel (2012)</span>
-            <p style="margin-top:12px;">Notre système nerveux évalue en permanence, hors de notre conscience, si nous sommes en sécurité ou en danger. Il bascule en quelques millisecondes entre trois états : connexion sociale, combat/fuite, ou effondrement. Les personnes anxieuses oscillent souvent entre ces états sans pouvoir se stabiliser.</p>
-            <p>Quand votre cœur s'emballe sans raison ou que vous vous figez, c'est votre système polyvagal qui s'exprime. <strong>Dans V.A.L.E.U.R©</strong>, chaque masque correspond à un état de défense du système nerveux. La méthode vous apprend à reconnaître l'état dans lequel vous êtes et vous donne des techniques somatiques simples pour élargir votre fenêtre de tolérance.</p>
-        </div></div>
-      </div>
-      <div class="acc reveal">
-        <button class="acc-trigger"><span class="acc-q">Trauma & mémoires figées</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><div class="acc-body-inner">
-            <strong>Le corps n'oublie pas — empreintes traumatiques et défenses somatiques</strong><br><span style="font-size:13.5px;color:var(--ink4)">Bessel van der Kolk (2014) · Siegel (2010) · Cozolino (2014)</span>
-            <p style="margin-top:12px;">Le traumatisme n'est pas seulement un souvenir : c'est une <strong>empreinte corporelle</strong> qui maintient le système nerveux en alerte permanente. Ces mémoires restent dans la mémoire implicite sans être intégrées au récit de vie, ce qui explique les réactions disproportionnées ou les blocages irrationnels.</p>
-            <p><strong>V.A.L.E.U.R©</strong> ne fait pas de traitement du trauma, mais intègre la sécurité comme prérequis. Le test identifie les zones de fragilité, et les fiches-actions proposent des exercices de stabilisation polyvagale avant d'aborder les contenus plus sensibles.</p>
-        </div></div>
-      </div>
-      <div class="acc reveal">
-        <button class="acc-trigger"><span class="acc-q">Neurobiologie de la peur</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><div class="acc-body-inner">
-            <strong>Amygdale, conditionnement, mémoire implicite</strong><br><span style="font-size:13.5px;color:var(--ink4)">Joseph LeDoux (1996, 2015) · Siegel (2010)</span>
-            <p style="margin-top:12px;">La peur emprunte une voie rapide (inconsciente, via l'amygdale) qui déclenche une réaction en 50 millisecondes, bien avant que la voie lente (consciente, via le cortex) n'ait analysé la situation. C'est pourquoi vous pouvez <em>savoir</em> que tout va bien et <em>ressentir</em> quand même de l'anxiété.</p>
-            <p><strong>Dans V.A.L.E.U.R©</strong>, cette dissociation entre savoir et ressentir est au cœur du travail. La méthode vous apprend à reconnaître les déclencheurs implicites de vos peurs et à utiliser des techniques de défusion cognitive pour reprendre le contrôle.</p>
-        </div></div>
-      </div>
-      <div class="acc reveal">
-        <button class="acc-trigger"><span class="acc-q">Automatismes psychologiques — Janet</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><div class="acc-body-inner">
-            <strong>Les conduites automatiques hors conscience — idées fixes subconscientes</strong><br><span style="font-size:13.5px;color:var(--ink4)">Pierre Janet (1889, 1907)</span>
-            <p style="margin-top:12px;">Pierre Janet a montré que certains comportements sont régis par des <strong>idées fixes subconscientes</strong> — des schémas mentaux agissant automatiquement, en dehors de la conscience. Ces idées fixes peuvent dicter des conduites entières sans que la personne ne s'en rende compte.</p>
-            <p>Quand vous vous dites « Ce n'est pas moi qui ai réagi comme ça », vous expérimentez peut-être une idée fixe. <strong>V.A.L.E.U.R©</strong> nomme et cartographie précisément ces idées fixes — vos masques. La méthode vous aide à les reconnaître et à dialoguer avec elles, plutôt que de les combattre.</p>
-        </div></div>
-      </div>
-      <div class="acc reveal">
-        <button class="acc-trigger"><span class="acc-q">Psychologie analytique — Jung</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><div class="acc-body-inner">
-            <strong>La Persona · L'Ombre · L'individuation — devenir pleinement soi</strong><br><span style="font-size:13.5px;color:var(--ink4)">C. G. Jung (1921, 1959)</span>
-            <p style="margin-top:12px;">Jung a décrit la <strong>Persona</strong> comme un masque social construit pour répondre aux attentes, et <strong>l'Ombre</strong> comme les parts refoulées qui continuent d'agir inconsciemment. L'individuation est le chemin qui mène de la Persona au Soi authentique, en intégrant l'Ombre.</p>
-            <p>Chaque masque de <strong>V.A.L.E.U.R©</strong> correspond à une déclinaison de la Persona. Le test vous montre votre Persona dominante, les fiches-actions vous aident à intégrer votre Ombre, et le SPA (Score de Présence Authentique) mesure votre progression vers le Soi authentique.</p>
-        </div></div>
-      </div>
-      <div class="acc reveal">
-        <button class="acc-trigger"><span class="acc-q">Thérapie cognitive — Beck</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><div class="acc-body-inner">
-            <strong>Pensées automatiques · Croyances centrales · Colonnes de Beck</strong><br><span style="font-size:13.5px;color:var(--ink4)">Aaron T. Beck (1979) · Cognitive Therapy</span>
-            <p style="margin-top:12px;">Aaron Beck a découvert que nos émotions sont provoquées par des <strong>pensées automatiques</strong> souvent biaisées (catastrophisme, pensée tout-ou-rien), issues de croyances centrales profondes héritées de l'enfance. Les colonnes de Beck permettent de les débusquer.</p>
-            <p><strong>V.A.L.E.U.R©</strong> identifie les croyances centrales associées à chaque masque et utilise une version enrichie des colonnes de Beck, adaptée à votre profil, pour restructurer en profondeur les schémas qui vous limitent.</p>
-        </div></div>
-      </div>
-      <div class="acc reveal">
-        <button class="acc-trigger"><span class="acc-q">Psychologie de l'identité</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><div class="acc-body-inner">
-            <strong>Le faux self · True self · Développement du moi authentique</strong><br><span style="font-size:13.5px;color:var(--ink4)">Winnicott (1960) · Erikson (1968) · Marcia (1966)</span>
-            <p style="margin-top:12px;">Winnicott a distingué le <strong>vrai self</strong> (noyau authentique) du <strong>faux self</strong> (façade adaptative). Le faux self se développe quand l'environnement ne peut pas accueillir les expressions spontanées de l'enfant. Avec le temps, ce mécanisme de survie devient une prison identitaire.</p>
-            <p>Si vous vous sentez épuisé·e à force de vous adapter, <strong>V.A.L.E.U.R©</strong> mesure votre Score de Présence Authentique, reflet direct de l'expression de votre vrai self. La méthode vous accompagne pour faire reculer le faux self et laisser émerger votre nature profonde.</p>
-        </div></div>
-      </div>
-      <div class="acc reveal">
-        <button class="acc-trigger"><span class="acc-q">Thérapie d'acceptation — ACT</span><span class="acc-icon">+</span></button>
-        <div class="acc-body"><div class="acc-body-inner">
-            <strong>Acceptation & défusion · Réduction de la résistance psychologique</strong><br><span style="font-size:13.5px;color:var(--ink4)">Hayes, Strosahl & Wilson (2006) · Goldin et al. (2008)</span>
-            <p style="margin-top:12px;">La thérapie ACT repose sur un constat : <strong>plus on lutte contre une pensée ou une émotion, plus elle prend de pouvoir</strong>. La défusion cognitive (prendre du recul) réduit l'activité de l'amygdale et augmente celle du cortex préfrontal. Accepter apaise le cerveau.</p>
-            <p>La formule fondatrice de <strong>V.A.L.E.U.R©</strong> (D = e × r²) est une traduction directe de ce principe : la détresse vient de la résistance (r), pas de l'émotion (e). La méthode vous apprend à réduire la résistance plutôt qu'à combattre l'émotion. Les fiches-actions sont structurées autour de cette logique d'acceptation active.</p>
-        </div></div>
-      </div>
+    <div class="eyebrow center reveal">Sur les épaules des géants</div>
+    <h2 style="text-align:center;margin-bottom:var(--s4)" class="reveal">Les courants qui ont <em>nourri</em> la méthode</h2>
+    <div class="acc-wrap reveal">
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Théorie de l'attachement</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner"><strong>Bowlby, Ainsworth, Fraley & Shaver.</strong> Nos premières relations façonnent nos peurs du rejet et de l'abandon. Les 7 masques sont directement issus de ces patterns d'attachement insécure.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Neurosciences — Régulation émotionnelle</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner"><strong>Porges, Dana, Siegel.</strong> Le système nerveux évalue en permanence si nous sommes en sécurité. Chaque masque correspond à un état de défense du système nerveux.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Neurobiologie de la peur</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner"><strong>Joseph LeDoux.</strong> La peur emprunte une voie rapide (amygdale) qui déclenche une réaction en 50 ms — avant que la conscience n'intervienne.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Psychologie analytique — Jung</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner"><strong>La Persona, l'Ombre, l'individuation.</strong> Chaque masque V.A.L.E.U.R© correspond à une déclinaison de la Persona. Le SPA mesure votre progression vers le Soi authentique.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Thérapie cognitive — Beck</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner"><strong>Pensées automatiques, croyances centrales.</strong> V.A.L.E.U.R© identifie les croyances associées à chaque masque et utilise une version enrichie des colonnes de Beck.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Thérapie d'acceptation — ACT</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner"><strong>Hayes, Strosahl & Wilson.</strong> La formule D = e × r² est une traduction directe du principe ACT : réduire la résistance plutôt que combattre l'émotion.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- 4 COMPOSANTES -->
+<!-- MÉTHODE -->
 <section>
-  <div class="wrap-wide">
-    <div class="sec-head reveal">
-      <p class="eyebrow">De la théorie à la transformation</p>
-      <h2 class="sec-title">Quatre composantes, <em>un chemin complet</em></h2>
-      <p class="sec-lead">Du ciblage précis à la mesure du changement.</p>
-    </div>
-    <div class="comp-grid">
-      <div class="comp reveal"><div class="comp-num">01</div><h3>Le questionnaire</h3><p>85 affirmations psychométriques, calibrées sur des instruments validés. Administrées lors de la première séance. La fondation de tout l'accompagnement.</p></div>
-      <div class="comp reveal"><div class="comp-num">02</div><h3>Le portrait</h3><p>Votre masque dominant identifié avec précision — et les mécanismes transdiagnostiques qui l'intensifient : bloqueur émotionnel, amplificateur d'incertitude.</p></div>
-      <div class="comp reveal"><div class="comp-num">03</div><h3>Les outils</h3><p>100+ fiches psychoéducatives ciblées sur votre configuration exacte. 6 familles d'outils. Pas un protocole générique — votre chemin.</p></div>
-      <div class="comp reveal"><div class="comp-num">04</div><h3>La mesure du changement</h3><p>Le Score de Présence Authentique (SPA) mesure votre espace de liberté — ce que vous êtes quand le masque se lève. Il évolue au fil du parcours.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SPA -->
-<section class="alt">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="eyebrow">La mesure du changement</p>
-      <h2 class="sec-title">Le Score de <em>Présence Authentique</em></h2>
-      <p class="sec-lead">Votre espace de liberté — déjà présent, mesuré, suivi dans le temps. Un score bas ne signifie pas l'absence de vous-même : il indique que les masques occupent beaucoup d'espace. Un score élevé révèle une nature profonde plus accessible.</p>
+    <div class="eyebrow center reveal">La méthode</div>
+    <h2 style="text-align:center;margin-bottom:var(--s5)" class="reveal">Six lettres pour <em>se libérer</em></h2>
+    <div class="valeur-row reveal">
+      <div class="valeur-letter"><div class="vl-letter">V</div><div class="vl-word">Voir</div></div>
+      <div class="valeur-letter"><div class="vl-letter">A</div><div class="vl-word">Accueillir</div></div>
+      <div class="valeur-letter"><div class="vl-letter">L</div><div class="vl-word">Localiser</div></div>
+      <div class="valeur-letter"><div class="vl-letter">E</div><div class="vl-word">Explorer</div></div>
+      <div class="valeur-letter"><div class="vl-letter">U</div><div class="vl-word">Unifier</div></div>
+      <div class="valeur-letter"><div class="vl-letter">R</div><div class="vl-word">Renforcer</div></div>
     </div>
-    <div class="spa-row reveal">
-      <div class="spa-ex"><div class="spa-ex-val" style="color:#B5312A">28%</div><div class="spa-ex-label">Début de parcours</div><p>Les masques occupent l'essentiel de l'espace. Le travail peut commencer.</p></div>
-      <div class="spa-ex"><div class="spa-ex-val" style="color:#B8930A">57%</div><div class="spa-ex-label">Mi-parcours</div><p>L'espace de liberté s'ouvre. La nature profonde devient accessible.</p></div>
-      <div class="spa-ex"><div class="spa-ex-val" style="color:#2D7A4F">81%</div><div class="spa-ex-label">Ancrage</div><p>La joie d'être soi — stable, ancrée, choisie.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PORTRAITS EXEMPLES -->
-<section>
-  <div class="wrap-wide">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Un masque dominant. Des mécanismes précis.</p>
-      <h2 class="sec-title">Un portrait <em>qui vous ressemble</em></h2>
-      <p class="sec-lead">Voici trois exemples réels de ce que révèle un portrait V.A.L.E.U.R©. Chaque profil est unique — et précisément ciblé.</p>
-    </div>
-    <div class="portraits-grid">
-      <div class="portrait-card reveal" style="--pc:#2D7A4F">
-        <div class="pc-head">
-          <span class="pc-badge">Portrait V.A.L.E.U.R©</span>
-          <h3 class="pc-name">Masque Vert</h3>
-          <p class="pc-fear">Peur du rejet & de l'abandon</p>
-        </div>
-        <div class="pc-block"><span class="pc-label">La protection</span><p>Hypervigilance relationnelle. Adaptation permanente au désir de l'autre — pour ne pas être rejeté·e ni abandonné·e.</p></div>
-        <div class="pc-block"><span class="pc-label">La valeur derrière</span><p>L'authenticité relationnelle. La capacité à exister vraiment dans le lien — sans jouer un rôle.</p></div>
-        <div class="pc-block"><span class="pc-label">Les forces</span><p>Sensibilité relationnelle profonde · Capacité de connexion vraie et durable · Empathie comme don, non comme survie.</p></div>
-        <div class="pc-spa"><span class="pc-label">Score de Présence Authentique</span><p>Un espace de liberté significatif, à nourrir et ancrer.</p></div>
-      </div>
-      <div class="portrait-card reveal" style="--pc:#B8930A">
-        <div class="pc-head">
-          <span class="pc-badge">Portrait V.A.L.E.U.R©</span>
-          <h3 class="pc-name">Masque Jaune</h3>
-          <p class="pc-fear">Intolérance à l'incertitude</p>
-        </div>
-        <div class="pc-block"><span class="pc-label">La protection</span><p>Peur de l'inconnu et de l'imprévu. Besoin de contrôle cognitif permanent — anticiper pour ne jamais être pris·e au dépourvu.</p></div>
-        <div class="pc-block"><span class="pc-label">La valeur derrière</span><p>La confiance dans le flux de la vie. Le lâcher-prise. La spontanéité et la présence à l'instant.</p></div>
-        <div class="pc-block"><span class="pc-label">Les forces</span><p>Intelligence organisatrice · Aptitude à créer de la clarté dans le chaos · Vision systémique remarquable.</p></div>
-        <div class="pc-spa"><span class="pc-label">Score de Présence Authentique</span><p>Espace de liberté existant — invitation à y habiter davantage.</p></div>
-      </div>
-      <div class="portrait-card reveal" style="--pc:#C4581F">
-        <div class="pc-head">
-          <span class="pc-badge">Portrait V.A.L.E.U.R©</span>
-          <h3 class="pc-name">Masque Vert + Orange</h3>
-          <p class="pc-fear">Peur du rejet · verrouillée par le bloqueur émotionnel</p>
-        </div>
-        <div class="pc-block"><span class="pc-label">La protection</span><p>La protection dominante est la peur du rejet (Vert). Mais un mécanisme la verrouille : la coupure émotionnelle (Orange) empêche d'accéder à ce que l'on ressent vraiment.</p></div>
-        <div class="pc-block"><span class="pc-label">La valeur derrière</span><p>La profondeur des liens. La vulnérabilité comme chemin vers l'authenticité relationnelle.</p></div>
-        <div class="pc-block"><span class="pc-label">Les forces</span><p>Sensibilité extrême aux autres · Capacité de connexion authentique et profonde une fois la peur traversée.</p></div>
-        <div class="pc-spa"><span class="pc-label">Score de Présence Authentique</span><p>Un espace de liberté à construire — le travail commence ici.</p></div>
-      </div>
+    <div class="acc-wrap reveal">
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Voir — Reconnaître le masque qui s'active</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner">Prendre conscience de ses mécanismes défensifs dans l'instant où ils se déclenchent. Nommer la peur, c'est déjà la désamorcer.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Accueillir — L'émotion sous le masque, sans fuir</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner">Cesser de lutter. La souffrance est proportionnelle au carré de la résistance. Accueillir, c'est réduire la douleur.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Localiser — Dans le corps, là où le masque se manifeste</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner">Le corps enregistre ce que l'esprit refoule. La localisation corporelle est la porte d'entrée vers ce qui est vraiment là.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Explorer — Le conflit entre le masque et votre valeur</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner">Découvrir ce qui est vraiment important derrière la peur. Chaque masque protège une valeur précieuse.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Unifier — Intégrer la part blessée, choisir sa valeur</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner">Réconcilier ses peurs et sa vérité intérieure. Ne plus avoir besoin du masque de la même façon.</div></div></div>
+      <div class="acc"><button class="acc-trigger" onclick="toggleAcc(this)"><span class="acc-q">Renforcer — Ancrer le nouveau choix durablement</span><span class="acc-icon">+</span></button><div class="acc-body"><div class="acc-body-inner">Consolider la liberté retrouvée par des comportements choisis. La joie d'être soi, stable et accessible.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="final-cta">
+<!-- CTA -->
+<section style="background:var(--cream2);text-align:center;">
   <div class="wrap">
-    <p class="eyebrow">Découvrir vos masques</p>
-    <h2>Commencer à <em>vous libérer</em></h2>
-    <p>L'exploration gratuite des 7 miroirs vous donne une première idée de vos tendances. Le portrait complet — réalisé en première séance — est votre vraie boussole.</p>
-    <a href="les-7-miroirs.html" class="btn-gold">Explorer les 7 masques <span>→</span></a>
-    <p class="final-note">Gratuit · Confidentiel · Rien n'est enregistré</p>
+    <h2 class="reveal" style="margin-bottom:var(--s3)">Prêt·e à <em>vous libérer</em> ?</h2>
+    <p class="lead reveal" style="margin:0 auto var(--s4)">Le premier test gratuit vous donne une première idée de vos tendances. Le portrait complet est votre boussole.</p>
+    <a href="les-7-miroirs.html" class="cta-primary reveal">Explorer les 7 masques gratuit →</a>
+    <p style="font-size:var(--text-xs);color:var(--ink4);margin-top:var(--s2)" class="reveal">Gratuit · Confidentiel · 5 minutes</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <a href="/" class="footer-logo"><img src="LOGO-VALEUR.png" alt="" class="footer-mask">V.A.L.E.U.R<sup>©</sup></a>
-        <p class="footer-copy">Méthode Céline Bourbon, Psychologue · Bordeaux<br>
-          <a href="mailto:contact@psyh.fr">contact@psyh.fr</a> · <a href="https://www.psyh.fr" target="_blank" rel="noopener">Le cabinet</a>
-          <span class="fsep"></span><a href="mentions-legales.html">Mentions légales</a> · <a href="contact.html#pro">Professionnels</a>
-          <span class="fsep"></span><a href="contact.html">Contact</a></p>
-        <p class="footer-copy" style="margin-top:12px;">Les 7 masques : <a href="masque-rouge.html" style="color:#B5312ACC;text-decoration:none;">Rouge</a> · <a href="masque-orange.html" style="color:#C4581FCC;text-decoration:none;">Orange</a> · <a href="masque-jaune.html" style="color:#B8930ACC;text-decoration:none;">Jaune</a> · <a href="masque-vert.html" style="color:#2D7A4FCC;text-decoration:none;">Vert</a> · <a href="masque-bleu.html" style="color:#1D5F8ACC;text-decoration:none;">Bleu</a> · <a href="masque-indigo.html" style="color:#5C3280CC;text-decoration:none;">Indigo</a> · <a href="masque-violet.html" style="color:#7A3594CC;text-decoration:none;">Violet</a></p>
-        <p class="footer-copy" style="margin-top:14px">© Céline Bourbon · V.A.L.E.U.R© · Tous droits réservés<br><em>De la peur à la joie d'être soi</em> · Éditions L'Harmattan</p>
-      </div>
-      <div class="footer-links">
-        <a href="/">Accueil</a><a href="methode.html">La méthode</a>
-        <a href="accompagnement.html">En cabinet</a><a href="contact.html">Contact</a>
-      </div>
-    </div>
+    <p class="footer-text">Méthode V.A.L.E.U.R© · <a href="mailto:contact@psyh.fr">contact@psyh.fr</a> · <a href="mentions-legales.html">Mentions légales</a><br>© Céline Bourbon, Psychologue — Bordeaux · <em>De la peur à la joie d'être soi</em> — Éditions L'Harmattan</p>
+    <div class="footer-masks"><a href="masque-rouge.html">Rouge</a> · <a href="masque-orange.html">Orange</a> · <a href="masque-jaune.html">Jaune</a> · <a href="masque-vert.html">Vert</a> · <a href="masque-bleu.html">Bleu</a> · <a href="masque-indigo.html">Indigo</a> · <a href="masque-violet.html">Violet</a></div>
   </div>
 </footer>
 
 <script>
-  // Attendre le chargement complet du DOM avant d'attacher les événements
-  document.addEventListener('DOMContentLoaded', function() {
-    // Burger menu
-    window.toggleNav = function() {
-      document.getElementById('burger').classList.toggle('open');
-      document.getElementById('mobile-nav').classList.toggle('open');
-    };
-    window.closeNav = function() {
-      document.getElementById('burger').classList.remove('open');
-      document.getElementById('mobile-nav').classList.remove('open');
-    };
-
-    // Accordéons
-    var accTriggers = document.querySelectorAll('.acc-trigger');
-    accTriggers.forEach(function(trigger) {
-      trigger.addEventListener('click', function() {
-        var acc = this.closest('.acc');
-        var body = acc.querySelector('.acc-body');
-        var isOpen = acc.classList.contains('open');
-        if (isOpen) {
-          acc.classList.remove('open');
-          body.style.maxHeight = null;
-          this.setAttribute('aria-expanded', 'false');
-        } else {
-          acc.classList.add('open');
-          body.style.maxHeight = body.scrollHeight + 'px';
-          this.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-
-    // Effet de révélation au scroll
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('vis');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
-
-    // Ombre de la nav au scroll
-    window.addEventListener('scroll', function() {
-      document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(14,17,32,.06)' : 'none';
-    });
-
-    // Désactiver clic droit (protection)
-    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
-  });
+function toggleNav(){document.getElementById('burger').classList.toggle('open');document.getElementById('mobile-nav').classList.toggle('open');}
+function toggleAcc(btn){var acc=btn.closest('.acc');var body=acc.querySelector('.acc-body');if(acc.classList.contains('open')){acc.classList.remove('open');body.style.maxHeight=null;btn.setAttribute('aria-expanded','false');}else{acc.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';btn.setAttribute('aria-expanded','true');}}
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>20?'0 2px 20px rgba(14,17,32,.05)':'none';});
 </script>
 </body>
 </html>
