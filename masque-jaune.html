@@ -35,17 +35,20 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:#F9F5EE;color:#0E1120;overflow-x:hidden;-webkit-user-select:none;user-select:none;-webkit-font-smoothing:antialiased;font-size:18px;line-height:1.9;}
+body{font-family:'Jost',sans-serif;background:#F9F5EE;color:#0E1120;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:18px;line-height:1.9;}
 :root{
   --cream:#F9F5EE;--cream2:#F2EDE3;--ink:#0E1120;--ink2:#1C2035;--ink3:#4A4F66;--ink4:#8589A0;
   --gold:#C9A84C;--gold-ink:#7A5E1A;--gold-pale:rgba(201,168,76,.10);--gold-border:rgba(201,168,76,.22);
   --line:rgba(14,17,32,.08);--line2:rgba(14,17,32,.04);
   --rouge:#B5312A;--orange:#C4581F;--jaune:#B8930A;--vert:#2D7A4F;--bleu:#1D5F8A;--indigo:#5C3280;--violet:#7A3594;
   --mc:#B8930A;--max-w:860px;--pad:clamp(20px,5vw,52px);
+  --ease:cubic-bezier(.22,.8,.28,1);
+  --s2:16px;--s3:24px;--s4:32px;--s5:48px;--s6:64px;--r:14px;
 }
 nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(249,245,238,.95);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--line);}
 .nav-inner{max-width:1060px;margin:0 auto;padding:0 var(--pad);height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--ink);text-decoration:none;flex-shrink:0;}
+.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:var(--ink);text-decoration:none;flex-shrink:0;}
+.nav-logo img{width:28px;height:28px;object-fit:contain;}
 .nav-logo sup{font-size:10px;vertical-align:super;letter-spacing:0}
 .nav-links{display:flex;align-items:center;gap:28px}
 .nav-link{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink4);text-decoration:none;transition:color .2s;white-space:nowrap;}
@@ -64,17 +67,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;background:rgba(249,245,238,
 @media(max-width:920px){.nav-links{display:none}}
 @media(max-width:680px){.nav-cta{display:none}.burger{display:flex}}
 .chroma{height:4px;display:flex;margin-top:68px}
-.cs{flex:1}
+.chroma .cs{flex:1;opacity:0;transition:opacity .4s ease;}
+.chroma.loaded .cs{opacity:1;}
+.chroma .cs:nth-child(1){transition-delay:0s}
+.chroma .cs:nth-child(2){transition-delay:.05s}
+.chroma .cs:nth-child(3){transition-delay:.1s}
+.chroma .cs:nth-child(4){transition-delay:.15s}
+.chroma .cs:nth-child(5){transition-delay:.2s}
+.chroma .cs:nth-child(6){transition-delay:.25s}
+.chroma .cs:nth-child(7){transition-delay:.3s}
 .wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
 .eyebrow{font-size:11px;font-weight:500;letter-spacing:3.5px;text-transform:uppercase;color:var(--mc);margin-bottom:18px;}
 
 .mask-hero{background:var(--ink);padding:clamp(72px,10vw,120px) 0 clamp(60px,8vw,96px);position:relative;overflow:hidden;}
 .mask-hero::before{content:'';position:absolute;top:-40%;right:-15%;width:640px;height:640px;background:radial-gradient(circle,color-mix(in srgb,var(--mc) 22%,transparent) 0%,transparent 65%);pointer-events:none;}
-.mh-eyebrow{font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--mc);margin-bottom:20px;filter:brightness(1.5);position:relative;}
-.mh-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,60px);font-weight:300;line-height:1.14;color:var(--cream);margin-bottom:20px;position:relative;}
+.mask-hero-grid{position:relative;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(30px,6vw,60px);align-items:center;}
+.mh-eyebrow{font-size:11px;letter-spacing:3.5px;text-transform:uppercase;color:var(--mc);margin-bottom:20px;filter:brightness(1.5);}
+.mh-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,60px);font-weight:300;line-height:1.14;color:var(--cream);margin-bottom:20px;}
 .mh-title em{color:var(--mc);font-style:italic;filter:brightness(1.6);}
-.mh-intro{font-size:clamp(16px,2.1vw,18px);color:rgba(249,245,238,.62);max-width:620px;line-height:1.85;position:relative;}
-.mh-kw{margin-top:26px;font-size:13px;letter-spacing:1.5px;color:rgba(249,245,238,.38);font-style:italic;position:relative;}
+.mh-intro{font-size:clamp(16px,2.1vw,18px);color:rgba(249,245,238,.62);max-width:620px;line-height:1.85;}
+.mask-hero-visual{display:flex;justify-content:center;align-items:center;}
+.mask-hero-img{width:min(260px,55vw);height:auto;filter:drop-shadow(0 20px 50px rgba(0,0,0,.5));animation:float 6s var(--ease) infinite;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.mh-kw{margin-top:26px;font-size:13px;letter-spacing:1.5px;color:rgba(249,245,238,.38);font-style:italic;}
+@media(max-width:860px){.mask-hero-grid{grid-template-columns:1fr;gap:var(--s6);text-align:center;}.mask-hero-visual{order:-1;}.mask-hero-img{width:min(180px,50vw);}}
+
+.sig-band{background:var(--gold-pale);border-top:1px solid var(--gold-line);border-bottom:1px solid var(--gold-line);}
+.sig-band .wrap{padding-top:var(--s2);padding-bottom:var(--s2);}
+.sig-band p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,2.1vw,19px);color:var(--gold-ink);text-align:center;line-height:1.5;}
+.sig-band em{font-weight:500;color:var(--ink2);font-style:italic;}
 
 section.msec{padding:clamp(52px,7vw,84px) 0;}
 section.msec.alt{background:var(--cream2);}
@@ -183,12 +204,13 @@ footer{background:var(--ink);padding:56px 0;}
 
 <nav>
   <div class="nav-inner">
-    <a href="/" class="nav-logo">V.A.L.E.U.R<sup>©</sup></a>
+    <a href="/" class="nav-logo"><img src="LOGO-VALEUR.png" alt="">V.A.L.E.U.R<sup>©</sup></a>
     <div class="nav-links">
       <a href="/" class="nav-link">Accueil</a>
       <a href="methode.html" class="nav-link">La méthode</a>
       <a href="accompagnement.html" class="nav-link">En cabinet</a>
       <a href="livre.html" class="nav-link">Le livre</a>
+      <a href="les-7-miroirs.html" class="nav-link">Les 7 miroirs</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
     <a href="les-7-miroirs.html" class="nav-cta">Les 7 miroirs <span>→</span></a>
@@ -200,6 +222,7 @@ footer{background:var(--ink);padding:56px 0;}
   <a href="methode.html">La méthode</a>
   <a href="accompagnement.html">En cabinet</a>
   <a href="livre.html">Le livre</a>
+  <a href="les-7-miroirs.html">Les 7 miroirs</a>
   <a href="contact.html">Contact</a>
   <a href="les-7-miroirs.html" class="m-cta">Explorer les 7 masques →</a>
 </div>
@@ -211,16 +234,28 @@ footer{background:var(--ink);padding:56px 0;}
   <div class="cs" style="background:var(--violet)"></div>
 </div>
 
-
 <!-- ═══ HERO ═══ -->
 <section class="mask-hero">
   <div class="wrap">
-    <p class="mh-eyebrow">Les 7 masques · La peur de l'inconnu</p>
-    <h1 class="mh-title">La peur qui anticipe<br><em>tout</em></h1>
-    <p class="mh-intro">Vous ne pouvez pas vous empêcher de prévoir. L'imprévu n'est pas un inconfort — c'est une menace. Alors vous planifiez, vous vérifiez, vous anticipez. Votre cerveau préfère la catastrophe certaine à l'incertitude. Cette vigilance épuisante a une histoire.</p>
+    <div class="mask-hero-grid">
+      <div>
+        <p class="mh-eyebrow">Les 7 masques · La peur de l'inconnu</p>
+        <h1 class="mh-title">La peur qui anticipe<br><em>tout</em></h1>
+        <p class="mh-intro">Vous ne pouvez pas vous empêcher de prévoir. L'imprévu n'est pas un inconfort — c'est une menace. Alors vous planifiez, vous vérifiez, vous anticipez. Votre cerveau préfère la catastrophe certaine à l'incertitude. Cette vigilance épuisante a une histoire.</p>
+      </div>
+      <div class="mask-hero-visual">
+        <img src="masque-jaune.png" alt="Masque Jaune — La peur de l'inconnu" class="mask-hero-img" loading="eager">
+      </div>
+    </div>
     <p class="mh-kw">intolérance à l'incertitude · anticiper · ruminations · anxiété généralisée</p>
   </div>
 </section>
+
+<div class="sig-band">
+  <div class="wrap">
+    <p>Ceci est le <strong>Masque Jaune</strong> — l'un des <em>7 masques</em> de la méthode V.A.L.E.U.R© créée par Céline Bourbon, psychologue. <a href="methode.html" style="color:var(--gold-ink);">Découvrir la méthode →</a></p>
+  </div>
+</div>
 
 <!-- ═══ RECONNAISSANCE ═══ -->
 <section class="msec">
@@ -367,6 +402,12 @@ footer{background:var(--ink);padding:56px 0;}
   </div>
 </section>
 
+<!-- ═══ CITATION CÉLINE ═══ -->
+<div class="celine-quote" style="max-width:660px; margin:var(--s4) auto; padding:var(--s2) var(--s3); background:var(--gold-pale); border:1px solid var(--gold-line); border-radius:var(--r); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(18px,2.5vw,21px); color:var(--ink2); text-align:center;">
+  « L'incertitude n'est pas un danger — c'est le territoire naturel de la vie. Vous avez toujours eu ce qu'il fallait pour traverser ce que vous ne pouviez pas prévoir. »
+  <div style="font-size:var(--t-xs,12px); color:var(--ink4); margin-top:6px; font-style:normal;">— Céline Bourbon</div>
+</div>
+
 <!-- ═══ COÛT + FORCE ═══ -->
 <section class="msec alt">
   <div class="wrap">
@@ -383,17 +424,22 @@ footer{background:var(--ink);padding:56px 0;}
       <div class="fb-label">Ce qui attend derrière</div>
       <p class="flead">Non plus <em>anticiper pour survivre</em> — mais <em>agir depuis la confiance</em>. Votre intelligence, libérée du besoin de tout prévoir, devient fluide, créative, intuitive.</p>
       <p class="fbody">Une confiance inébranlable. Libéré·e du besoin de tout anticiper, l’intelligence devient fluide et l’action devient juste — même dans le flou.</p>
+      <p style="font-size:13px; color:var(--ink4); margin-top:var(--s2);">Ce travail se mesure : c'est le <a href="accompagnement.html" style="color:var(--gold-ink);">Score de Présence Authentique</a>, votre pourcentage de liberté d'être soi.</p>
     </div>
     <p class="liberation-line reveal">L’incertitude n’est pas un danger — c’est le territoire naturel de la vie. Vous avez toujours eu ce qu’il fallait pour traverser ce que vous ne pouviez pas prévoir.</p>
   </div>
 </section>
 
-<!-- ═══ CTA ═══ -->
+<!-- ═══ CTA ENRICHI ═══ -->
 <section class="cta-band">
   <div class="wrap">
     <h2>«&nbsp;Quel masque décide à votre place&nbsp;?&nbsp;»</h2>
-    <p>21 questions · 5 minutes · Gratuit et confidentiel</p>
+    <p>7 questions · Quelques minutes · Gratuit et confidentiel</p>
     <a href="les-7-miroirs.html" class="btn-gold">Explorer les 7 masques <span>→</span></a>
+    <div style="margin-top:var(--s3); display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+      <a href="methode.html" style="color:rgba(249,245,238,.55); font-size:13px; text-decoration:underline;">Comprendre la méthode</a>
+      <a href="accompagnement.html" style="color:rgba(249,245,238,.55); font-size:13px; text-decoration:underline;">Rencontrer Céline Bourbon</a>
+    </div>
   </div>
 </section>
 
@@ -440,7 +486,9 @@ function toggleNav(){document.getElementById('burger').classList.toggle('open');
 window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>40?'0 2px 20px rgba(14,17,32,.06)':'none';});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-(function(){document.addEventListener('contextmenu',e=>e.preventDefault());})();
+window.addEventListener('load', function(){
+  document.querySelector('.chroma').classList.add('loaded');
+});
 </script>
 </body>
 </html>
